@@ -1,0 +1,368 @@
+{
+  "almonds": {
+    "image": "IMG video/Images/proizvodi/nuts-almonds-detail.webp",
+    "name": "Almonds (Nonpareil)",
+    "shortDescription": "Premium California Nonpareil almonds, shelled and graded by count, ideal for snacking and confectionery.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Variety", "value": "Nonpareil (Supreme)" },
+          { "item": "Grade", "value": "U.S. Fancy" },
+          { "item": "Size (Count/oz)", "value": "18/20, 20/22, 23/25, 27/30" },
+          { "item": "Style", "value": "Shelled, Unroasted, Pasteurized" },
+          { "item": "Crop Year", "value": "Current" },
+          { "item": "Moisture", "value": "6% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA (California), Australia, Spain" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "22.68 kg (50 lbs) vacuum-packed cartons" },
+          { "item": "Loadability", "value": "Approx. 19-20 MT per 40' container" }
+        ]
+      }
+    ]
+  },
+  "walnuts": {
+    "image": "IMG video/Images/proizvodi/nuts-walnuts-detail.webp",
+    "name": "Walnuts (Chandler)",
+    "shortDescription": "Chandler variety walnuts, known for their light color and high-quality kernels. Available as halves or in-shell.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Variety", "value": "Chandler" },
+          { "item": "Style", "value": "Shelled (Halves & Pieces) or In-Shell (Jumbo)" },
+          { "item": "Grade (Halves)", "value": "LHP (Light Halves & Pieces), 80% Halves" },
+          { "item": "Color", "value": "Extra Light / Light" },
+          { "item": "Crop Year", "value": "Current" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA (California), Chile, China" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging (Shelled)", "value": "10 kg or 12.5 kg vacuum-packed cartons" },
+          { "item": "Packaging (In-Shell)", "value": "25 kg bags" },
+          { "item": "Transport", "value": "20' or 40' Container" }
+        ]
+      }
+    ]
+  },
+  "cashews": {
+    "image": "IMG video/Images/proizvodi/nuts-cashews-detail.webp",
+    "name": "Cashew Kernels (WW320)",
+    "shortDescription": "White Wholes 320 (WW320) grade cashew kernels, a global standard for size and quality.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "WW320 (White Wholes, 300-320 kernels/lb)" },
+          { "item": "Alt. Grade", "value": "WW240 (Larger size)" },
+          { "item": "Standard", "value": "AFI Standard" },
+          { "item": "Moisture", "value": "5% Max" },
+          { "item": "Broken", "value": "5% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Processing Hubs", "value": "Vietnam, India" },
+          { "item": "Raw Nut Origin", "value": "Ivory Coast, Nigeria, Ghana, Tanzania" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "22.68 kg (50 lbs) vacuum-packed, CO2-flushed flexi-pouches in cartons" },
+          { "item": "Loadability", "value": "Approx. 15.876 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "pistachios": {
+    "image": "IMG video/Images/proizvodi/nuts-pistachios-detail.webp",
+    "name": "Pistachios (In-Shell)",
+    "shortDescription": "Roasted and salted in-shell pistachios, graded by size (count per ounce) and split percentage.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Variety", "value": "Kerman (USA), Fandoghi (Iran - *Note: Using Turkish source*)" },
+          { "item": "Grade (US)", "value": "US Fancy" },
+          { "item": "Size (Count/oz)", "value": "21/25 or 26/30" },
+          { "item": "Closed Shell", "value": "< 4% Max" },
+          { "item": "Style", "value": "Roasted, Salted, In-Shell" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA (California), Turkey (Gaziantep)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "10 kg or 25 kg bags/cartons" },
+          { "item": "Transport", "value": "20' or 40' Container" }
+        ]
+      }
+    ]
+  },
+  "hazelnuts": {
+    "image": "IMG video/Images/proizvodi/nuts-hazelnuts-detail.webp",
+    "name": "Hazelnut Kernels (Turkish)",
+    "shortDescription": "Shelled, roasted, or natural hazelnut kernels from the Turkish Black Sea region, sized and graded.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Levant Quality (Giresun quality also available)" },
+          { "item": "Style", "value": "Natural or Roasted Kernels" },
+          { "item": "Size", "value": "11/13 mm, 13/15 mm" },
+          { "item": "Moisture", "value": "6% Max" },
+          { "item": "Purity", "value": "99.9% Min" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey (Black Sea), Italy, Azerbaijan" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg vacuum bags in cartons or 50 kg jute bags" },
+          { "item": "Transport", "value": "20' or 40' Container" }
+        ]
+      }
+    ]
+  },
+  "raisins": {
+    "image": "IMG video/Images/proizvodi/nuts-raisins-detail.webp",
+    "name": "Raisins (Sultana)",
+    "shortDescription": "Turkish Sultana raisins, Type 9, a standard for baking and confectionery. Also available as Thompson Seedless (USA).",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Sultana (Type 9)" },
+          { "item": "Alt. Type", "value": "Thompson Seedless (USA)" },
+          { "item": "Size", "value": "Standard or Medium" },
+          { "item": "Moisture", "value": "13% - 16%" },
+          { "item": "Purity", "value": "99.5% Min" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey (Aegean), USA (California), South Africa" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "10 kg or 12.5 kg cartons with poly liner" },
+          { "item": "Loadability", "value": "Approx. 20-22 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "apricots": {
+    "image": "IMG video/Images/proizvodi/nuts-apricots-detail.webp",
+    "name": "Dried Apricots (Turkish)",
+    "shortDescription": "Whole dried Turkish apricots from Malatya, graded by size (Jumbo, No. 1, etc.) and treated with SO2 or natural.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Whole, Pitted" },
+          { "item": "Variety", "value": "Malatya" },
+          { "item": "Size", "value": "Jumbo (60-80/kg), No. 1 (81-100/kg), No. 2 (101-120/kg)" },
+          { "item": "SO2 Content", "value": "2000-3000 ppm (Standard) or <100 ppm (Natural)" },
+          { "item": "Moisture", "value": "25% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey (Malatya)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "5 kg or 12.5 kg cartons with poly liner" },
+          { "item": "Loadability", "value": "Approx. 20-22 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "dates": {
+    "image": "IMG video/Images/proizvodi/nuts-dates-detail.webp",
+    "name": "Dates (Medjool)",
+    "shortDescription": "Premium Medjool dates, known for their large size, soft texture, and rich flavor.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Variety", "value": "Medjool (Medjoul)" },
+          { "item": "Alt. Variety", "value": "Deglet Nour" },
+          { "item": "Grade", "value": "Premium / Fancy" },
+          { "item": "Size", "value": "Jumbo (18-23 g/pc), Large (15-18 g/pc)" },
+          { "item": "Style", "value": "Whole, with pit" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Jordan, Israel, Palestine, USA (California), Morocco" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging (Retail)", "value": "500g, 1kg, 2kg boxes" },
+          { "item": "Packaging (Bulk)", "value": "5 kg cartons" },
+          { "item": "Transport", "value": "Reefer container" }
+        ]
+      }
+    ]
+  },
+  "figs": {
+    "image": "IMG video/Images/proizvodi/nuts-figs-detail.webp",
+    "name": "Dried Figs (Turkish Lerida)",
+    "shortDescription": "Turkish dried figs (Lerida type), a popular format, graded by size and quality.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Lerida (manipulated into flat round shape)" },
+          { "item": "Alt. Type", "value": "Natural (Garland)" },
+          { "item": "Size", "value": "No. 1 (Largest) to No. 10 (Smallest)" },
+          { "item": "Moisture", "value": "22% - 26%" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey (Aydin)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "1kg, 5kg, 10kg cartons" },
+          { "item": "Transport", "value": "20' Container" }
+        ]
+      }
+    ]
+  },
+  "sunflower-seeds": {
+    "image": "IMG video/Images/proizvodi/nuts-sunflowerseeds-detail.webp",
+    "name": "Sunflower Seeds (Hulled)",
+    "shortDescription": "Hulled sunflower seed kernels (bakery grade), high purity, for baking, confectionery, and oil production.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Hulled Kernels (Bakery Grade)" },
+          { "item": "Purity", "value": "99.9% Min" },
+          { "item": "Moisture", "value": "8% Max" },
+          { "item": "Broken", "value": "5% Max" },
+          { "item": "Oil Content", "value": "48% Min (for crushing grade)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Bulgaria, Romania, Moldova, Argentina" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg paper bags" },
+          { "item": "Loadability", "value": "Approx. 22-24 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "sesame-seeds": {
+    "image": "IMG video/Images/proizvodi/nuts-sesame-detail.webp",
+    "name": "Sesame Seeds (Natural)",
+    "shortDescription": "Natural unhulled sesame seeds, 99.9% purity, widely used for oil extraction (tahini) and baking.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Natural, Unhulled" },
+          { "item": "Purity", "value": "99.90% Min" },
+          { "item": "Moisture", "value": "6% Max" },
+          { "item": "Oil Content", "value": "48% - 52% Min" },
+          { "item": "FFA", "value": "2% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Sudan, Ethiopia, Nigeria, Tanzania, India" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg or 50 kg PP bags" },
+          { "item": "Loadability", "value": "Approx. 19-20 MT per 20' container" }
+        ]
+      }
+    ]
+  }
+}

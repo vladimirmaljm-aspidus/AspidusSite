@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <title>Product Details | Aspidus</title>
+    <meta name="description" content="Detailed specifications for Aspidus commodities.">
+    
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.google.com/recaptcha/api.js https://www.google.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+        img-src 'self' data: https://www.aspidus.co;
+        frame-src https://www.google.com/;
+        connect-src 'self' https://formspree.io;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self' https://formspree.io;
+    ">
+    <meta name="X-Content-Type-Options" content="nosniff">
+    <meta name="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <link rel="icon" type="image/png" href="IMG video/Images/favicon.png"/>
+    <link rel="apple-touch-icon" href="IMG video/Images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet"/>
+    
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        // Osnovna Tailwind konfiguracija sa vašeg sajta
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#3457D5', secondary: '#D4AF37' },
+                    fontFamily: { 'sans': ['Poppins', 'sans-serif'], 'serif': ['Cormorant Garamond', 'serif'] },
+                    borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="bg-white text-gray-800">
+
+    <div id="preloader">
+         <svg viewBox="25 25 50 50">
+          <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+    </div>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="pt-32 pb-16 md:pt-40 md:pb-24 animate-on-scroll">
+            <div class="product-detail-container">
+                
+                <div id="product-error-container" class="product-loading-error hidden">
+                    <i class="ri-search-line text-5xl text-gray-400 mb-4"></i>
+                    <h2 id="product-error-title" class="text-2xl font-serif font-bold" data-en-text="Loading Product..." data-tr-text="Ürün Yükleniyor..." data-ru-text="Загрузка товара..." data-sr-text="Učitavanje Proizvoda...">Loading Product...</h2>
+                    <p id="product-error-message" class="text-lg mt-2" data-en-text="Please wait a moment." data-tr-text="Lütfen bir saniye bekleyin." data-ru-text="Пожалуйста, подождите." data-sr-text="Molimo sačekajte."></p>
+                </div>
+
+                <div id="product-content-container" class="hidden">
+                    
+                    <div class="product-header-grid">
+                        <div class="product-image-wrapper">
+                            <img id="product-image" src="" alt="Product Image">
+                        </div>
+                        <div class="product-info-wrapper">
+                            <h1 id="product-name" class="gold-text"></h1>
+                            <p id="product-description" class="product-short-description"></p>
+                            
+                            <a id="product-cta-button" href="contact.html" 
+                               class="btn-gold text-gray-900 px-8 py-3 !rounded-button whitespace-nowrap font-semibold inline-block hover-lift"
+                               data-en-text="Request a Quote"
+                               data-tr-text="Teklif İste"
+                               data-ru-text="Запросить цену"
+                               data-sr-text="Zatražite Ponudu">
+                               Request a Quote
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-tabs-container">
+                        <nav id="product-tab-nav" class="product-tab-nav">
+                            </nav>
+                        <div id="product-tab-content" class="product-tab-content-wrapper">
+                            </div>
+                    </div>
+
+                </div></div></section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Čekamo da 'main.js' odradi svoje (npr. postavi jezik)
+            setTimeout(initializeProductPage, 100); 
+        });
+
+        async function initializeProductPage() {
+            const errorContainer = document.getElementById('product-error-container');
+            const errorTitle = document.getElementById('product-error-title');
+            const errorMessage = document.getElementById('product-error-message');
+            const contentContainer = document.getElementById('product-content-container');
+            
+            // Jezik i URL parametri
+            const lang = document.documentElement.lang || 'en';
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            // Funkcije za prikaz greške/sadržaja
+            const showError = (messageKey) => {
+                const langTitles = { en: 'Error Loading Product', tr: 'Ürün Yüklenirken Hata', ru: 'Ошибка загрузки товара', sr: 'Greška pri Učitavanju' };
+                const langMessages = {
+                    notFound: { en: 'The product you are looking for could not be found.', tr: 'Aradığınız ürün bulunamadı.', ru: 'Товар, который вы ищеte, не найден.', sr: 'Proizvod koji tražite nije pronađen.' },
+                    noId: { en: 'No product ID was specified.', tr: 'Ürün kimliği belirtilmedi.', ru: 'Не указан ID товара.', sr: 'Nije naveden ID proizvoda.' },
+                    noManifest: { en: 'Could not load product manifest.', tr: 'Ürün manifestosu yüklenemedi.', ru: 'Не удалось загрузить манифест продуктов.', sr: 'Nije moguće učitati manifest proizvoda.' },
+                    noCategoryFile: { en: 'Could not load product category data.', tr: 'Ürün kategori verisi yüklenemedi.', ru: 'Не удалось загрузить данные категории продуктов.', sr: 'Nije moguće učitati podatke o kategoriji proizvoda.' }
+                };
+                
+                errorTitle.textContent = langTitles[lang] || langTitles['en'];
+                errorMessage.textContent = langMessages[messageKey]?.[lang] || langMessages[messageKey]?.['en'] || 'An unknown error occurred.';
+                errorContainer.classList.remove('hidden');
+                contentContainer.classList.add('hidden');
+            };
+
+            const showContent = () => {
+                errorContainer.classList.add('hidden');
+                contentContainer.classList.remove('hidden');
+            };
+
+            // 1. Proveri da li postoji ID
+            if (!productId) {
+                showError('noId');
+                return;
+            }
+
+            // 2. Učitaj "Glavni" manifest
+            let manifest;
+            try {
+                const response = await fetch('product-manifest.json');
+                if (!response.ok) throw new Error('Network response was not ok');
+                manifest = await response.json();
+            } catch (error) {
+                console.error('Failed to fetch product-manifest.json:', error);
+                showError('noManifest');
+                return;
+            }
+
+            // 3. Pronađi koji fajl kategorije treba učitati
+            const categoryFileName = manifest.productMap[productId];
+            if (!categoryFileName) {
+                console.error(`No category file mapping found for product ID: ${productId}`);
+                showError('notFound');
+                return;
+            }
+
+            // 4. Učitaj specifični fajl kategorije (npr. "products/energy.json")
+            let categoryData;
+            try {
+                const response = await fetch(`products/${categoryFileName}`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                categoryData = await response.json();
+            } catch (error) {
+                console.error(`Failed to fetch ${categoryFileName}:`, error);
+                showError('noCategoryFile');
+                return;
+            }
+
+            // 5. Pronađi proizvod UNUTAR fajla kategorije
+            const productData = categoryData[productId];
+            if (!productData) {
+                console.error(`Product ${productId} not found inside ${categoryFileName}`);
+                showError('notFound');
+                return;
+            }
+
+            // 6. Prevedi podatke za prikaz (SADA KORISTIMO ENGLESKI)
+            const defaultProductImage = manifest.defaultProductImage || 'IMG video/Images/placeholder.webp';
+            const tabTranslations = manifest.tabs; // Nazivi tabova
+            const noDataMessage = tabTranslations.noData;
+
+            // 7. Popuni osnovne informacije o proizvodu
+            document.title = `${productData.name} | Aspidus`;
+            document.getElementById('product-image').src = productData.image || defaultProductImage;
+            document.getElementById('product-image').alt = productData.name;
+            document.getElementById('product-name').textContent = productData.name;
+            document.getElementById('product-description').textContent = productData.shortDescription || '';
+            
+            // Ažuriraj CTA dugme
+            const ctaButton = document.getElementById('product-cta-button');
+            const ctaText = ctaButton.getAttribute(`data-${lang}-text`) || ctaButton.getAttribute('data-en-text');
+            ctaButton.textContent = ctaText;
+            ctaButton.href = `contact.html?subject=Inquiry for ${encodeURIComponent(productData.name)}`;
+
+            // 8. Dinamički generiši Tabove i Sadržaj
+            const tabNav = document.getElementById('product-tab-nav');
+            const tabContentWrapper = document.getElementById('product-tab-content');
+            tabNav.innerHTML = ''; 
+            tabContentWrapper.innerHTML = ''; 
+
+            if (productData.tabs && productData.tabs.length > 0) {
+                productData.tabs.forEach((tab, index) => {
+                    const tabTitle = tabTranslations[tab.titleKey];
+                    if (!tabTitle) return; // Preskoči ako ključ taba ne postoji
+
+                    // Kreiraj dugme za tab
+                    const tabButton = document.createElement('button');
+                    tabButton.className = 'product-tab-button';
+                    tabButton.textContent = tabTitle;
+                    tabButton.setAttribute('data-tab', `tab-${index}`);
+                    if (index === 0) tabButton.classList.add('active');
+                    tabNav.appendChild(tabButton);
+
+                    // Kreiraj sadržaj za tab
+                    const tabContent = document.createElement('div');
+                    tabContent.id = `tab-${index}`;
+                    tabContent.className = 'product-tab-content';
+                    if (index === 0) tabContent.classList.add('active');
+
+                    if (tab.type === 'table' && tab.content && tab.content.length > 0) {
+                        // Generiši tabelu
+                        let tableHTML = '<div class="spec-table-wrapper"><table class="spec-table"><tbody>';
+                        tab.content.forEach(row => {
+                            tableHTML += `<tr><td>${row.item}</td><td>${row.value}</td></tr>`;
+                        });
+                        tableHTML += '</tbody></table></div>';
+                        tabContent.innerHTML = tableHTML;
+                    } else if (tab.type === 'text' && tab.content) {
+                        // Generiši običan paragraf
+                        tabContent.innerHTML = `<p>${tab.content}</p>`;
+                    } else {
+                        // Ako nema sadržaja
+                        tabContent.innerHTML = `<p>${noDataMessage}</p>`;
+                    }
+                    tabContentWrapper.appendChild(tabContent);
+                });
+            } else {
+                tabNav.innerHTML = '';
+                tabContentWrapper.innerHTML = `<div class="product-loading-error">${noDataMessage}</div>`;
+            }
+
+            // 9. Dodaj logiku za kliktanje na tabove
+            const tabButtons = document.querySelectorAll('.product-tab-button');
+            const tabContents = document.querySelectorAll('.product-tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    button.classList.add('active');
+                    const targetTabId = button.getAttribute('data-tab');
+                    document.getElementById(targetTabId).classList.add('active');
+                });
+            });
+
+            // 10. Prikazi ceo sadržaj
+            showContent();
+        }
+    </script>
+    </body>
+</html>

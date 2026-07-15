@@ -1,0 +1,306 @@
+{
+  "brent-crude": {
+    "image": "IMG video/Images/proizvodi/crude-oil-detail.webp",
+    "name": "Crude Oil (Brent)",
+    "shortDescription": "Brent Crude is a leading global price benchmark for Atlantic basin light sweet crude oils.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Light Sweet Crude" },
+          { "item": "API Gravity", "value": "Approx. 38.0° - 39.0°" },
+          { "item": "Sulfur Content", "value": "Approx. 0.30% - 0.45%" },
+          { "item": "Density (15°C)", "value": "Approx. 835 kg/m³" },
+          { "item": "Benchmark For", "value": "Europe, Africa, Middle East" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Primary Origin", "value": "North Sea (United Kingdom, Norway)" },
+          { "item": "Blend Components", "value": "Brent, Forties, Oseberg, Ekofisk, Troll (BFOET)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Loading", "value": "VLCC / Suezmax / Aframax Tankers" },
+          { "item": "Terms", "value": "FOB, CIF" },
+          { "item": "Pricing", "value": "Dated Brent (Platts)" }
+        ]
+      }
+    ]
+  },
+  "wti-crude": {
+    "image": "IMG video/Images/proizvodi/crude-oil-detail.webp",
+    "name": "Crude Oil (WTI)",
+    "shortDescription": "West Texas Intermediate (WTI) is a high-quality light sweet crude and a primary benchmark for North American oil.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Light Sweet Crude" },
+          { "item": "API Gravity", "value": "Approx. 39.0° - 42.0°" },
+          { "item": "Sulfur Content", "value": "Approx. 0.20% - 0.35%" },
+          { "item": "Density (15°C)", "value": "Approx. 820 kg/m³" },
+          { "item": "Benchmark For", "value": "North & South America" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Primary Origin", "value": "USA (Texas - Permian Basin, Eagle Ford)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Delivery Hub", "value": "Cushing, Oklahoma (Pipeline)" },
+          { "item": "Export Hub", "value": "FOB Houston / Corpus Christi" },
+          { "item": "Loading", "value": "Tankers, Pipelines" },
+          { "item": "Pricing", "value": "NYMEX Futures" }
+        ]
+      }
+    ]
+  },
+  "lng": {
+    "image": "IMG video/Images/proizvodi/lng-detail.webp",
+    "name": "Liquefied Natural Gas (LNG)",
+    "shortDescription": "Clean, reliable, and efficient energy source, cooled to a liquid state for transport and storage.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Methane (CH4)", "value": "87-99% mol" },
+          { "item": "Gross Calorific Value", "value": "~39 - 43 MJ/m³ (GHV)" },
+          { "item": "State", "value": "Cryogenic Liquid (-162°C / -260°F)" },
+          { "item": "Sulfur Content", "value": "Extremely low" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Qatar, Australia, Nigeria, Algeria" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Transport", "value": "Specialized LNG Carriers (Q-Flex, Q-Max)" },
+          { "item": "Terms", "value": "DES (Delivered Ex-Ship), FOB" },
+          { "item": "Pricing Benchmark", "value": "JKM (Asia), TTF (Europe), Henry Hub (USA)" }
+        ]
+      }
+    ]
+  },
+  "lpg": {
+    "image": "IMG video/Images/proizvodi/lpg-detail.webp",
+    "name": "Liquefied Petroleum Gas (LPG)",
+    "shortDescription": "Versatile fuel mixture (Propane/Butane) used for heating, cooking, and automotive fuel.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Composition", "value": "Propane (C3H8), Butane (C4H10), or a mix" },
+          { "item": "Standard (Propane)", "value": "HD-5 Grade (90% min Propane)" },
+          { "item": "Standard (Auto)", "value": "EN 589" },
+          { "item": "Calorific Value", "value": "~46.1 MJ/kg (Propane)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Exporters", "value": "Middle East (Saudi Arabia, UAE, Qatar), USA" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Transport", "value": "VLGC (Very Large Gas Carriers)" },
+          { "item": "Domestic", "value": "Pressurized cylinders (11kg, 50kg), bulk tankers" },
+          { "item": "Pricing Benchmark", "value": "CP (Saudi Aramco Contract Price), Mont Belvieu (USA)" }
+        ]
+      }
+    ]
+  },
+  "gasoline": {
+    "image": "IMG video/Images/proizvodi/gasoline-detail.webp",
+    "name": "Gasoline (RON 95)",
+    "shortDescription": "High-quality unleaded gasoline (petrol) meeting international standards such as RON 95.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "EN 228 (Euro 5/6)" },
+          { "item": "RON (Research Octane)", "value": "95.0 Min" },
+          { "item": "MON (Motor Octane)", "value": "85.0 Min" },
+          { "item": "Sulfur Content", "value": "10 mg/kg (10ppm) Max" },
+          { "item": "Density (15°C)", "value": "720 - 775 kg/m³" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Origin", "value": "Global Refineries" },
+          { "item": "Major Hubs", "value": "ARA (Netherlands), Singapore, US Gulf Coast" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Transport", "value": "Bulk Cargo Tankers (Handysize, MR, LR)" },
+          { "item": "Terms", "value": "FOB, CIF" }
+        ]
+      }
+    ]
+  },
+  "diesel": {
+    "image": "IMG video/Images/proizvodi/diesel-detail.webp",
+    "name": "Diesel (EN590)",
+    "shortDescription": "Ultra-low sulfur diesel (ULSD) compliant with EN590 standards (10ppm sulfur) for modern diesel engines.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "EN 590 10ppm" },
+          { "item": "Cetane Index", "value": "51.0 Min" },
+          { "item": "Sulfur Content", "value": "10 mg/kg (10ppm) Max" },
+          { "item": "Density (15°C)", "value": "820 - 845 kg/m³" },
+          { "item": "CFPP (Cold Filter)", "value": "Market/Season dependent (e.g., -15°C Winter)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Origin", "value": "Global Refineries" },
+          { "item": "Major Exporters", "value": "Middle East, India, USA, South Korea" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Transport", "value": "Bulk Cargo Tankers (Handysize, MR, LR)" },
+          { "item": "Terms", "value": "FOB, CIF" },
+          { "item": "Pricing Benchmark", "value": "Platts (e.g., ICE Gasoil)" }
+        ]
+      }
+    ]
+  },
+  "jet-fuel": {
+    "image": "IMG video/Images/proizvodi/jetfuel-detail.webp",
+    "name": "Jet Fuel (A-1)",
+    "shortDescription": "High-quality aviation turbine fuel (Jet A-1) meeting stringent international safety and performance standards.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "ASTM D1655 (Jet A-1)" },
+          { "item": "Flash Point", "value": "38°C Min" },
+          { "item": "Freezing Point", "value": "-47°C Max" },
+          { "item": "Density (15°C)", "value": "775 - 840 kg/m³" },
+          { "item": "Sulfur (Total)", "value": "0.30% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Origin", "value": "Global Refineries" },
+          { "item": "Major Hubs", "value": "Singapore, Middle East, South Korea, USA" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Transport", "value": "Bulk Cargo Tankers, Dedicated Pipelines" },
+          { "item": "Terms", "value": "FOB, CIF, TTO" }
+        ]
+      }
+    ]
+  },
+  "polyethylene": {
+    "image": "IMG video/Images/proizvodi/polymers-detail.webp",
+    "name": "Polyethylene (PE)",
+    "shortDescription": "Versatile polymer available in various grades (HDPE, LDPE, LLDPE) for packaging, industrial, and consumer applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Types", "value": "HDPE (High-Density), LDPE (Low-Density), LLDPE (Linear Low-Density)" },
+          { "item": "Format", "value": "Granules / Pellets" },
+          { "item": "Key Specs", "value": "Melt Flow Index (MFI), Density" },
+          { "item": "Applications (HDPE)", "value": "Blow molding (bottles), pipes, crates" },
+          { "item": "Applications (LDPE/LLDPE)", "value": "Films, bags, flexible packaging" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Middle East (e.g., SABIC - Saudi Arabia), USA (e.g., Dow), Asia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg bags or 1 MT (1000 kg) bulk bags" },
+          { "item": "Loadability", "value": "Approx. 25-27 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "polypropylene": {
+    "image": "IMG video/Images/proizvodi/polymers-detail.webp",
+    "name": "Polypropylene (PP)",
+    "shortDescription": "Durable and chemical-resistant thermoplastic (Homopolymer, Copolymer) used in automotive, packaging, and textile industries.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Types", "value": "Homopolymer, Random Copolymer, Impact Copolymer" },
+          { "item": "Format", "value": "Granules / Pellets" },
+          { "item": "Key Spec", "value": "Melt Flow Index (MFI)" },
+          { "item": "Applications", "value": "Injection molding (automotive, caps), fibers (non-woven), film (BOPP)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Middle East, South Korea, USA, Europe" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg bags or 1 MT (1000 kg) bulk bags" },
+          { "item": "Loadability", "value": "Approx. 25-27 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "black-pepper": {
+    "image": "IMG video/Images/proizvodi/spices-pepper-detail.webp",
+    "name": "Black Pepper (Whole)",
+    "shortDescription": "Whole dried black pepper, graded by density (g/l), sourced from primary producers.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Quality", "value": "550 g/l (FAQ - Fair Average Quality)" },
+          { "item": "Alt. Quality", "value": "500 g/l" },
+          { "item": "Alt. Quality (High)", "value": "570 g/l (ASTA)" },
+          { "item": "Moisture", "value": "12.5% Max" },
+          { "item": "Admixture", "value": "1.0% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Vietnam, Brazil, Indonesia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg or 50 kg new PP bags" },
+          { "item": "Loadability", "value": "Approx. 15 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "cinnamon": {
+    "image": "IMG video/Images/proizvodi/spices-cinnamon-detail.webp",
+    "name": "Cinnamon (Cassia & Ceylon)",
+    "shortDescription": "Offering both main types of cinnamon: pungent, strong Cassia and sweet, delicate Ceylon ('True Cinnamon').",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type 1: Cassia", "value": "Strong flavor, hard bark. Common grades: Split, Broken." },
+          { "item": "Type 2: Ceylon", "value": "Subtle flavor, soft bark. Common grades: Alba, C5, C4." },
+          { "item": "Moisture", "value": "12% - 14% Max" },
+          { "item": "Oil Content (Cassia)", "value": "2.5% - 4.0%" },
+          { "item": "Oil Content (Ceylon)", "value": "1.0% - 2.5%" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Cassia Origin", "value": "Vietnam, Indonesia, China" },
+          { "item": "Ceylon Origin", "value": "Sri Lanka, Madagascar" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg cartons (sticks) or 50 kg bales (broken)" },
+          { "item": "Transport", "value": "20' or 40' Container" }
+        ]
+      }
+    ]
+  },
+  "cumin": {
+    "image": "IMG video/Images/proizvodi/spices-cumin-detail.webp",
+    "name": "Cumin Seeds (99%)",
+    "shortDescription": "Whole dried cumin seeds, machine-cleaned to high purity standards for food processing and export.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "99% Purity (Singapore Grade)" },
+          { "item": "Alt. Grade", "value": "99.5% (Europe Grade)" },
+          { "item": "Moisture", "value": "9% Max" },
+          { "item": "Admixture", "value": "1% Max (for 99% Grade)" },
+          { "item": "Flavor", "value": "Aromatic, free from musty odors" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "India (Gujarat), Turkey, Syria" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg or 50 kg PP bags" },
+          { "item": "Loadability", "value": "Approx. 14 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "turmeric": {
+    "image": "IMG video/Images/proizvodi/spices-turmeric-detail.webp",
+    "name": "Turmeric Fingers (Polished)",
+    "shortDescription": "Dried whole turmeric fingers, graded by curcumin content, available in polished or unpolished formats.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Fingers (Whole)" },
+          { "item": "Variety", "value": "e.g., Rajapuri, Erode" },
+          { "item": "Curcumin Content", "value": "2.5% - 5.0% (Varies by grade)" },
+          { "item": "Finish", "value": "Machine Polished or Unpolished" },
+          { "item": "Moisture", "value": "10% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "India (Sangli), Vietnam, Nigeria" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg or 50 kg Jute/PP bags" },
+          { "item": "Loadability", "value": "Approx. 18 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "cloves": {
+    "image": "IMG video/Images/proizvodi/spices-cloves-detail.webp",
+    "name": "Cloves (Hand Picked)",
+    "shortDescription": "High-quality, hand-picked whole dried cloves, valued for their high oil content and strong aroma.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "Hand Picked (Superior)" },
+          { "item": "Alt. Grade", "value": "Lal Pari (FAQ Grade)" },
+          { "item": "Moisture", "value": "12% Max" },
+          { "item": "Admixture", "value": "1% Max" },
+          { "item": "Stems", "value": "2% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Indonesia, Madagascar, Tanzania (Zanzibar), Sri Lanka" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg or 50 kg Jute/PP bags" },
+          { "item": "Loadability", "value": "Approx. 9-10 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "oregano": {
+    "image": "IMG video/Images/proizvodi/spices-herbs-detail.webp",
+    "name": "Dried Oregano (Rubbed)",
+    "shortDescription": "Dried, rubbed oregano leaves (Origanum Vulgare), primarily sourced from Turkey, graded by volatile oil content.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Rubbed Leaves" },
+          { "item": "Volatile Oil", "value": "2.5% - 3.5% Min" },
+          { "item": "Moisture", "value": "10% Max" },
+          { "item": "Ash", "value": "8% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey (Aegean), Greece, Spain" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "10 kg or 25 kg paper bags or cartons" },
+          { "item": "Loadability", "value": "Approx. 7-8 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "vanilla-extract": {
+    "image": "IMG video/Images/proizvodi/spices-vanilla-detail.webp",
+    "name": "Vanilla Extract (Bourbon)",
+    "shortDescription": "Premium natural Bourbon vanilla extract (single-fold or multi-fold), sourced from Madagascar vanilla beans.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Natural Bourbon Vanilla Extract" },
+          { "item": "Strength", "value": "Single-Fold (1X) or Multi-Fold (e.g., 10X)" },
+          { "item": "Standard", "value": "FDA Standard (35% Alcohol Min, 13.35 oz beans/gal)" },
+          { "item": "Key Component", "value": "Vanillin (natural)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Primary Bean Origin", "value": "Madagascar (Bourbon), Indonesia" },
+          { "item": "Processing", "value": "USA, France" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Food-grade jerry cans, drums, or IBC totes" },
+          { "item": "Transport", "value": "Standard or Reefer (for stability)" }
+        ]
+      }
+    ]
+  }
+}

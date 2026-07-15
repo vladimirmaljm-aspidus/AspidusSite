@@ -1,0 +1,295 @@
+{
+  "yarn": {
+    "image": "IMG video/Images/proizvodi/textiles-yarn-detail.webp",
+    "name": "Cotton Yarn (Carded/Combed)",
+    "shortDescription": "High-quality ring-spun cotton yarn for knitting and weaving, available in various counts.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "100% Cotton, Ring Spun" },
+          { "item": "Count", "value": "Ne 20/1, Ne 24/1, Ne 30/1, Ne 40/1" },
+          { "item": "Process", "value": "Carded or Combed" },
+          { "item": "Application", "value": "Knitting or Weaving" },
+          { "item": "Grade", "value": "Uster 5-10% (Top Grade)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "India, Vietnam, Pakistan, Turkey, Uzbekistan" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Cones in export-worthy cartons or pallets" },
+          { "item": "Loadability", "value": "Approx. 24-25 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "natural-fibers": {
+    "image": "IMG video/Images/proizvodi/textiles-cotton-detail.webp",
+    "name": "Raw Cotton (Ginned)",
+    "shortDescription": "Raw ginned cotton bales, graded by staple length, strength, and micronaire for spinning mills.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade (US)", "value": "SGM 1-1/8\" (Staple 36)" },
+          { "item": "Grade (Brazil)", "value": "Middling 1-1/8\"" },
+          { "item": "Strength (Gpt)", "value": "28 Gpt Min" },
+          { "item": "Micronaire", "value": "3.8 - 4.9" },
+          { "item": "Moisture", "value": "8.5% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Brazil, India, Australia, Benin, Ivory Coast" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Standard high-density bales (approx. 220-250 kg)" },
+          { "item": "Loadability", "value": "Approx. 25-26 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "synthetic-fibers-textile": {
+    "image": "IMG video/Images/proizvodi/textiles-polyester-detail.webp",
+    "name": "Polyester Staple Fiber (PSF)",
+    "shortDescription": "Virgin-grade Polyester Staple Fiber (PSF) used for spinning, non-woven fabrics, and filling applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Virgin, Semi-Dull, Raw White" },
+          { "item": "Denier", "value": "1.2D, 1.4D, 1.5D" },
+          { "item": "Cut Length", "value": "32mm, 38mm, 51mm" },
+          { "item": "Application", "value": "Ring Spinning, Non-Woven" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "China, India, South Korea, Taiwan" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Pressed bales (approx. 300-350 kg)" },
+          { "item": "Loadability", "value": "Approx. 24-25 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "industrial-chemicals": {
+    "image": "IMG video/Images/proizvodi/raw-chemicals-detail.webp",
+    "name": "Caustic Soda Flakes (99%)",
+    "shortDescription": "High-purity Caustic Soda (Sodium Hydroxide) flakes, essential for paper, textile, and detergent manufacturing.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Product", "value": "Sodium Hydroxide (NaOH)" },
+          { "item": "Purity", "value": "99.0% Min" },
+          { "item": "Sodium Chloride (NaCl)", "value": "0.05% Max" },
+          { "item": "Sodium Carbonate (Na2CO3)", "value": "0.5% Max" },
+          { "item": "Iron (Fe)", "value": "10 ppm Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Middle East (Saudi Arabia, UAE), China, USA, EU" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg PP/PE bags" },
+          { "item": "Loadability", "value": "Approx. 25-27 MT per 20' container (palletized)" }
+        ]
+      }
+    ]
+  },
+  "plastic-pellets": {
+    "image": "IMG video/Images/proizvodi/polymers-detail.webp",
+    "name": "Plastic Pellets (PET / HDPE)",
+    "shortDescription": "Prime virgin plastic granules (PET & HDPE) for food-grade packaging, bottle, and pipe manufacturing.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Product", "value": "PET (Polyethylene Terephthalate) - Bottle Grade" },
+          { "item": "Key Spec (PET)", "value": "Intrinsic Viscosity (IV) e.g., 0.80, 0.84" },
+          { "item": "Product", "value": "HDPE (High-Density Polyethylene) - Blow Molding Grade" },
+          { "item": "Key Spec (HDPE)", "value": "Melt Flow Index (MFI), Density" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Middle East (SABIC), South Korea, Taiwan, USA" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg bags or 1100 kg bulk bags (Jumbo)" },
+          { "item": "Loadability", "value": "Approx. 25-26 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "wood-pulp": {
+    "image": "IMG video/Images/proizvodi/raw-pulp-detail.webp",
+    "name": "Wood Pulp (NBSK)",
+    "shortDescription": "Northern Bleached Softwood Kraft (NBSK) pulp, a benchmark commodity for high-quality paper production.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "NBSK (Northern Bleached Softwood Kraft)" },
+          { "item": "Brightness", "value": "90% ISO Min" },
+          { "item": "Moisture", "value": "Air-dry (approx. 10%)" },
+          { "item": "Application", "value": "Tissue, Printing Paper, Specialty Paper" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Canada, USA, Sweden, Finland" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Sheet-dried bales (approx. 250 kg), unitized" },
+          { "item": "Transport", "value": "Bulk vessel or 40' HQ containers" }
+        ]
+      }
+    ]
+  },
+  "waste-paper": {
+    "image": "IMG video/Images/proizvodi/raw-wastepaper-detail.webp",
+    "name": "Waste Paper (OCC 11)",
+    "shortDescription": "OCC (Old Corrugated Containers) Grade 11, a key raw material for recycling into new containerboard.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "OCC Grade 11 (ISRI Standard)" },
+          { "item": "Description", "value": "Consists of corrugated containers" },
+          { "item": "Out-throws", "value": "< 5% (non-corrugated materials)" },
+          { "item": "Prohibitive Materials", "value": "< 1%" },
+          { "item": "Moisture", "value": "< 12% (Bale weight)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Exporters", "value": "USA, EU (UK, Netherlands, Germany), Japan" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "High-density pressed bales (approx. 800-1400 kg)" },
+          { "item": "Loadability", "value": "Approx. 25-27 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "lumber": {
+    "image": "IMG video/Images/proizvodi/raw-lumber-detail.webp",
+    "name": "Lumber (SPF)",
+    "shortDescription": "Construction-grade dimensional lumber, primarily Spruce-Pine-Fir (SPF), for residential and commercial framing.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Species", "value": "SPF (Spruce-Pine-Fir)" },
+          { "item": "Grade", "value": "#2 & Better (Standard construction grade)" },
+          { "item": "Size", "value": "2x4, 2x6 (standard US dimensions)" },
+          { "item": "Moisture", "value": "Kiln-Dried (KD-HT), 19% Max" },
+          { "item": "Standard", "value": "CLS / S4S (Canadian Lumber Standard)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Canada, USA, EU (Germany, Sweden)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundled and wrapped for export" },
+          { "item": "Transport", "value": "40' HQ Container or Breakbulk vessel" }
+        ]
+      }
+    ]
+  },
+  "steel-rebar": {
+    "image": "IMG video/Images/proizvodi/construction-rebar-detail.webp",
+    "name": "Steel Rebar (Deformed)",
+    "shortDescription": "Hot-rolled deformed steel reinforcement bars used for concrete reinforcement in construction.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "ASTM A615 (Grade 60), BS 4449 (B500B), EN 10080" },
+          { "item": "Diameter", "value": "8mm - 40mm" },
+          { "item": "Length", "value": "Standard 12 meters (6m available)" },
+          { "item": "Yield Strength (Gr 60)", "value": "420 MPa Min (60,000 psi)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey, Vietnam, India, Brazil, EU (Italy, Spain)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundles of 2-5 MT, tagged" },
+          { "item": "Transport", "value": "Bulk vessel (Handysize) or 20' Containers (for <12m lengths)" }
+        ]
+      }
+    ]
+  }
+}

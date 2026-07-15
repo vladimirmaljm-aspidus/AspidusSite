@@ -1,0 +1,183 @@
+{
+  "cocoa-butter": {
+    "image": "IMG video/Images/proizvodi/cocoa-butter-detail.webp",
+    "name": "Cocoa Butter (Natural & Deodorized)",
+    "shortDescription": "Premium natural or deodorized cocoa butter, ideal for chocolate manufacturing, confectionery, and cosmetic applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type 1", "value": "Natural Cocoa Butter (Golden color, strong aroma)" },
+          { "item": "Type 2", "value": "Deodorized Cocoa Butter (Light color, neutral aroma)" },
+          { "item": "Free Fatty Acids (FFA)", "value": "1.75% Max" },
+          { "item": "Moisture & Volatiles", "value": "0.2% Max" },
+          { "item": "Melting Point", "value": "32-36°C (Slightly variable by type)" },
+          { "item": "Saponification Value", "value": "190-200 mg KOH/g" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Ivory Coast, Ghana, Ecuador, Netherlands, Germany" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg cartons with PE liners (block form)" },
+          { "item": "Alt. Packaging", "value": "ISO Tanktainers (liquid bulk)" },
+          { "item": "Loadability", "value": "Approx. 20-25 MT per 20' FCL" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "text",
+        "content": "ISO, HACCP, Fair Trade, Halal, Kosher. All relevant certificates are provided with shipment."
+      }
+    ]
+  },
+  "cocoa-mass": {
+    "image": "IMG video/Images/proizvodi/cocoa-mass-detail.webp",
+    "name": "Cocoa Mass (Cocoa Liquor)",
+    "shortDescription": "Pure, unsweetened 100% cocoa, produced from ground cocoa nibs. The base ingredient for all chocolate.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Natural or Alkalized" },
+          { "item": "Fat Content", "value": "50-58% (Standard)" },
+          { "item": "Fineness", "value": "99.5% min through 75-micron sieve" },
+          { "item": "Moisture", "value": "2.0% Max" },
+          { "item": "pH (Natural)", "value": "5.2 - 5.8" },
+          { "item": "pH (Alkalized)", "value": "6.8 - 7.5" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Ivory Coast, Ghana, Ecuador, Netherlands" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg cartons (blocks or wafers/chips)" },
+          { "item": "Alt. Packaging", "value": "ISO Tanktainers (liquid bulk)" },
+          { "item": "Loadability", "value": "Approx. 20-25 MT per 20' FCL" }
+        ]
+      }
+    ]
+  },
+  "cocoa-powder": {
+    "image": "IMG video/Images/proizvodi/cocoa-powder-detail.webp",
+    "name": "Cocoa Powder (Alkalized & Natural)",
+    "shortDescription": "High-quality cocoa powder, available in various fat contents and pH levels for baking, beverages, and industrial use.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type 1 (Natural)", "value": "Fat: 10-12%, pH: 5.0-6.0 (Light brown, acidic)" },
+          { "item": "Type 2 (Alkalized)", "value": "Fat: 10-12%, pH: 6.8-7.2 (Medium brown, 'Dutched')" },
+          { "item": "Type 3 (Alkalized High Fat)", "value": "Fat: 20-22%, pH: 7.2-7.8 (Dark red/black, rich flavor)" },
+          { "item": "Fineness", "value": "99.0% - 99.5% min through 75-micron sieve" },
+          { "item": "Moisture", "value": "5.0% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Netherlands, Germany, Spain, Ivory Coast, Ghana" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg multi-ply paper bags with PE liner" },
+          { "item": "Loadability (10-12%)", "value": "Approx. 15-17 MT per 20' container" },
+          { "item": "Loadability (20-22%)", "value": "Approx. 12-14 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "roasted-beans": {
+    "image": "IMG video/Images/proizvodi/coffee-detail.webp",
+    "name": "Green Coffee Beans (Arabica/Robusta)",
+    "shortDescription": "Green coffee beans, graded and sourced for roasting, including high-quality Arabica and robust Robusta.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type 1: Arabica", "value": "Washed/Natural. Grades: Brazil NY 2/3, Colombia Supremo (Sc. 17/18), Ethiopia Yirgacheffe (G2)" },
+          { "item": "Type 2: Robusta", "value": "Washed/Natural. Grades: Vietnam G1 (Sc. 18), Uganda Screen 18" },
+          { "item": "Moisture", "value": "12.5% Max" },
+          { "item": "Defects", "value": "Per grading standard (e.g., <8 defects for NY 2)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Arabica Origin", "value": "Brazil, Colombia, Ethiopia" },
+          { "item": "Robusta Origin", "value": "Vietnam, Brazil, Indonesia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "60 kg Jute bags or 69 kg (Colombia)" },
+          { "item": "Loadability", "value": "Approx. 19.2 MT per 20' container" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "text",
+        "content": "ICO Certificate of Origin, Fair Trade, Rainforest Alliance (available upon request)."
+      }
+    ]
+  },
+  "instant-coffee": {
+    "image": "IMG video/Images/proizvodi/coffee-instant-detail.webp",
+    "name": "Instant Coffee (Spray & Freeze Dried)",
+    "shortDescription": "Soluble coffee available as spray-dried agglomerated or premium freeze-dried, made from Arabica or Robusta beans.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type 1: Spray Dried", "value": "Agglomerated or Powder. Cost-effective, fast processing." },
+          { "item": "Type 2: Freeze Dried", "value": "Granules. Preserves more aroma and flavor (premium)." },
+          { "item": "Bean Source", "value": "100% Robusta, 100% Arabica, or Blends" },
+          { "item": "Moisture", "value": "3.5% - 5.0% Max" },
+          { "item": "Caffeine Content", "value": "Varies (e.g., 2-4%)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Brazil, Vietnam, Colombia, India, Germany, Netherlands" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg or 30 kg cartons with poly liner" },
+          { "item": "Transport", "value": "20' or 40' Container" },
+          { "item": "Loadability", "value": "Approx. 11 MT (40' HQ), 5 MT (20')" }
+        ]
+      }
+    ]
+  }
+}

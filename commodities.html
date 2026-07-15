@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <title>Commodities Portfolio | Energy, Metals, Agriculture | Aspidus</title>
+    <meta name="description" content="Explore Aspidus' diverse portfolio of global commodities including Energy, Metals, Agriculture, Meat, Raw Materials, Textiles, Fertilizers, and more. Reliable supply chain management.">
+    
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.google.com/recaptcha/api.js https://www.google.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+        img-src 'self' data: https://www.aspidus.co;
+        frame-src https://www.google.com/;
+        connect-src 'self' https://formspree.io;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self' https://formspree.io;
+    ">
+    <meta name="X-Content-Type-Options" content="nosniff">
+    <meta name="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <link rel="canonical" href="https://www.aspidus.co/commodities.html" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aspidus.co/commodities.html">
+    <meta property="og:title" content="Commodities Portfolio | Energy, Metals, Agriculture | Aspidus">
+    <meta property="og:description" content="Explore Aspidus' diverse portfolio of global commodities. Reliable supply chain management for Energy, Metals, Agriculture, and more.">
+    <meta property="og:image" content="https://www.aspidus.co/IMG video/Images/aspidus_og_image.png">
+    <link rel="icon" type="image/png" href="IMG video/Images/favicon.png"/>
+    <link rel="apple-touch-icon" href="IMG video/Images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet"/>
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#3457D5', secondary: '#D4AF37', dark: '#111827' },
+                    fontFamily: { 'sans': ['Poppins', 'sans-serif'], 'serif': ['Cormorant Garamond', 'serif'] },
+                    borderRadius: { 'none': '0px', 'sm': '2px', DEFAULT: '4px', 'md': '8px', 'lg': '12px', 'button': '4px' }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .subsidiary-card.is-hidden { display: none !important; }
+       
+        /* Ultra-clean Corporate Overlay */
+        #panel-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(17, 24, 39, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1002;
+        }
+        #panel-overlay.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Strict Professional Panel */
+        #commodity-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            max-width: 42rem; /* 672px */
+            background-color: #ffffff;
+            z-index: 1003;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border-left: 1px solid #e5e7eb;
+        }
+        #commodity-panel.is-open {
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 768px) { 
+            #commodity-panel { max-width: 100%; }
+        }
+
+        /* Clean Header */
+        .panel-header {
+            flex-shrink: 0;
+            padding: 2rem 2.5rem 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #ffffff;
+        }
+        #panel-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem; 
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.2;
+        }
+        #panel-close-btn {
+            width: 2.5rem; 
+            height: 2.5rem; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af; 
+            background-color: transparent;
+            font-size: 1.75rem; 
+            transition: color 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+        #panel-close-btn:hover {
+            color: #111827; 
+        }
+
+        /* Clean Body */
+        .panel-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 2rem 2.5rem;
+        }
+        .panel-body img {
+            width: 100%;
+            aspect-ratio: 21 / 9;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 2rem; 
+            border: 1px solid #e5e7eb;
+        }
+        .panel-body p {
+            font-size: 1rem; 
+            line-height: 1.7;
+            color: #4b5563; 
+            margin-bottom: 2.5rem; 
+        }
+        .panel-body h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.125rem; 
+            font-weight: 600;
+            color: #111827; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #e5e7eb; 
+            padding-bottom: 0.75rem; 
+            margin-bottom: 1.5rem; 
+        }
+        
+        /* Structured List */
+        #panel-product-list {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 2rem; 
+        }
+        @media (min-width: 640px) { 
+             #panel-product-list { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        .product-item-rich {
+             position: relative;
+             word-break: break-word;
+        }
+        .product-item-rich .product-title {
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600; 
+            font-size: 1rem; 
+            color: #1f2937; 
+            margin-bottom: 0.75rem; 
+            border-left: 3px solid #3457D5; /* Plava korporativna linija */
+            padding-left: 0.75rem;
+        }
+        .product-item-rich .sub-product-list {
+            list-style: none;
+            margin: 0;
+            padding-left: 1rem; 
+        }
+        .product-item-rich .sub-product-list li {
+            position: relative;
+            margin-bottom: 0.5rem; 
+        }
+        .product-item-rich .sub-product-list li a {
+            color: #4b5563; 
+            font-size: 0.9rem; 
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-block;
+        }
+        .product-item-rich .sub-product-list li a:hover {
+            color: #3457D5; 
+            text-decoration: underline;
+        }
+        .product-item-rich .sub-product-list li::before {
+            content: '•'; 
+            position: absolute;
+            left: -1rem; 
+            top: 0;
+            color: #9ca3af; 
+        }
+        
+        /* Clean Footer Navigation */
+        .panel-footer {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #e5e7eb; 
+            background-color: #ffffff; 
+        }
+        .panel-nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; 
+            padding: 1.25rem 1.5rem; 
+            font-size: 0.875rem; 
+            color: #4b5563; 
+            transition: background-color 0.2s ease, color 0.2s ease;
+            flex-grow: 1;
+            flex-basis: 0;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .panel-nav-btn:hover {
+            background-color: #f9fafb; 
+            color: #111827; 
+        }
+        .panel-nav-btn i {
+            font-size: 1.5rem; 
+            color: #9ca3af;
+        }
+        .panel-nav-btn:hover i {
+            color: #111827;
+        }
+        .panel-nav-btn .nav-label {
+            display: block;
+            font-size: 0.75rem; 
+            color: #9ca3af; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem; 
+        }
+        .panel-nav-btn .nav-category-name {
+            display: block;
+            font-weight: 600; 
+            white-space: normal; 
+            word-break: break-word; 
+            line-height: 1.3; 
+        }
+        #panel-nav-next {
+            text-align: right;
+            justify-content: flex-end;
+            border-left: 1px solid #e5e7eb; 
+        }
+        #panel-nav-next > div { order: -1; }
+        #panel-nav-next > i { order: 1; }
+
+        /* Custom Hover for Commodity Cards */
+        .commodity-card-clean {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .commodity-card-clean:hover {
+            border-color: #3457D5;
+            box-shadow: 0 10px 25px -5px rgba(52, 87, 213, 0.1), 0 8px 10px -6px rgba(52, 87, 213, 0.1);
+            transform: translateY(-2px);
+        }
+        .commodity-card-clean img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-secondary selection:text-white">
+
+    <div id="preloader">
+         <svg viewBox="25 25 50 50">
+          <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+    </div>
+
+    <div id="header-placeholder"></div>
+    
+    <main>
+        <!-- Minimalist Hero Section -->
+        <section class="pt-32 pb-16 bg-white border-b border-gray-200 relative">
+            <div class="container mx-auto px-6 relative z-10 text-center"> 
+                <h1 class="text-4xl md:text-5xl font-bold font-serif mb-4 text-gray-900" data-en-text="Commodities Portfolio" data-tr-text="Emtia Portföyü" data-ru-text="Портфель сырьевых товаров" data-sr-text="Portfolio Proizvoda">Commodities Portfolio</h1>
+                <div class="w-16 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-en-text="Explore our comprehensive portfolio of global commodities, backed by robust supply chain management and international compliance." data-tr-text="Sağlam tedarik zinciri yönetimi ve uluslararası uyumlulukla desteklenen kapsamlı küresel emtia portföyümüzü keşfedin." data-ru-text="Ознакомьтесь с нашим комплексным портфелем мировых сырьевых товаров, поддерживаемым надежным управлением цепочками поставок и международными стандартами." data-sr-text="Istražite naš sveobuhvatan portfolio globalnih proizvoda, podržan snažnim upravljanjem lancem snabdevanja i međunarodnom usklađenošću.">Explore our comprehensive portfolio of global commodities, backed by robust supply chain management and international compliance.</p>
+            </div>
+        </section>
+
+        <!-- Prominent Search Section -->
+        <section class="py-10 bg-gray-50 border-b border-gray-200 sticky top-0 z-40" style="top: 72px;">
+             <div class="container mx-auto px-6"> 
+                 <div class="max-w-4xl mx-auto relative"> 
+                     <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none"> 
+                         <i class="ri-search-line text-gray-400 text-2xl"></i> 
+                     </div> 
+                     <input type="search" id="commodity-search" class="w-full py-4 pl-14 pr-6 text-lg text-gray-900 bg-white border border-gray-300 rounded shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search commodities, sectors, or materials..." data-en-placeholder="Search commodities, sectors, or materials..." data-tr-placeholder="Emtiaları, sektörleri veya malzemeleri arayın..." data-ru-placeholder="Поиск товаров, секторов или материалов..." data-sr-placeholder="Pretražite proizvode, sektore ili materijale..."> 
+                 </div> 
+             </div>
+        </section>
+
+
+
+
+        
+        <!-- Clean Corporate Grid Section -->
+        <section class="py-16 bg-gray-50" id="commodities-section">
+            <div class="container mx-auto px-6">
+                <div id="commodities-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                    <!-- Kartica: Energy -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="energy">
+                        <img alt="Energy Commodities" data-en-alt="Energy Commodities" data-tr-alt="Enerji Emtiaları" data-ru-alt="Энергетические сырьевые товары" data-sr-alt="Energetski proizvodi" src="IMG video/Images/energy.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Energy" data-tr-text="Enerji" data-ru-text="Энергетика" data-sr-text="Energija">Energy</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Crude oil, natural gas, and refined petrochemical products." data-tr-text="Ham petrol, doğal gaz ve rafine petrokimya ürünleri." data-ru-text="Сырая нефть, природный газ и продукты нефтепереработки." data-sr-text="Sirova nafta, prirodni gas i rafinisani petrohemijski proizvodi.">Crude oil, natural gas, and refined petrochemical products.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center group-hover:underline">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Metals -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="metals">
+                        <img alt="Metals Trading" data-en-alt="Metals Trading" data-tr-alt="Metal Ticareti" data-ru-alt="Торговля металлами" data-sr-alt="Trgovina metalima" src="IMG video/Images/metals.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Metals" data-tr-text="Metaller" data-ru-text="Металлы" data-sr-text="Metali">Metals</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Ferrous and non-ferrous metals, ores, and precious metals." data-tr-text="Demirli ve demirsiz metaller, cevherler ve değerli metaller." data-ru-text="Черные и цветные металлы, руды и драгоценные металлы." data-sr-text="Crni i obojeni metali, rude i plemeniti metali.">Ferrous and non-ferrous metals, ores, and precious metals.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Agriculture -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="agriculture">
+                        <img alt="Agriculture Commodities" data-en-alt="Agriculture Commodities" data-tr-alt="Tarım Emtiaları" data-ru-alt="Сельскохозяйственные сырьевые товары" data-sr-alt="Poljoprivredni proizvodi" src="IMG video/Images/agrikultura.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Agriculture" data-tr-text="Tarım" data-ru-text="Сельское хозяйство" data-sr-text="Poljoprivreda">Agriculture</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Grains, edible oils, and soft commodities for global supply." data-tr-text="Küresel tedarik için tahıllar, yenilebilir yağlar ve yumuşak emtialar." data-ru-text="Зерновые, пищевые масла и мягкие товары для мировых поставок." data-sr-text="Žitarice, jestiva ulja i meki proizvodi za globalno snabdevanje.">Grains, edible oils, and soft commodities for global supply.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Meat -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="meat">
+                        <img alt="Meat & Processed Foods" data-en-alt="Meat & Processed Foods" data-tr-alt="Et ve İşlenmiş Gıdalar" data-ru-alt="Мясо и переработанные продукты" data-sr-alt="Meso i prerađevine" src="IMG video/Images/meat.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Meat & Processed" data-tr-text="Et ve İşlenmiş" data-ru-text="Мясо и продукты" data-sr-text="Meso i Prerađevine">Meat & Processed</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Fresh and processed meat products ensuring global quality standards." data-tr-text="Küresel kalite standartlarını sağlayan taze ve işlenmiş et ürünleri." data-ru-text="Свежие и переработанные мясные продукты, соответствующие мировым стандартам." data-sr-text="Sveže i prerađeno meso koje ispunjava globalne standarde kvaliteta.">Fresh and processed meat products ensuring global quality standards.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Raw Materials -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="raw_materials">
+                        <img alt="Raw Materials" data-en-alt="Raw Materials" data-tr-alt="Hammadde" data-ru-alt="Сырье" data-sr-alt="Sirovine" src="IMG video/Images/raw_materials.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Raw Materials" data-tr-text="Hammadde" data-ru-text="Сырье" data-sr-text="Sirovine">Raw Materials</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Essential raw and semi-finished goods for industrial manufacturing." data-tr-text="Endüstriyel üretim için temel hammadde ve yarı mamul mallar." data-ru-text="Основное сырье и полуфабрикаты для промышленного производства." data-sr-text="Osnovne sirovine i poluproizvodi za industrijsku proizvodnju.">Essential raw and semi-finished goods for industrial manufacturing.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Construction -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="construction">
+                        <img alt="Construction Materials" data-en-alt="Construction Materials" data-tr-alt="İnşaat Malzemeleri" data-ru-alt="Строительные материалы" data-sr-alt="Građevinski materijali" src="IMG video/Images/construction.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Construction" data-tr-text="İnşaat" data-ru-text="Строительство" data-sr-text="Građevinarstvo">Construction</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Comprehensive range of materials for infrastructure and building projects." data-tr-text="Altyapı ve bina projeleri için kapsamlı malzeme yelpazesi." data-ru-text="Комплексный ассортимент материалов для инфраструктурных проектов." data-sr-text="Sveobuhvatan asortiman materijala za infrastrukturu i građevinske projekte.">Comprehensive range of materials for infrastructure and building projects.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Textiles -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="textiles">
+                        <img alt="Textiles & Fibers" data-en-alt="Textiles & Fibers" data-tr-alt="Tekstil ve Lifler" data-ru-alt="Текстиль и волокна" data-sr-alt="Tekstil i vlakna" src="IMG video/Images/textiles.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Textiles & Fibers" data-tr-text="Tekstil ve Lifler" data-ru-text="Текстиль и волокна" data-sr-text="Tekstil i Vlakna">Textiles & Fibers</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Natural and synthetic fibers, yarns, and fabrics for global apparel." data-tr-text="Küresel giyim için doğal ve sentetik lifler, iplikler ve kumaşlar." data-ru-text="Натуральные и синтетические волокна, пряжа и ткани." data-sr-text="Prirodna i sintetička vlakna, prediva i tkanine za industriju odeće.">Natural and synthetic fibers, yarns, and fabrics for global apparel.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Fertilizers -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="fertilizers">
+                        <img alt="Fertilizers" data-en-alt="Fertilizers" data-tr-alt="Gübreler" data-ru-alt="Удобрения" data-sr-alt="Đubriva" src="IMG video/Images/fertilizers.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Fertilizers" data-tr-text="Gübreler" data-ru-text="Удобрения" data-sr-text="Đubriva">Fertilizers</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="NPK, urea, and phosphates crucial for enhancing global crop yields." data-tr-text="Küresel mahsul verimini artırmak için çok önemli olan NPK, üre ve fosfatlar." data-ru-text="NPK, мочевина и фосфаты, необходимые для повышения урожайности." data-sr-text="NPK, urea i fosfati ključni za povećanje globalnih prinosa useva.">NPK, urea, and phosphates crucial for enhancing global crop yields.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Nuts & Dried Fruits -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="nuts_dried_fruits">
+                        <img alt="Nuts & Dried Fruits" data-en-alt="Nuts & Dried Fruits" data-tr-alt="Kuruyemiş ve Kuru Meyveler" data-ru-alt="Орехи и сухофрукты" data-sr-alt="Orašasti plodovi i suvo voće" src="IMG video/Images/nuts_dried_fruits.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Nuts & Dried Fruits" data-tr-text="Kuruyemişler" data-ru-text="Орехи и фрукты" data-sr-text="Orašasti Plodovi i Suvo Voće">Nuts & Dried Fruits</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Premium selection of nuts, dried fruits, and seeds from best growers." data-tr-text="En iyi yetiştiricilerden birinci sınıf kuruyemiş, kuru meyve ve tohum seçkisi." data-ru-text="Премиальный выбор орехов, сухофруктов и семян от лучших производителей." data-sr-text="Premium selekcija orašastih plodova, suvog voća i semena.">Premium selection of nuts, dried fruits, and seeds from best growers.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Cocoa & Coffee -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="cocoa_coffee">
+                        <img alt="Cocoa & Coffee" data-en-alt="Cocoa & Coffee" data-tr-alt="Kakao ve Kahve" data-ru-alt="Какао и кофе" data-sr-alt="Kakao i kafa" src="IMG video/Images/cacao_coffee.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Cocoa & Coffee" data-tr-text="Kakao ve Kahve" data-ru-text="Какао и кофе" data-sr-text="Kakao i Kafa">Cocoa & Coffee</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Finest cocoa and coffee products sourced for the beverage industry." data-tr-text="İçecek endüstrisi için tedarik edilen en iyi kakao ve kahve ürünleri." data-ru-text="Лучшие какао и кофейные продукты для индустрии напитков." data-sr-text="Najfiniji proizvodi od kakaa i kafe nabavljeni za industriju pića.">Finest cocoa and coffee products sourced for the beverage industry.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!-- Kartica: Spices -->
+                    <div class="subsidiary-card commodity-card-clean" data-category="spices">
+                        <img alt="Spices & Flavorings" data-en-alt="Spices & Flavorings" data-tr-alt="Baharatlar ve Aroma Vericiler" data-ru-alt="Специи и ароматизаторы" data-sr-alt="Začini i arome" src="IMG video/Images/spices.webp" loading="lazy"/>
+                        <div class="p-6 flex flex-col flex-grow"> 
+                            <h3 class="text-xl font-bold font-serif mb-2 text-gray-900" data-en-text="Spices & Flavorings" data-tr-text="Baharatlar" data-ru-text="Специи" data-sr-text="Začini">Spices & Flavorings</h3> 
+                            <p class="text-gray-500 mb-4 text-sm flex-grow" data-en-text="Premium quality spices and natural flavorings from around the world." data-tr-text="Dünyanın dört bir yanından birinci sınıf baharatlar ve doğal tatlandırıcılar." data-ru-text="Специи премиум-качества и натуральные ароматизаторы со всего мира." data-sr-text="Začini vrhunskog kvaliteta i prirodne arome iz celog sveta.">Premium quality spices and natural flavorings from around the world.</p> 
+                            <div class="text-primary text-sm font-semibold flex items-center">
+                                <span data-en-text="View Details" data-tr-text="Detayları Gör" data-ru-text="Подробнее" data-sr-text="Pogledaj Detalje">View Details</span> <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div> 
+                    </div>
+
+                </div>
+
+                <!-- Poruka za praznu pretragu -->
+                <div id="no-results-message" class="text-center mt-12 hidden bg-white border border-gray-200 p-10 rounded"> 
+                    <i class="ri-search-eye-line text-4xl text-gray-300 mb-4 block"></i>
+                    <h3 class="text-xl font-bold font-serif text-gray-800" data-en-text="No matches found.">No matches found.</h3> 
+                    <p class="text-gray-500 mt-2" data-en-text="Please try adjusting your search terms.">Please try adjusting your search terms.</p> 
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Overlay & Side Panel (Corporate Datasheet Style) -->
+    <div id="panel-overlay"></div>
+    <div id="commodity-panel">
+        <div class="panel-header">
+            <h2 id="panel-title" class="truncate"></h2>
+            <button id="panel-close-btn" aria-label="Close panel">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        
+        <div class="panel-body">
+            <img id="panel-image" src="" alt="Category Image" /> 
+            <p id="panel-description"></p> 
+            <div> 
+                <h4 data-en-text="Available Specifications"
+                    data-tr-text="Mevcut Özellikler"
+                    data-ru-text="Доступные спецификации"
+                    data-sr-text="Dostupne Specifikacije">Available Specifications</h4> 
+                <div id="panel-product-list">
+                   <!-- Popunjava se preko JS-a -->
+                </div> 
+            </div> 
+        </div>
+
+        <div class="panel-footer">
+            <button id="panel-nav-prev" class="panel-nav-btn">
+                <i class="ri-arrow-left-line"></i>
+                <div>
+                    <span class="nav-label" 
+                          data-en-text="Previous Sector"
+                          data-tr-text="Önceki Sektör"
+                          data-ru-text="Предыдущий сектор"
+                          data-sr-text="Prethodni Sektor">Previous Sector</span>
+                    <span id="prev-category-name" class="nav-category-name"></span>
+                </div>
+            </button>
+            <button id="panel-nav-next" class="panel-nav-btn">
+                <div>
+                    <span class="nav-label"
+                          data-en-text="Next Sector"
+                          data-tr-text="Sonraki Sektör"
+                          data-ru-text="Следующий сектор"
+                          data-sr-text="Sledeći Sektor">Next Sector</span>
+                    <span id="next-category-name" class="nav-category-name"></span>
+                </div>
+                <i class="ri-arrow-right-line"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="main.js"></script>
+    
+    <script>
+        // Mapa ID-jeva (Isto kao pre, kompletno)
+        const productNameToIdMap = {
+            'Brent Crude': 'brent-crude', 'WTI': 'wti-crude', 'LNG': 'lng', 'LPG': 'lpg', 'Gasoline': 'gasoline', 'Diesel': 'diesel', 'Jet Fuel': 'jet-fuel', 'Polyethylene': 'polyethylene', 'Polypropylene': 'polypropylene',
+            'Copper': 'copper', 'Aluminium': 'aluminium', 'Zinc': 'zinc', 'Lead': 'lead', 'Gold': 'gold', 'Silver': 'silver', 'Platinum': 'platinum', 'Steel': 'steel', 'Iron Ore': 'iron-ore', 'Nickel': 'nickel', 'Copper Concentrate': 'copper-concentrate', 'Zinc Concentrate': 'zinc-concentrate',
+            'Wheat': 'wheat', 'Corn': 'corn', 'Soybeans': 'soybeans', 'Rice': 'rice', 'Sunflower Oil': 'sunflower-oil', 'Palm Oil': 'palm-oil', 'Olive Oil': 'olive-oil', 'Coffee Beans': 'coffee-beans', 'Sugar': 'sugar', 'Cocoa Beans': 'cocoa-beans', 'Soybean Meal': 'soybean-meal', 'Corn Gluten Feed': 'corn-gluten-feed',
+            'Chicken': 'chicken', 'Turkey': 'turkey', 'Duck': 'duck', 'Beef': 'beef', 'Veal': 'veal', 'Lamb': 'lamb', 'Pork Bellies': 'pork-bellies', 'Sausages': 'sausages', 'Cured Hams': 'cured-hams', 'Liver': 'liver', 'Kidneys': 'kidneys', 'Skins': 'skins',
+            'Yarn': 'yarn', 'Natural Fibers (Cotton, Wool)': 'natural-fibers', 'Synthetic Fibers (Polyester)': 'synthetic-fibers-textile', 'Industrial Chemicals': 'industrial-chemicals', 'Plastic Pellets (PET, HDPE)': 'plastic-pellets', 'Wood Pulp': 'wood-pulp', 'Waste Paper': 'waste-paper', 'Lumber': 'lumber', 'Steel Rebar': 'steel-rebar',
+            'Cement': 'cement', 'Sand': 'sand', 'Gravel': 'gravel', 'Aggregates': 'aggregates', 'Mineral Wool': 'mineral-wool', 'Foam Boards': 'foam-boards', 'Glass Wool': 'glass-wool', 'Steel Beams': 'steel-beams', 'Rebars': 'rebars', 'Pipes': 'pipes', 'Tiles': 'tiles', 'Paints': 'paints', 'Drywall': 'drywall',
+            'Cotton': 'cotton', 'Wool': 'wool', 'Linen': 'linen', 'Silk': 'silk', 'Polyester': 'polyester', 'Nylon': 'nylon', 'Acrylic': 'acrylic', 'Spandex': 'spandex', 'Cotton Yarn': 'cotton-yarn', 'Polyester Yarn': 'polyester-yarn', 'Blended Yarns': 'blended-yarns', 'Woven Fabrics': 'woven-fabrics', 'Knitted Fabrics': 'knitted-fabrics', 'Denim': 'denim',
+            'Urea': 'urea', 'Ammonium Nitrate': 'ammonium-nitrate', 'Ammonium Sulfate': 'ammonium-sulfate', 'DAP': 'dap', 'MAP': 'map', 'TSP': 'tsp', 'Muriate of Potash (MOP)': 'mop', 'Sulphate of Potash (SOP)': 'sop', 'NPK': 'npk', 'NP': 'np', 'PK': 'pk',
+            'Almonds': 'almonds', 'Walnuts': 'walnuts', 'Cashews': 'cashews', 'Pistachios': 'pistachios', 'Hazelnuts': 'hazelnuts', 'Raisins': 'raisins', 'Apricots': 'apricots', 'Dates': 'dates', 'Figs': 'figs', 'Prunes': 'prunes', 'Sunflower Seeds': 'sunflower-seeds', 'Pumpkin Seeds': 'pumpkin-seeds', 'Sesame Seeds': 'sesame-seeds',
+            'Cocoa Butter': 'cocoa-butter', 'Cocoa Mass': 'cocoa-mass', 'Cocoa Powder': 'cocoa-powder', 'Arabica Beans': 'roasted-beans', 'Robusta Beans': 'roasted-beans', 'Green Coffee': 'roasted-beans', 'Roasted Beans': 'roasted-beans', 'Instant Coffee': 'instant-coffee', 'Coffee Extracts': 'coffee-extracts',
+            'Black Pepper': 'black-pepper', 'Cinnamon': 'cinnamon', 'Cumin': 'cumin', 'Turmeric': 'turmeric', 'Cloves': 'cloves', 'Oregano': 'oregano', 'Basil': 'basil', 'Thyme': 'thyme', 'Rosemary': 'rosemary', 'Vanilla Extract': 'vanilla-extract', 'Almond Extract': 'almond-extract', 'Lemon Essence': 'lemon-essence'
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Podaci (Potpuno netaknuti prevodi)
+            const categories_data = {
+                energy: { image: 'IMG video/Images/energy.webp', en: { title: 'Energy Commodities', description: 'We are a key player in the global energy market, trading in crude oil, natural gas, refined products, and petrochemicals to power industries and economies worldwide.', products: [ { name: 'Crude Oil', subProducts: ['Brent Crude', 'WTI'] }, { name: 'Natural Gas', subProducts: ['LNG', 'LPG'] }, { name: 'Refined Products', subProducts: ['Gasoline', 'Diesel', 'Jet Fuel'] }, { name: 'Petrochemicals', subProducts: ['Polyethylene', 'Polypropylene'] } ] }, tr: { title: 'Enerji Emtiaları', description: 'Küresel enerji piyasasında önemli bir oyuncu olarak, dünya çapındaki endüstrileri ve ekonomileri güçlendirmek için ham petrol, doğal gaz, rafine ürünler ve petrokimya ticareti yapıyoruz.', products: [ { name: 'Ham Petrol', subProducts: ['Brent Ham Petrol', 'WTI'] }, { name: 'Doğal Gaz', subProducts: ['LNG', 'LPG'] }, { name: 'Rafine Ürünler', subProducts: ['Benzin', 'Dizel', 'Jet Yakıtı'] }, { name: 'Petrokimyasallar', subProducts: ['Polietilen', 'Polipropilen'] } ] }, ru: { title: 'Энергетические сырьевые товары', description: 'Мы являемся ключевым игроком на мировом энергетическом рынке, торгуя сырой нефтью, природным газом, нефтепродуктами и нефтехимией для обеспечения энергией промышленности и экономик по всему миру.', products: [ { name: 'Сырая нефть', subProducts: ['Brent Crude', 'WTI'] }, { name: 'Природный газ', subProducts: ['СПГ', 'СУГ'] }, { name: 'Нефтепродукты', subProducts: ['Бензин', 'Дизельное топливо', 'Авиационное топливо'] }, { name: 'Нефтехимикаты', subProducts: ['Полиэтилен', 'Полипропилен'] } ] }, sr: { title: 'Energetski proizvodi', description: 'Ključni smo igrač na globalnom energetskom tržištu, trgujući sirovom naftom, prirodnim gasom, rafinisanim proizvodima i petrohemikalijama za napajanje industrija i ekonomija širom sveta.', products: [ { name: 'Sirova nafta', subProducts: ['Brent Crude', 'WTI'] }, { name: 'Prirodni gas', subProducts: ['LNG', 'LPG'] }, { name: 'Rafinisani proizvodi', subProducts: ['Benzin', 'Dizel', 'Avionsko gorivo'] }, { name: 'Petrohemikalije', subProducts: ['Polietilen', 'Polipropilen'] } ] } },
+                metals: { image: 'IMG video/Images/metals.webp', en: { title: 'Metals & Minerals', description: 'Our extensive portfolio in metals and minerals covers base, precious, and industrial metals, serving a wide range of industries from construction to high-tech manufacturing.', products: [ { name: 'Base Metals', subProducts: ['Copper', 'Aluminium', 'Zinc', 'Lead'] }, { name: 'Precious Metals', subProducts: ['Gold', 'Silver', 'Platinum'] }, { name: 'Industrial Metals', subProducts: ['Steel', 'Iron Ore', 'Nickel'] }, { name: 'Metal Concentrates', subProducts: ['Copper Concentrate', 'Zinc Concentrate'] } ] }, tr: { title: 'Metaller ve Mineraller', description: 'Metaller ve minerallerdeki geniş portföyümüz, inşaattan yüksek teknoloji üretimine kadar geniş bir endüstri yelpazesine hizmet veren baz, değerli ve endüstriyel metalleri kapsamaktadır.', products: [ { name: 'Baz Metaller', subProducts: ['Bakır', 'Alüminyum', 'Çinko', 'Kurşun'] }, { name: 'Değerli Metaller', subProducts: ['Altın', 'Gümüş', 'Platin'] }, { name: 'Endüstriyel Metaller', subProducts: ['Çelik', 'Demir Cevheri', 'Nikel'] }, { name: 'Metal Konsantreleri', subProducts: ['Bakır Konsantresi', 'Çinko Konsantresi'] } ] }, ru: { title: 'Металлы и минералы', description: 'Наш обширный портфель металлов и минералов охватывает основные, драгоценные и промышленные металлы, обслуживая широкий спектр отраслей от строительства до высокотехнологичного производства.', products: [ { name: 'Основные металлы', subProducts: ['Медь', 'Алюминий', 'Цинк', 'Свинец'] }, { name: 'Драгоценные металлы', subProducts: ['Золото', 'Серебро', 'Платина'] }, { name: 'Промышленные металлы', subProducts: ['Сталь', 'Железная руда', 'Никель'] }, { name: 'Металлические концентраты', subProducts: ['Медный концентрат', 'Цинковый концентрат'] } ] }, sr: { title: 'Metali i minerali', description: 'Naš obiman portfolio metala i minerala pokriva osnovne, plemenite i industrijske metale, opslužujući širok spektar industrija od građevinarstva do visokotehnološke proizvodnje.', products: [ { name: 'Osnovni metali', subProducts: ['Bakar', 'Aluminijum', 'Cink', 'Olovo'] }, { name: 'Plemeniti metali', subProducts: ['Zlato', 'Srebro', 'Platina'] }, { name: 'Industrijski metali', subProducts: ['Čelik', 'Gvozdena ruda', 'Nikal'] }, { name: 'Koncentrati metala', subProducts: ['Koncentrat bakra', 'Koncentrat cinka'] } ] } },
+                agriculture: { image: 'IMG video/Images/agrikultura.webp', en: { title: 'Agricultural Commodities', description: 'As a crucial link in the food supply chain, we trade in grains, edible oils, and soft commodities, contributing to global food security and sustainability.', products: [ { name: 'Grains & Cereals', subProducts: ['Wheat', 'Corn', 'Soybeans', 'Rice'] }, { name: 'Edible Oils', subProducts: ['Sunflower Oil', 'Palm Oil', 'Olive Oil'] }, { name: 'Soft Commodities', subProducts: ['Coffee Beans', 'Sugar', 'Cocoa Beans'] }, { name: 'Animal Feed', subProducts: ['Soybean Meal', 'Corn Gluten Feed'] } ] }, tr: { title: 'Tarım Emtiaları', description: 'Gıda tedarik zincirinin önemli bir halkası olarak, küresel gıda güvenliğine ve sürdürülebilirliğe katkıda bulunarak tahıl, yenilebilir yağlar ve yumuşak emtia ticareti yapıyoruz.', products: [ { name: 'Tahıllar ve Hububat', subProducts: ['Buğday', 'Mısır', 'Soya', 'Pirinç'] }, { name: 'Yenilebilir Yağlar', subProducts: ['Ayçiçek Yağı', 'Palm Yağı', 'Zeytinyağı'] }, { name: 'Yumuşak Emtialar', subProducts: ['Kahve Çekirdekleri', 'Şeker', 'Kakao Çekirdekleri'] }, { name: 'Hayvan Yemi', subProducts: ['Soya Fasulyesi Küspesi', 'Mısır Glüteni Yemi'] } ] }, ru: { title: 'Сельскохозяйственные сырьевые товары', description: 'Являясь ключевым звеном в цепочке поставок продовольствия, мы торгуем зерном, пищевыми маслами и мягкими сырьевыми товарами, внося вклад в глобальную продовольственную безопасность и устойчивость.', products: [ { name: 'Зерновые и злаки', subProducts: ['Пшеница', 'Кукуруза', 'Соя', 'Рис'] }, { name: 'Пищевые масла', subProducts: ['Подсолнечное масло', 'Пальмовое масло', 'Оливковое масло'] }, { name: 'Мягкие сырьевые товары', subProducts: ['Кофейные зерна', 'Сахар', 'Какао-бобы'] }, { name: 'Корма для животных', subProducts: ['Соевый шрот', 'Кукурузный глютен'] } ] }, sr: { title: 'Poljoprivredni proizvodi', description: 'Kao ključna karika u lancu snabdevanja hranom, trgujemo žitaricama, jestivim uljima i mekim proizvodima, doprinoseći globalnoj sigurnosti hrane i održivosti.', products: [ { name: 'Žitarice', subProducts: ['Pšenica', 'Kukuruz', 'Soja', 'Pirinač'] }, { name: 'Jestiva ulja', subProducts: ['Suncokretovo ulje', 'Palmino ulje', 'Maslinovo ulje'] }, { name: 'Meki proizvodi', subProducts: ['Zrna kafe', 'Šećer', 'Kakao zrna'] }, { name: 'Stočna hrana', subProducts: ['Sojina sačma', 'Kukuruzni gluten'] } ] } },
+                meat: { image: 'IMG video/Images/meat.webp', en: { title: 'Meat & Processed Products', description: 'Our trade in meat and processed products ensures high-quality sourcing from certified producers, meeting the diverse needs of consumers and food industries worldwide.', products: [ { name: 'Poultry', subProducts: ['Chicken', 'Turkey', 'Duck'] }, { name: 'Red Meat', subProducts: ['Beef', 'Veal', 'Lamb'] }, { name: 'Pork & Processed Meats', subProducts: ['Pork Bellies', 'Sausages', 'Cured Hams'] }, { name: 'Offal & By-products', subProducts: ['Liver', 'Kidneys', 'Skins'] } ] }, tr: { title: 'Et ve İşlenmiş Ürünler', description: 'Et ve işlenmiş ürün ticaretimiz, dünya çapındaki tüketicilerin ve gıda endüstrilerinin çeşitli ihtiyaçlarını karşılayarak, sertifikalı üreticilerden yüksek kaliteli tedarik sağlar.', products: [ { name: 'Kanatlı Hayvan Etleri', subProducts: ['Tavuk', 'Hindi', 'Ördek'] }, { name: 'Kırmızı Et', subProducts: ['Sığır Eti', 'Dana Eti', 'Kuzu Eti'] }, { name: 'Domuz Eti ve İşlenmiş Etler', subProducts: ['Domuz Göbeği', 'Sosis', 'Tütsülenmiş Jambon'] }, { name: 'Sakadat ve Yan Ürünler', subProducts: ['Karaciğer', 'Böbrek', 'Deri'] } ] }, ru: { title: 'Мясо и продукты переработки', description: 'Наша торговля мясом и продуктами переработки обеспечивает высококачественные поставки от сертифицированных производителей, удовлетворяя разнообразные потребности потребителей и пищевой промышленности по всему миру.', products: [ { name: 'Мясо птицы', subProducts: ['Курица', 'Индейка', 'Утка'] }, { name: 'Красное мясо', subProducts: ['Говядина', 'Телятина', 'Баранина'] }, { name: 'Свинина и мясные изделия', subProducts: ['Свиная грудинка', 'Колбасы', 'Вяленые окорока'] }, { name: 'Субпродукты', subProducts: ['Печень', 'Почки', 'Кожи'] } ] }, sr: { title: 'Meso i prerađevine', description: 'Naša trgovina mesom i prerađevinama obezbeđuje visokokvalitetne izvore od sertifikovanih proizvođača, zadovoljavajući različite potrebe potrošača i prehrambene industrije širom sveta.', products: [ { name: 'Živinsko meso', subProducts: ['Piletina', 'Ćuretina', 'Patka'] }, { name: 'Crveno meso', subProducts: ['Govedina', 'Teletina', 'Jagnjetina'] }, { name: 'Svinjetina i prerađevine', subProducts: ['Svinjska potrbušina', 'Kobasice', 'Sušene šunke'] }, { name: 'Iznutrice i nusproizvodi', subProducts: ['Jetra', 'Bubrezi', 'Koža'] } ] } },
+                raw_materials: { image: 'IMG video/Images/raw_materials.webp', en: { title: 'Raw Materials & Semi-Finished Goods', description: 'We are a reliable source for a wide range of raw and semi-finished goods essential for various industries, including textiles, chemicals, and construction materials.', products: [ { name: 'Textile Raw Materials', subProducts: ['Yarn', 'Natural Fibers (Cotton, Wool)', 'Synthetic Fibers (Polyester)'] }, { name: 'Chemicals & Plastics', subProducts: ['Industrial Chemicals', 'Plastic Pellets (PET, HDPE)'] }, { name: 'Paper & Pulp', subProducts: ['Wood Pulp', 'Waste Paper'] }, { name: 'Building & Construction', subProducts: ['Lumber', 'Steel Rebar', 'Cement'] } ] }, tr: { title: 'Hammadde ve Yarı Mamul Mallar', description: 'Tekstil, kimya ve inşaat malzemeleri de dahil olmak üzere çeşitli endüstriler için gerekli olan geniş bir hammadde ve yarı mamul yelpazesi için güvenilir bir kaynağız.', products: [ { name: 'Tekstil Hammaddeleri', subProducts: ['İplik', 'Doğal Lifler (Pamuk, Yün)', 'Sentetik Lifler (Polyester)'] }, { name: 'Kimyasallar ve Plastikler', subProducts: ['Endüstriyel Kimyasallar', 'Plastik Peletleri (PET, HDPE)'] }, { name: 'Kağıt ve Selüloz', subProducts: ['Odun Selülozu', 'Atık Kağıt'] }, { name: 'İnşaat Malzemeleri', subProducts: ['Kereste', 'Çelik İnşaat Demiri', 'Çimento'] } ] }, ru: { title: 'Сырье и полуфабрикаты', description: 'Мы являемся надежным поставщиком широкого спектка сырья и полуфабрикатов, необходимых для различных отраслей, включая текстиль, химикаты и строительные материалы.', products: [ { name: 'Текстильное сырье', subProducts: ['Пряжа', 'Натуральные волокна (хлопок, шерсть)', 'Синтетические волокна (полиэстер)'] }, { name: 'Химикаты и пластмассы', subProducts: ['Промышленные химикаты', 'Пластиковые гранулы (PET, HDPE)'] }, { name: 'Бумага и целлюлоза', subProducts: ['Древесная масса', 'Макулатура'] }, { name: 'Строительные материалы', subProducts: ['Пиломатериалы', 'Стальная арматура', 'Цемент'] } ] }, sr: { title: 'Sirovine i poluproizvodi', description: 'Pouzdan smo izvor širokog spektra sirovina i poluproizvoda neophodnih za različite industrije, uključujući tekstil, hemikalije i građevinske materijale.', products: [ { name: 'Tekstilne sirovine', subProducts: ['Predivo', 'Prirodna vlakna (pamuk, vuna)', 'Sintetička vlakna (poliester)'] }, { name: 'Hemikalije i plastika', subProducts: ['Industrijske hemikalije', 'Plastični peleti (PET, HDPE)'] }, { name: 'Papir i celuloza', subProducts: ['Drvena pulpa', 'Stari papir'] }, { name: 'Građevinarstvo', subProducts: ['Građa', 'Čelična armatura', 'Cement'] } ] } },
+                construction: { image: 'IMG video/Images/construction.webp', en: { title: 'Construction Materials', description: 'We supply a complete range of construction materials to support projects of all scales, from basic materials like cement and sand to specialized metal structures and insulation.', products: [ { name: 'Basic Materials', subProducts: ['Cement', 'Sand', 'Gravel', 'Aggregates'] }, { name: 'Insulation Materials', subProducts: ['Mineral Wool', 'Foam Boards', 'Glass Wool'] }, { name: 'Metal Structures', subProducts: ['Steel Beams', 'Rebars', 'Pipes'] }, { name: 'Finishing Materials', subProducts: ['Tiles', 'Paints', 'Drywall'] } ] }, tr: { title: 'İnşaat Malzemeleri', description: 'Çimento ve kum gibi temel malzemelerden özel metal yapılara ve yalıtıma kadar her ölçekteki projeleri desteklemek için eksiksiz bir inşaat malzemeleri yelpazesi tedarik ediyoruz.', products: [ { name: 'Temel Malzemeler', subProducts: ['Çimento', 'Kum', 'Çakıl', 'Agregalar'] }, { name: 'Yalıtım Malzemeleri', subProducts: ['Mineral Yün', 'Köpük Levhalar', 'Cam Yünü'] }, { name: 'Metal Yapılar', subProducts: ['Çelik Kirişler', 'İnşaat Demiri', 'Borular'] }, { name: 'Son Kat Malzemeleri', subProducts: ['Fayans', 'Boyalar', 'Alçıpan'] } ] }, ru: { title: 'Строительные материалы', description: 'Мы поставляем полный спектр строительных материалов для поддержки проектов любого масштаба, от основных материалов, таких как цемент и песок, до специализированных металлических конструкций и изоляции.', products: [ { name: 'Базовые материалы', subProducts: ['Цемент', 'Песок', 'Гравий', 'Заполнители'] }, { name: 'Изоляционные материалы', subProducts: ['Минеральная вата', 'Пенопластовые плиты', 'Стеклянная вата'] }, { name: 'Металлические конструкции', subProducts: ['Стальные балки', 'Арматура', 'Трубы'] }, { name: 'Отделочные материалы', subProducts: ['Плитка', 'Краски', 'Гипсокартон'] } ] }, sr: { title: 'Građevinski materijali', description: 'Snabdevamo kompletnim asortimanom građevinskih materijala za podršku projektima svih razmera, od osnovnih materijala poput cementa i peska do specijalizovanih metalnih konstrukcija i izolacije.', products: [ { name: 'Osnovni materijali', subProducts: ['Cement', 'Pesak', 'Šljunak', 'Agregati'] }, { name: 'Izolacioni materijali', subProducts: ['Mineralna vuna', 'Ploče od pene', 'Staklena vuna'] }, { name: 'Metalne konstrukcije', subProducts: ['Čelične grede', 'Armatura', 'Cevi'] }, { name: 'Završni materijali', subProducts: ['Pločice', 'Boje', 'Gipsane ploče'] } ] } },
+                textiles: { image: 'IMG video/Images/textiles.webp', en: { title: 'Textiles & Fibers', description: 'We source and trade a wide variety of textile fibers, yarns, and fabrics to supply the global apparel and home textile industries with quality materials.', products: [ { name: 'Natural Fibers', subProducts: ['Cotton', 'Wool', 'Linen', 'Silk'] }, { name: 'Synthetic Fibers', subProducts: ['Polyester', 'Nylon', 'Acrylic', 'Spandex'] }, { name: 'Yarns', subProducts: ['Cotton Yarn', 'Polyester Yarn', 'Blended Yarns'] }, { name: 'Fabrics', subProducts: ['Woven Fabrics', 'Knitted Fabrics', 'Denim'] } ] }, tr: { title: 'Tekstil ve Lifler', description: 'Küresel hazır giyim ve ev tekstili endüstrilerine kaliteli malzemeler tedarik etmek için çok çeşitli tekstil elyafları, iplikler ve kumaşlar tedarik ediyor ve ticaretini yapıyoruz.', products: [ { name: 'Doğal Lifler', subProducts: ['Pamuk', 'Yün', 'Keten', 'İpek'] }, { name: 'Sentetik Lifler', subProducts: ['Polyester', 'Naylon', 'Akrilik', 'Spandex'] }, { name: 'İplikler', subProducts: ['Pamuk İpliği', 'Polyester İpliği', 'Karışım İplikler'] }, { name: 'Kumaşlar', subProducts: ['Dokuma Kumaşlar', 'Örgü Kumaşlar', 'Denim'] } ] }, ru: { title: 'Текстиль и волокна', description: 'Мы закупаем и торгуем широким спектром текстильных волокон, пряжи и тканей, чтобы поставлять качественные материалы для мировой швейной и домашней текстильной промышленности.', products: [ { name: 'Натуральные волокна', subProducts: ['Хлопок', 'Шерсть', 'Лен', 'Шелк'] }, { name: 'Синтетические волокна', subProducts: ['Полиэстер', 'Нейлон', 'Акрил', 'Спандекс'] }, { name: 'Пряжа', subProducts: ['Хлопчатобумажная пряжа', 'Полиэстеровая пряжа', 'Смешанная пряжа'] }, { name: 'Ткани', subProducts: ['Тканые материалы', 'Трикотажные материалы', 'Джинса'] } ] }, sr: { title: 'Tekstil i vlakna', description: 'Nabavljamo i trgujemo širokim spektrom tekstilnih vlakana, prediva i tkanina kako bismo globalnoj industriji odeće i kućnog tekstila obezbedili kvalitetne materijale.', products: [ { name: 'Prirodna vlakna', subProducts: ['Pamuk', 'Vuna', 'Lan', 'Svila'] }, { name: 'Sintetička vlakna', subProducts: ['Poliester', 'Najlon', 'Akril', 'Spandex'] }, { name: 'Prediva', subProducts: ['Pamučno predivo', 'Poliestersko predivo', 'Mešana prediva'] }, { name: 'Tkanine', subProducts: ['Tkane tkanine', 'Pletene tkanine', 'Džins'] } ] } },
+                fertilizers: { image: 'IMG video/Images/fertilizers.webp', en: { title: 'Fertilizers', description: 'Our portfolio of fertilizers is designed to support global agriculture by enhancing crop yields and improving soil health with essential nutrients.', products: [ { name: 'Nitrogen Fertilizers', subProducts: ['Urea', 'Ammonium Nitrate', 'Ammonium Sulfate'] }, { name: 'Phosphate Fertilizers', subProducts: ['DAP', 'MAP', 'TSP'] }, { name: 'Potash Fertilizers', subProducts: ['Muriate of Potash (MOP)', 'Sulphate of Potash (SOP)'] }, { name: 'Complex Fertilizers', subProducts: ['NPK', 'NP', 'PK'] } ] }, tr: { title: 'Gübreler', description: 'Gübre portföyümüz, mahsul verimini artırarak ve temel besinlerle toprak sağlığını iyileştirerek küresel tarımı desteklemek üzere tasarlanmıştır.', products: [ { name: 'Azotlu Gübreler', subProducts: ['Üre', 'Amonyum Nitrat', 'Amonyum Sülfat'] }, { name: 'Fosfatlı Gübreler', subProducts: ['DAP', 'MAP', 'TSP'] }, { name: 'Potaslı Gübreler', subProducts: ['Muriate of Potash (MOP)', 'Sulphate of Potash (SOP)'] }, { name: 'Karma Gübreler', subProducts: ['NPK', 'NP', 'PK'] } ] }, ru: { title: 'Удобрения', description: 'Наш портфель удобрений предназначен для поддержки мирового сельского хозяйства путем повышения урожайности и улучшения здоровья почвы с помощью необходимых питательных веществ.', products: [ { name: 'Азотные удобрения', subProducts: ['Мочевина', 'Аммиачная селитра', 'Сульфат аммония'] }, { name: 'Фосфорные удобрения', subProducts: ['DAP', 'MAP', 'TSP'] }, { name: 'Калийные удобрения', subProducts: ['Хлористый калий (MOP)', 'Сульфат калия (SOP)'] }, { name: 'Комплексные удобрения', subProducts: ['NPK', 'NP', 'PK'] } ] }, sr: { title: 'Đubriva', description: 'Naš portfolio đubriva je dizajniran da podrži globalnu poljoprivredu povećanjem prinosa useva i poboljšanjem zdravlja zemljišta esencijalnim hranljivim materijama.', products: [ { name: 'Azotna đubriva', subProducts: ['Urea', 'Amonijum nitrat', 'Amonijum sulfat'] }, { name: 'Fosfatna đubriva', subProducts: ['DAP', 'MAP', 'TSP'] }, { name: 'Kalijumova đubriva', subProducts: ['Kalijum hlorid (MOP)', 'Kalijum sulfat (SOP)'] }, { name: 'Složena đubriva', subProducts: ['NPK', 'NP', 'PK'] } ] } },
+                nuts_dried_fruits: { image: 'IMG video/Images/nuts_dried_fruits.webp', en: { title: 'Nuts & Dried Fruits', description: 'We specialize in sourcing and supplying a premium selection of nuts, dried fruits, and seeds from the best growers worldwide for the food and snack industries.', products: [ { name: 'Nuts', subProducts: ['Almonds', 'Walnuts', 'Cashews', 'Pistachios', 'Hazelnuts'] }, { name: 'Dried Fruits', subProducts: ['Raisins', 'Apricots', 'Dates', 'Figs', 'Prunes'] }, { name: 'Seeds', subProducts: ['Sunflower Seeds', 'Pumpkin Seeds', 'Sesame Seeds'] } ] }, tr: { title: 'Kuruyemiş ve Kuru Meyveler', description: 'Gıda ve atıştırmalık endüstrileri için dünyanın en iyi yetiştiricilerinden yüksek kaliteli kuruyemiş, kuru meyve ve tohum seçimi tedarik etme konusunda uzmanız.', products: [ { name: 'Kuruyemişler', subProducts: ['Badem', 'Ceviz', 'Kaju', 'Antep Fıstığı', 'Fındık'] }, { name: 'Kuru Meyveler', subProducts: ['Kuru Üzüm', 'Kuru Kayısı', 'Hurma', 'İncir', 'Erik Kurusu'] }, { name: 'Tohumlar', subProducts: ['Ayçiçeği Çekirdeği', 'Kabak Çekirdeği', 'Susam'] } ] }, ru: { title: 'Орехи и сухофрукты', description: 'Мы специализируемся на поиске и поставке высококачественного ассортимента орехов, сухофруктов и семян от лучших производителей по всему миру для пищевой и снэковой промышленности.', products: [ { name: 'Орехи', subProducts: ['Миндаль', 'Грецкие орехи', 'Кешью', 'Фисташки', 'Фундук'] }, { name: 'Сухофрукты', subProducts: ['Изюм', 'Абрикосы', 'Финики', 'Инжир', 'Чернослив'] }, { name: 'Семена', subProducts: ['Семена подсолнечника', 'Тыквенные семечки', 'Кунжут'] } ] }, sr: { title: 'Orašasti plodovi i suvo voće', description: 'Specijalizovani smo za nabavku i snabdevanje premium selekcije orašastih plodova, suvog voća i semena od najboljih svetskih uzgajivača za prehrambenu i snack industriju.', products: [ { name: 'Orašasti plodovi', subProducts: ['Bademi', 'Orasi', 'Indijski orasi', 'Pistaći', 'Lešnici'] }, { name: 'Suvo voće', subProducts: ['Suvo grožđe', 'Kajsije', ' urme', 'Smokve', 'Šljive'] }, { name: 'Semenke', subProducts: ['Semenke suncokreta', 'Semenke bundeve', 'Susam'] } ] } },
+                cocoa_coffee: { image: 'IMG video/Images/cacao_coffee.webp', en: { title: 'Cocoa & Coffee', description: 'We are dedicated to providing the finest cocoa and coffee products from renowned origins to the chocolate, confectionery, and beverage industries worldwide.', products: [ { name: 'Cocoa Products', subProducts: ['Cocoa Beans', 'Cocoa Butter', 'Cocoa Mass', 'Cocoa Powder'] }, { name: 'Coffee Beans', subProducts: ['Arabica Beans', 'Robusta Beans', 'Green Coffee', 'Roasted Beans'] }, { name: 'Coffee Derivatives', subProducts: ['Instant Coffee', 'Coffee Extracts'] } ] }, tr: { title: 'Kakao ve Kahve', description: 'Dünyanın dört bir yanındaki çikolata, şekerleme ve içecek endüstrilerine tanınmış kökenlerden en iyi kakao ve kahve ürünlerini sunmaya adadık.', products: [ { name: 'Kakao Ürünleri', subProducts: ['Kakao Çekirdekleri', 'Kakao Yağı', 'Kakao Kütlesi', 'Kakao Tozu'] }, { name: 'Kahve Çekirdekleri', subProducts: ['Arabica Çekirdekleri', 'Robusta Çekirdekleri', 'Yeşil Kahve', 'Kavrulmuş Çekirdekler'] }, { name: 'Kahve Türevleri', subProducts: ['Hazır Kahve', 'Kahve Ekstraktları'] } ] }, ru: { title: 'Какао и кофе', description: 'Мы стремимся поставлять лучшие какао- и кофейные продукты из известных регионов для шоколадной, кондитерской и напиточной промышленности по всему миру.', products: [ { name: 'Продукты из какао', subProducts: ['Какао-бобы', 'Какао-масло', 'Какао-масса', 'Какао-порошок'] }, { name: 'Кофейные зерна', subProducts: ['Арабика', 'Робуста', 'Зеленый кофе', 'Жареные зерна'] }, { name: 'Кофейные производные', subProducts: ['Растворимый кофе', 'Кофейные экстракты'] } ] }, sr: { title: 'Kakao i kafa', description: 'Posvećeni smo pružanju najfinijih proizvoda od kakaa i kafe sa renomiranih porekla industriji čokolade, slatkiša i pića širom sveta.', products: [ { name: 'Proizvodi od kakaa', subProducts: ['Kakao zrna', 'Kakao puter', 'Kakao masa', 'Kakao prah'] }, { name: 'Zrna kafe', subProducts: ['Arabika', 'Robusta', 'Zelena kafa', 'Pržena zrna'] }, { name: 'Derivati kafe', subProducts: ['Instant kafa', 'Ekstrakti kafe'] } ] } },
+                spices: { image: 'IMG video/Images/spices.webp', en: { title: 'Spices & Flavorings', description: 'We offer a rich assortment of high-quality spices, herbs, and natural extracts, sourcing exotic and traditional flavors for the global food and beverage industry.', products: [ { name: 'Spices', subProducts: ['Black Pepper', 'Cinnamon', 'Cumin', 'Turmeric', 'Cloves'] }, { name: 'Herbs', subProducts: ['Oregano', 'Basil', 'Thyme', 'Rosemary'] }, { name: 'Natural Extracts', subProducts: ['Vanilla Extract', 'Almond Extract', 'Lemon Essence'] } ] }, tr: { title: 'Baharatlar ve Aroma Vericiler', description: 'Küresel yiyecek ve içecek endüstrisi için egzoti̇k ve geleneksel lezzetler tedarik ederek, zengin bir yüksek kaliteli baharat, ot ve doğal özler yelpazesi sunuyoruz.', products: [ { name: 'Baharatlar', subProducts: ['Karabiber', 'Tarçın', 'Kimyon', 'Zerdeçal', 'Karanfil'] }, { name: 'Otlar', subProducts: ['Kekik', 'Fesleğen', 'Kekik otu', 'Biberiye'] }, { name: 'Doğal Ekstraktlar', subProducts: ['Vanilya Ekstraktı', 'Badem Ekstraktı', 'Limon Esansı'] } ] }, ru: { title: 'Специи и ароматизаторы', description: 'Мы предлагаем богатый ассортимент высококачественных специй, трав и натуральных экстрактов, поставляя экзотические и традиционные ароматы для мировой пищевой и напиточной промышленности.', products: [ { name: 'Специи', subProducts: ['Черный перец', 'Корица', 'Кумин', 'Куркума', 'Гвоздика'] }, { name: 'Травы', subProducts: ['Орегано', 'Базилик', 'Тимьян', 'Розмарин'] }, { name: 'Натуральные экстракты', subProducts: ['Экстракт ванили', 'Экстракт миндаля', 'Лимонная эссенция'] } ] }, sr: { title: 'Začini i arome', description: 'Nudimo bogat asortiman visokokvalitetnih začina, bilja i prirodnih ekstrakata, nabavljajući egzotične i tradicionalne ukuse za globalnu industriju hrane i pića.', products: [ { name: 'Začini', subProducts: ['Crni biber', 'Cimet', 'Kumin', 'Kurkuma', 'Karanfilić'] }, { name: 'Bilje', subProducts: ['Origano', 'Bosiljak', 'Majčina dušica', 'Ruzmarin'] }, { name: 'Prirodni ekstrakti', subProducts: ['Ekstrakt vanile', 'Ekstrakt badema', 'Esencija limuna'] } ] } }
+            };
+            
+            // Dopuna fallback prevoda
+            Object.keys(categories_data).forEach(key => { const enData = categories_data[key].en; ['tr', 'ru', 'sr'].forEach(lang => { if (!categories_data[key][lang]) { categories_data[key][lang] = JSON.parse(JSON.stringify(enData)); } else { if (!categories_data[key][lang].title) categories_data[key][lang].title = enData.title; if (!categories_data[key][lang].description) categories_data[key][lang].description = enData.description; if (!categories_data[key][lang].products) categories_data[key][lang].products = JSON.parse(JSON.stringify(enData.products)); else { if(categories_data[key][lang].products.length !== enData.products.length) { categories_data[key][lang].products = JSON.parse(JSON.stringify(enData.products)); } else { categories_data[key][lang].products.forEach((prod, index) => { if (!prod.name) prod.name = enData.products[index].name; if (!prod.subProducts || prod.subProducts.length !== enData.products[index].subProducts.length) { prod.subProducts = JSON.parse(JSON.stringify(enData.products[index].subProducts)); } }); } } } }); });
+
+            const categoryOrder = Object.keys(categories_data); 
+            
+            const panelOverlay = document.getElementById('panel-overlay');
+            const commodityPanel = document.getElementById('commodity-panel');
+            const panelCloseBtn = document.getElementById('panel-close-btn');
+            const panelNavPrev = document.getElementById('panel-nav-prev');
+            const panelNavNext = document.getElementById('panel-nav-next');
+            const panelImage = document.getElementById('panel-image');
+            const panelTitle = document.getElementById('panel-title');
+            const panelDescription = document.getElementById('panel-description');
+            const panelProductList = document.getElementById('panel-product-list');
+            const panelBody = document.querySelector('.panel-body');
+            
+            const prevCategoryNameEl = document.getElementById('prev-category-name');
+            const nextCategoryNameEl = document.getElementById('next-category-name');
+            const panelNavPrevLabel = panelNavPrev.querySelector('.nav-label');
+            const panelNavNextLabel = panelNavNext.querySelector('.nav-label');
+
+            let currentCategoryIndex = 0;
+            
+            function showCommodityPanel(categoryKey) {
+                if (!commodityPanel || !panelImage || !panelTitle || !panelDescription || !panelProductList) return;
+                const data = categories_data[categoryKey];
+                if (!data) return;
+
+                const lang = document.documentElement.lang || 'en';
+                currentCategoryIndex = categoryOrder.indexOf(categoryKey); 
+                const localizedData = data[lang] || data['en']; 
+
+                const img = new Image();
+                img.onload = function() { panelImage.src = this.src; }
+                img.src = data.image; 
+                
+                panelImage.alt = localizedData.title; 
+                panelTitle.textContent = localizedData.title;
+                panelDescription.textContent = localizedData.description;
+
+                const productsListHTML = localizedData.products.map(product => {
+                    const subProductsHTML = product.subProducts.map(sub => {
+                        const productId = productNameToIdMap[sub]; 
+                        if (productId) {
+                            return `<li><a href="product-detail.html?id=${productId}" class="product-detail-link">${sub}</a></li>`;
+                        } else {
+                            return `<li>${sub}</li>`;
+                        }
+                    }).join('');
+
+                    return `
+                    <div class="product-item-rich">
+                        <h5 class="product-title">${product.name}</h5>
+                        <ul class="sub-product-list">
+                            ${subProductsHTML}
+                        </ul>
+                    </div>`;
+                }).join('');
+                panelProductList.innerHTML = productsListHTML;
+                
+                const prevIndex = (currentCategoryIndex - 1 + categoryOrder.length) % categoryOrder.length;
+                const nextIndex = (currentCategoryIndex + 1) % categoryOrder.length;
+                
+                const prevCategoryKey = categoryOrder[prevIndex];
+                const nextCategoryKey = categoryOrder[nextIndex];
+                
+                const prevLocalizedData = categories_data[prevCategoryKey][lang] || categories_data[prevCategoryKey]['en'];
+                const nextLocalizedData = categories_data[nextCategoryKey][lang] || categories_data[nextCategoryKey]['en'];
+
+                prevCategoryNameEl.textContent = prevLocalizedData.title;
+                nextCategoryNameEl.textContent = nextLocalizedData.title;
+                
+                panelNavPrevLabel.textContent = panelNavPrevLabel.getAttribute(`data-${lang}-text`) || panelNavPrevLabel.getAttribute('data-en-text');
+                panelNavNextLabel.textContent = panelNavNextLabel.getAttribute(`data-${lang}-text`) || panelNavNextLabel.getAttribute('data-en-text');
+
+                panelOverlay.classList.add('is-open');
+                commodityPanel.classList.add('is-open');
+                if(panelBody) panelBody.scrollTop = 0; 
+                document.body.style.overflow = 'hidden'; 
+            }
+
+            function closeCommodityPanel() { 
+                if (panelOverlay) panelOverlay.classList.remove('is-open'); 
+                if (commodityPanel) commodityPanel.classList.remove('is-open');
+                document.body.style.overflow = ''; 
+            }
+
+            document.querySelectorAll('#commodities-grid .subsidiary-card').forEach(card => card.addEventListener('click', () => showCommodityPanel(card.getAttribute('data-category'))));
+            
+            if (panelNavPrev) panelNavPrev.addEventListener('click', () => { 
+                const prevIndex = (currentCategoryIndex - 1 + categoryOrder.length) % categoryOrder.length;
+                showCommodityPanel(categoryOrder[prevIndex]);
+            });
+            if (panelNavNext) panelNavNext.addEventListener('click', () => { 
+                const nextIndex = (currentCategoryIndex + 1) % categoryOrder.length;
+                showCommodityPanel(categoryOrder[nextIndex]);
+            });
+            
+            if (panelCloseBtn) panelCloseBtn.addEventListener('click', closeCommodityPanel);
+            if (panelOverlay) panelOverlay.addEventListener('click', closeCommodityPanel);
+            
+            // Search Logic
+            const searchInputEl = document.getElementById('commodity-search');
+            const allCommodityCards = document.querySelectorAll('#commodities-grid .subsidiary-card');
+            const noResultsMessage = document.getElementById('no-results-message');
+             if (searchInputEl && allCommodityCards.length > 0 && noResultsMessage) {
+                 searchInputEl.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase().trim(); let visibleCards = 0;
+                    allCommodityCards.forEach(card => { 
+                        const cardText = card.textContent.toLowerCase(); 
+                        const isVisible = cardText.includes(searchTerm); 
+                        if(isVisible){
+                            card.classList.remove('is-hidden');
+                            visibleCards++;
+                        } else {
+                            card.classList.add('is-hidden');
+                        }
+                    });
+                    if(visibleCards > 0){
+                        noResultsMessage.classList.add('hidden');
+                    } else {
+                        noResultsMessage.classList.remove('hidden');
+                    }
+                });
+             }
+
+            function checkHashAndOpenPanel() {
+                if(window.location.hash) { 
+                    const hash = window.location.hash.substring(1); 
+                    if (categories_data.hasOwnProperty(hash)) {
+                        setTimeout(() => {
+                            showCommodityPanel(hash);
+                            history.pushState("", document.title, window.location.pathname + window.location.search);
+                        }, 300); 
+                    }
+                }
+            }
+            checkHashAndOpenPanel(); 
+        });
+    </script>
+    </body>
+</html>

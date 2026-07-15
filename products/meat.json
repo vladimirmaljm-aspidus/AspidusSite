@@ -1,0 +1,213 @@
+{
+  "chicken": {
+    "image": "IMG video/Images/proizvodi/meat-chicken-detail.webp",
+    "name": "Frozen Chicken (Whole & Cuts)",
+    "shortDescription": "High-quality, calibrated frozen chicken products sourced from SIF/BRC/Halal certified facilities, ideal for food service and retail.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Product", "value": "Whole Chicken, Boneless Breast, Leg Quarters" },
+          { "item": "Grade", "value": "Grade A" },
+          { "item": "Freezing", "value": "IQF (Individually Quick Frozen) or BQF (Block)" },
+          { "item": "Moisture", "value": "< 5%" },
+          { "item": "Broken Bones", "value": "< 2%" },
+          { "item": "Black Spots", "value": "None" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "BRC, ISO, HACCP" },
+          { "item": "Certification", "value": "Halal Certified (SIF)" },
+          { "item": "Veterinary", "value": "SGS Inspection, Health Certificate" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Brazil, USA, Turkey, EU (Poland, Netherlands)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "10kg, 15kg, or 20kg poly-lined cartons" },
+          { "item": "Shelf Life", "value": "24 months at -18°C" },
+          { "item": "Transport", "value": "40' High-Cube Reefer Container" },
+          { "item": "Loadability", "value": "Approx. 27-28 MT" }
+        ]
+      }
+    ]
+  },
+  "beef": {
+    "image": "IMG video/Images/proizvodi/meat-beef-detail.webp",
+    "name": "Frozen Boneless Beef",
+    "shortDescription": "Premium frozen boneless beef cuts, grass-fed or grain-fed, sourced from leading Halal-certified abattoirs.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Popular Cuts", "value": "Chuck, Brisket, Shank, Topside, Silverside, Rump" },
+          { "item": "Fat Content", "value": "90CL, 95CL (Chemical Lean)" },
+          { "item": "Type", "value": "Forequarter or Hindquarter cuts" },
+          { "item": "Freezing", "value": "BQF (Block Frozen) at -18°C" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "table",
+        "content": [
+          { "item": "Certification", "value": "Halal Certified" },
+          { "item": "Inspection", "value": "SGS / Bureau Veritas at loading" },
+          { "item": "Veterinary", "value": "Official Health Certificate" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Brazil, Argentina, Uruguay, Australia, India (Buffalo)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "20kg or 25kg poly-lined cartons" },
+          { "item": "Shelf Life", "value": "24 months at -18°C" },
+          { "item": "Transport", "value": "40' High-Cube Reefer Container" },
+          { "item": "Loadability", "value": "Approx. 27-28 MT" }
+        ]
+      }
+    ]
+  },
+  "lamb": {
+    "image": "IMG video/Images/proizvodi/meat-lamb-detail.webp",
+    "name": "Frozen Lamb Carcass & Cuts",
+    "shortDescription": "High-quality frozen lamb, available as 6-way cut carcasses or specific cuts, sourced from Australia and South America.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Product", "value": "Whole Carcass (6-way cut), Leg, Shoulder, Rack" },
+          { "item": "Weight (Carcass)", "value": "18-24 kg average" },
+          { "item": "Type", "value": "Grass-fed" },
+          { "item": "Freezing", "value": "Blast frozen at -18°C" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "table",
+        "content": [
+          { "item": "Certification", "value": "Halal Certified" },
+          { "item": "Standard", "value": "AUS-MEAT standard (Australia)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Australia, New Zealand, Uruguay" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging (Carcass)", "value": "Individually wrapped in stockinette bags" },
+          { "item": "Packaging (Cuts)", "value": "10-15kg cartons" },
+          { "item": "Transport", "value": "40' High-Cube Reefer Container" },
+          { "item": "Loadability", "value": "Approx. 26-27 MT" }
+        ]
+      }
+    ]
+  },
+  "turkey": {
+    "image": "IMG video/Images/proizvodi/meat-turkey-detail.webp",
+    "name": "Frozen Turkey (Whole & Cuts)",
+    "shortDescription": "Premium frozen turkey products, including whole birds for food service and specific cuts for processing.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Product", "value": "Whole Turkey, Boneless Breast Meat, Drumsticks" },
+          { "item": "Grade", "value": "Grade A" },
+          { "item": "Weight (Whole)", "value": "Calibrated sizes (e.g., 6-10 kg)" },
+          { "item": "Freezing", "value": "IQF or BQF" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "table",
+        "content": [
+          { "item": "Certification", "value": "Halal, BRC, ISO, HACCP" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Brazil, EU (Poland, Germany)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "10-15kg poly-lined cartons" },
+          { "item": "Transport", "value": "40' High-Cube Reefer Container" },
+          { "item": "Loadability", "value": "Approx. 27 MT" }
+        ]
+      }
+    ]
+  },
+  "liver": {
+    "image": "IMG video/Images/proizvodi/meat-offal-detail.webp",
+    "name": "Frozen Beef/Chicken Liver",
+    "shortDescription": "High-quality frozen beef and chicken livers, processed and packed for human consumption.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Beef Liver or Chicken Liver" },
+          { "item": "Standard", "value": "Grade A, 100% suitable for human consumption" },
+          { "item": "Processing", "value": "Washed, drained, and flash frozen" },
+          { "item": "Freezing", "value": "BQF (Block Frozen)" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "table",
+        "content": [
+          { "item": "Certification", "value": "Halal Certified" },
+          { "item": "Inspection", "value": "SGS Inspection" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Origin (Beef)", "value": "Brazil, Argentina, Uruguay" },
+          { "item": "Origin (Chicken)", "value": "Brazil, Turkey, USA" }
+        ]
+      },
+      {
+        "titleKey":"packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "10kg or 15kg cartons" },
+          { "item": "Transport", "value": "40' High-Cube Reefer Container" }
+        ]
+      }
+    ]
+  }
+}

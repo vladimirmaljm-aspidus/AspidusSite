@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <title>Compliance & Integrity Reporting | Aspidus</title>
+    <meta name="description" content="Aspidus Integrity Reporting Line. Report compliance issues, fraud, or ethical concerns securely and anonymously.">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.google.com/recaptcha/api.js https://www.google.com https://www.gstatic.com/recaptcha/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://www.aspidus.co; frame-src 'self' https://www.google.com/recaptcha/; connect-src 'self' https://formspree.io; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
+    
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#3457D5', secondary: '#D4AF37', dark: '#111827' },
+                    fontFamily: { 'sans': ['Poppins', 'sans-serif'], 'serif': ['Cormorant Garamond', 'serif'] },
+                    borderRadius: { DEFAULT: '8px' }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html">
+                <img src="IMG video/Images/aspidus_logo2.webp" alt="Aspidus Logo" class="h-10" />
+            </a>
+            <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-primary flex items-center">
+                <i class="ri-arrow-left-line mr-2"></i> Return to Main Site
+            </a>
+        </div>
+    </header>
+
+    <main class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                
+                <div class="mb-10 border-l-4 border-red-700 pl-6">
+                    <h1 class="text-4xl font-serif font-bold text-gray-900 mb-2">Compliance & Integrity Reporting</h1>
+                    <p class="text-gray-600">
+                        Aspidus DMCC is committed to the highest standards of ethical conduct. Use this secure channel to report suspected fraud, impersonation, or violations of our Code of Conduct.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 md:p-10 rounded-lg shadow-lg border-t-4 border-primary">
+                    
+                    <div class="bg-blue-50 p-4 rounded border border-blue-100 mb-8 text-sm text-blue-800 flex items-start">
+                        <i class="ri-shield-keyhole-line text-xl mr-3 mt-0.5"></i>
+                        <div>
+                            <strong>Confidentiality Assurance:</strong>
+                            You may choose to remain anonymous. All reports are treated with strict confidentiality and are routed directly to our Compliance Department.
+                        </div>
+                    </div>
+
+                    <form id="compliance-form" action="https://formspree.io/f/meozwped" method="POST">
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">What are you reporting? *</label>
+                            <select name="incident_type" required class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:outline-none">
+                                <option value="" disabled selected>Select Incident Type...</option>
+                                <option value="Impersonation">Impersonation of Aspidus Staff / Fake Mandate</option>
+                                <option value="Fraud">Financial Fraud / Scams</option>
+                                <option value="Corruption">Bribery / Corruption</option>
+                                <option value="SupplyChain">Supply Chain Unethical Practices</option>
+                                <option value="Other">Other Compliance Issue</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" id="anonymous-toggle" class="w-5 h-5 text-primary rounded border-gray-300 focus:ring-primary">
+                                <span class="ml-3 text-gray-700 font-medium">I wish to remain anonymous</span>
+                            </label>
+                        </div>
+
+                        <div id="contact-details" class="grid md:grid-cols-2 gap-6 mb-6 transition-all duration-300">
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1">Your Name *</label>
+                                <input type="text" id="reporter_name" name="reporter_name" class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1">Your Email *</label>
+                                <input type="email" id="reporter_email" name="reporter_email" class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">Incident Details *</label>
+                            <p class="text-xs text-gray-500 mb-2">Please provide dates, names of individuals involved, and a detailed description of the event.</p>
+                            <textarea name="details" rows="6" required class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:outline-none" placeholder="Describe the incident here..."></textarea>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-gray-700 font-semibold mb-2">Evidence (Optional)</label>
+                            <input type="text" name="evidence_links" class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:outline-none" placeholder="Paste links to documents (Google Drive, Dropbox, etc.)">
+                        </div>
+
+                        <div class="g-recaptcha mb-6" data-sitekey="6Lfy-6krAAAAABhP2FiswZJN4xJa_mSUai1QyWRc"></div>
+
+                        <button type="submit" class="w-full bg-gray-900 text-white font-bold py-4 rounded hover:bg-gray-800 transition-colors">
+                            Submit Secure Report
+                        </button>
+
+                    </form>
+                    
+                    <div id="form-success" class="hidden text-center p-8 bg-green-50 border border-green-200 rounded">
+                        <h3 class="text-2xl font-serif font-bold text-green-800 mb-2">Report Submitted</h3>
+                        <p class="text-green-700">Your report has been securely transmitted to the Aspidus Compliance Team. Thank you for helping us maintain our integrity.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8 text-center text-sm text-gray-500">
+        <p>&copy; 2025 Aspidus DMCC. All rights reserved. | <a href="index.html" class="hover:text-primary">Home</a></p>
+    </footer>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        // Logika za Anonimnost
+        const anonToggle = document.getElementById('anonymous-toggle');
+        const contactSection = document.getElementById('contact-details');
+        const nameInput = document.getElementById('reporter_name');
+        const emailInput = document.getElementById('reporter_email');
+
+        anonToggle.addEventListener('change', function() {
+            if(this.checked) {
+                contactSection.style.opacity = '0.3';
+                contactSection.style.pointerEvents = 'none';
+                nameInput.required = false;
+                emailInput.required = false;
+                nameInput.value = 'Anonymous';
+                emailInput.value = 'anonymous@report.com'; // Dummy value for Formspree
+            } else {
+                contactSection.style.opacity = '1';
+                contactSection.style.pointerEvents = 'auto';
+                nameInput.required = true;
+                emailInput.required = true;
+                nameInput.value = '';
+                emailInput.value = '';
+            }
+        });
+
+        // AJAX Slanje
+        const form = document.getElementById('compliance-form');
+        const successMsg = document.getElementById('form-success');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+            btn.disabled = true;
+            btn.innerText = 'Encrypting & Sending...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                } else {
+                    alert('Transmission failed. Please try again.');
+                    btn.disabled = false;
+                    btn.innerText = originalText;
+                }
+            } catch (error) {
+                alert('Error connecting to server.');
+                btn.disabled = false;
+                btn.innerText = originalText;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+{
+  "cotton": {
+    "image": "IMG video/Images/proizvodi/textiles-cotton-detail.webp",
+    "name": "Raw Cotton Bales",
+    "shortDescription": "High-grade raw ginned cotton bales, graded by staple length, strength (Gpt), and micronaire for spinning mills.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade (US)", "value": "SGM (Strict Good Middling) 1-1/8\" (Staple 36)" },
+          { "item": "Grade (Brazil)", "value": "Middling 1-1/8\"" },
+          { "item": "Strength (Gpt)", "value": "29 Gpt Min" },
+          { "item": "Micronaire (Mic)", "value": "3.8 - 4.9 NCL" },
+          { "item": "Moisture", "value": "8.5% Max" },
+          { "item": "Trash", "value": "< 3.5%" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Brazil, India, Australia, Pakistan, Benin, Ivory Coast" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Standard high-density pressed bales" },
+          { "item": "Bale Weight", "value": "Approx. 220-250 kg" },
+          { "item": "Loadability", "value": "Approx. 25-26 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "wool": {
+    "image": "IMG video/Images/proizvodi/textiles-wool-detail.webp",
+    "name": "Scoured Wool (Merino)",
+    "shortDescription": "High-quality scoured (cleaned) Merino wool, graded by micron, ready for spinning and textile production.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Merino Wool, Scoured" },
+          { "item": "Micron", "value": "19.5 mic, 20.5 mic, 22.5 mic (common grades)" },
+          { "item": "Staple Length", "value": "75mm - 90mm" },
+          { "item": "Vegetable Matter (VM)", "value": "< 1.5%" },
+          { "item": "Grease", "value": "< 1.5%" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Australia, New Zealand, South Africa, Argentina" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "High-density pressed bales (approx. 180-200 kg)" },
+          { "item": "Loadability", "value": "Approx. 24-25 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "polyester": {
+    "image": "IMG video/Images/proizvodi/textiles-polyester-detail.webp",
+    "name": "Polyester Staple Fiber (PSF)",
+    "shortDescription": "Virgin-grade Polyester Staple Fiber (PSF) used for spinning, non-woven fabrics, and filling applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Virgin, Semi-Dull, Raw White" },
+          { "item": "Denier", "value": "1.2D, 1.4D, 1.5D" },
+          { "item": "Cut Length", "value": "32mm, 38mm, 51mm" },
+          { "item": "Tenacity", "value": "> 6.0 g/d" },
+          { "item": "Application", "value": "Ring Spinning, Non-Woven, Filling" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "China, India, South Korea, Taiwan, Turkey, Vietnam" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Pressed bales (approx. 300-350 kg)" },
+          { "item": "Loadability", "value": "Approx. 24-25 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "cotton-yarn": {
+    "image": "IMG video/Images/proizvodi/textiles-yarn-detail.webp",
+    "name": "Cotton Yarn (Combed)",
+    "shortDescription": "Premium 100% cotton combed ring-spun yarn for high-quality knitting and weaving applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "100% Cotton, Ring Spun, Combed" },
+          { "item": "Count", "value": "Ne 30/1 (Standard)" },
+          { "item": "Other Counts", "value": "Ne 20/1, Ne 24/1, Ne 40/1" },
+          { "item": "Application", "value": "Knitting" },
+          { "item": "Grade", "value": "Uster 5-10% (Top Grade)" },
+          { "item": "Strength (CSP)", "value": "2500+" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "India, Vietnam, Pakistan, Turkey, Uzbekistan" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "1.89 kg cones, 24 cones per carton (45.36 kg)" },
+          { "item": "Loadability", "value": "Approx. 24.5 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "polyester-yarn": {
+    "image": "IMG video/Images/proizvodi/textiles-yarn-detail.webp",
+    "name": "Polyester Yarn (DTY)",
+    "shortDescription": "Polyester Drawn Textured Yarn (DTY) used widely in weaving and knitting for apparel and home textiles.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "DTY (Drawn Textured Yarn)" },
+          { "item": "Specification", "value": "150D/48F (150 Denier / 48 Filaments)" },
+          { "item": "Other Specs", "value": "75D/36F, 300D/96F" },
+          { "item": "Luster", "value": "Semi-Dull (SD)" },
+          { "item": "Intermingle", "value": "NIM (Non-Intermingled) or SIM (Slightly)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "China, India, Taiwan, South Korea, Turkey" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Approx. 6kg cones, palletized cartons" },
+          { "item": "Loadability", "value": "Approx. 24 MT per 40' HQ container" }
+        ]
+      }
+    ]
+  },
+  "denim": {
+    "image": "IMG video/Images/proizvodi/textiles-denim-detail.webp",
+    "name": "Denim Fabric",
+    "shortDescription": "Durable denim fabric for apparel, available in various weights and compositions (100% Cotton or Stretch).",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Composition", "value": "98% Cotton / 2% Spandex (Stretch)" },
+          { "item": "Alt. Composition", "value": "100% Cotton (Rigid)" },
+          { "item": "Weave", "value": "3/1 Twill" },
+          { "item": "Weight", "value": "10 oz. - 14.5 oz. (per square yard)" },
+          { "item": "Width", "value": "58\" - 62\" (inches)" },
+          { "item": "Dye", "value": "Indigo Dyed" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey, Pakistan, India, Bangladesh, China" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Rolls (approx. 50-100 meters per roll)" },
+          { "item": "Transport", "value": "20' or 40' Container" }
+        ]
+      }
+    ]
+  }
+}

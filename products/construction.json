@@ -1,0 +1,297 @@
+{
+  "cement": {
+    "image": "IMG video/Images/proizvodi/construction-cement-detail.webp",
+    "name": "Cement (OPC 42.5N/R)",
+    "shortDescription": "High-performance Ordinary Portland Cement (OPC) compliant with EN 197-1, suitable for all general construction purposes.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "EN 197-1:2011" },
+          { "item": "Type", "value": "CEM I 42.5N or 42.5R (Ordinary Portland Cement)" },
+          { "item": "Compressive Strength (28d)", "value": "42.5 MPa (N) - 62.5 MPa (R)" },
+          { "item": "Initial Setting Time", "value": "60 minutes Min" },
+          { "item": "Soundness (Le Chatelier)", "value": "10 mm Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Exporters", "value": "Vietnam, Turkey, Egypt, UAE, Pakistan" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "50 kg bags or 1.5 - 2.0 MT Jumbo bags" },
+          { "item": "Transport (Bagged)", "value": "20' Container (Approx. 27 MT)" },
+          { "item": "Transport (Bulk)", "value": "Bulk vessel (Cement carrier)" }
+        ]
+      }
+    ]
+  },
+  "sand": {
+    "image": "IMG video/Images/proizvodi/construction-sand-detail.webp",
+    "name": "Construction Sand (Washed)",
+    "shortDescription": "Clean, washed silica sand used for concrete production, mortar, and other general construction applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Washed Silica Sand / Concrete Sand" },
+          { "item": "Standard", "value": "ASTM C33 / BS 882" },
+          { "item": "Fineness Modulus", "value": "2.3 - 3.1" },
+          { "item": "Clay Lumps & Friable", "value": "< 3.0%" },
+          { "item": "Chloride Content", "value": "Low (for concrete use)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Origin", "value": "Highly regional (e.g., UAE, Oman, Saudi Arabia, Vietnam)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk" },
+          { "item": "Transport", "value": "Bulk carrier vessel or local truck delivery" }
+        ]
+      }
+    ]
+  },
+  "gravel": {
+    "image": "IMG video/Images/proizvodi/construction-aggregate-detail.webp",
+    "name": "Gravel / Aggregates",
+    "shortDescription": "Crushed stone and gravel (coarse aggregates) used as a primary component in concrete and for road base.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Crushed Stone (Gabbro, Limestone)" },
+          { "item": "Standard", "value": "ASTM C33 / BS 882" },
+          { "item": "Size", "value": "Commonly 10mm, 20mm, 40mm" },
+          { "item": "LA Abrasion Value", "value": "< 40%" },
+          { "item": "Water Absorption", "value": "< 2%" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Origin", "value": "Highly regional (e.g., UAE, Oman, local quarries)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk" },
+          { "item": "Transport", "value": "Bulk carrier vessel or local truck delivery" }
+        ]
+      }
+    ]
+  },
+  "mineral-wool": {
+    "image": "IMG video/Images/proizvodi/construction-insulation-detail.webp",
+    "name": "Mineral Wool Insulation",
+    "shortDescription": "Rock wool (stone wool) insulation boards and batts, providing high-performance thermal, acoustic, and fire insulation.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Rock Wool (Stone Wool)" },
+          { "item": "Density", "value": "40 kg/m³ to 150 kg/m³" },
+          { "item": "Thickness", "value": "50mm, 75mm, 100mm" },
+          { "item": "Thermal Conductivity", "value": "Approx. 0.034 - 0.039 W/m·K" },
+          { "item": "Fire Rating", "value": "Class A1 (Non-combustible)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "EU (Germany, Poland), Turkey, Middle East" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Compressed and wrapped in PE bags, palletized" },
+          { "item": "Transport", "value": "40' HQ Container" }
+        ]
+      }
+    ]
+  },
+  "steel-beams": {
+    "image": "IMG video/Images/proizvodi/construction-steelbeams-detail.webp",
+    "name": "Structural Steel Beams",
+    "shortDescription": "Hot-rolled structural steel sections (beams) used in construction and engineering projects.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Profiles", "value": "IPE (European), HEA/HEB (European), UB/UC (British)" },
+          { "item": "Standard", "value": "EN 10025, ASTM A36, ASTM A992" },
+          { "item": "Grade", "value": "S275JR, S355JR" },
+          { "item": "Length", "value": "Standard 12 meters" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey, China, EU (Spain, Germany), South Korea" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundles (2-5 MT)" },
+          { "item": "Transport", "value": "Bulk vessel or 40' Containers (for smaller profiles)" }
+        ]
+      }
+    ]
+  },
+  "rebars": {
+    "image": "IMG video/Images/proizvodi/construction-rebar-detail.webp",
+    "name": "Steel Rebars (Construction)",
+    "shortDescription": "Hot-rolled deformed steel reinforcement bars used for concrete reinforcement in construction.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "ASTM A615 (Grade 60), BS 4449 (B500B), EN 10080" },
+          { "item": "Diameter", "value": "8mm - 40mm" },
+          { "item": "Length", "value": "Standard 12 meters (6m available)" },
+          { "item": "Yield Strength (Gr 60)", "value": "420 MPa Min (60,000 psi)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey, Vietnam, India, Brazil, EU (Italy, Spain)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundles of 2-5 MT, tagged" },
+          { "item": "Transport", "value": "Bulk vessel (Handysize) or 20' Containers (for <12m lengths)" }
+        ]
+      }
+    ]
+  },
+  "pipes": {
+    "image": "IMG video/Images/proizvodi/construction-pipes-detail.webp",
+    "name": "Steel Pipes (Welded)",
+    "shortDescription": "Carbon steel pipes (ERW/HFW) used for structural applications, fencing, and fluid conveyance.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "ASTM A53 (Grade A, B), API 5L (Grade B, X42)" },
+          { "item": "Type", "value": "ERW (Electric Resistance Welded)" },
+          { "item": "Shape", "value": "Round, Square (SHS), Rectangular (RHS)" },
+          { "item": "Finish", "value": "Black (self-colored) or Galvanized (HDG)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey, China, India, South Korea" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundles, hexagonal, wrapped" },
+          { "item": "Transport", "value": "Bulk vessel or 20'/40' Containers" }
+        ]
+      }
+    ]
+  },
+  "tiles": {
+    "image": "IMG video/Images/proizvodi/construction-tiles-detail.webp",
+    "name": "Porcelain Tiles (60x60)",
+    "shortDescription": "High-quality glazed porcelain tiles, durable and suitable for residential and commercial flooring.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Glazed Porcelain, Rectified Edge" },
+          { "item": "Standard", "value": "ISO 13006 / EN 14411 (Group BIa)" },
+          { "item": "Size", "value": "600x600 mm (other sizes available)" },
+          { "item": "Water Absorption", "value": "≤ 0.5%" },
+          { "item": "PEI Rating (Abrasion)", "value": "Grade 4 (Heavy residential / Light commercial)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Spain, Italy, Turkey, India, Vietnam" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Cartons on wooden pallets, shrink-wrapped" },
+          { "item": "Loadability", "value": "Approx. 25-27 MT per 20' container (palletized)" }
+        ]
+      }
+    ]
+  },
+  "drywall": {
+    "image": "IMG video/Images/proizvodi/construction-drywall-detail.webp",
+    "name": "Gypsum Board (Drywall)",
+    "shortDescription": "Standard gypsum plasterboard for interior walls and ceilings, offering fast and efficient installation.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Standard (Regular) or Moisture-Resistant (MR)" },
+          { "item": "Standard", "value": "ASTM C1396 / EN 520" },
+          { "item": "Thickness", "value": "12.5 mm (Standard) / 9.5 mm" },
+          { "item": "Size", "value": "1200 x 2400 mm (or 4'x8')" },
+          { "item": "Edge", "value": "Tapered Edge (TE)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey, EU, Thailand, Middle East (KSA, UAE)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Stacked on pallets, edge-protected" },
+          { "item": "Transport", "value": "20' or 40' Containers" }
+        ]
+      }
+    ]
+  }
+}

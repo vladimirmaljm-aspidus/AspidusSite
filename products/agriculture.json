@@ -1,0 +1,406 @@
+{
+  "wheat": {
+    "image": "IMG video/Images/proizvodi/wheat-detail.webp",
+    "name": "Milling Wheat (12.5% Protein)",
+    "shortDescription": "High-quality milling wheat suitable for flour production, traded on international standards.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Protein", "value": "12.5% Min (Basis)" },
+          { "item": "Moisture", "value": "13.5% Max" },
+          { "item": "Test Weight", "value": "76 kg/hl Min" },
+          { "item": "Gluten (Wet)", "value": "26% Min" },
+          { "item": "Falling Number", "value": "250 sec Min" },
+          { "item": "Foreign Matter", "value": "2% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Canada, Australia, Argentina, EU (France, Germany)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk vessel or 50kg PP bags" },
+          { "item": "Transport", "value": "Bulk Carrier (Panamax, Supramax)" }
+        ]
+      }
+    ]
+  },
+  "corn": {
+    "image": "IMG video/Images/proizvodi/corn-detail.webp",
+    "name": "Yellow Corn (Maize) No. 2",
+    "shortDescription": "Standard grade Yellow Corn (Maize) used primarily for animal feed and ethanol production.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "US No. 2 (or equivalent)" },
+          { "item": "Test Weight", "value": "54 lbs/bushel (70 kg/hl) Min" },
+          { "item": "Moisture", "value": "14.5% Max" },
+          { "item": "Broken Corn & FM", "value": "3% Max" },
+          { "item": "Damaged Kernels", "value": "5% Max" },
+          { "item": "Aflatoxin", "value": "20 PPB Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Brazil, Argentina, South Africa" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk vessel" },
+          { "item": "Transport", "value": "Bulk Carrier (Panamax, Supramax)" }
+        ]
+      }
+    ]
+  },
+  "soybeans": {
+    "image": "IMG video/Images/proizvodi/soybeans-detail.webp",
+    "name": "Soybeans No. 2",
+    "shortDescription": "High-quality Yellow Soybeans for crushing (oil and meal production) and human consumption.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "US No. 2 (or equivalent)" },
+          { "item": "Protein", "value": "34% Min (Basis)" },
+          { "item": "Moisture", "value": "13.5% Max" },
+          { "item": "Oil Content", "value": "18.5% Min (Basis)" },
+          { "item": "Foreign Matter", "value": "2% Max" },
+          { "item": "Splits", "value": "20% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Brazil, Argentina" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk vessel" },
+          { "item": "Transport", "value": "Bulk Carrier (Panamax, Supramax)" }
+        ]
+      }
+    ]
+  },
+  "rice": {
+    "image": "IMG video/Images/proizvodi/rice-detail.webp",
+    "name": "White Rice (5% Broken)",
+    "shortDescription": "Long grain white rice, graded 5% broken, a globally recognized standard for quality.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Broken", "value": "5.0% Max" },
+          { "item": "Moisture", "value": "14.0% Max" },
+          { "item": "Foreign Matter", "value": "0.1% Max" },
+          { "item": "Yellow Kernels", "value": "0.5% Max" },
+          { "item": "Chalky Kernels", "value": "6.0% Max" },
+          { "item": "Damaged Kernels", "value": "0.75% Max" },
+          { "item": "Average Length", "value": "6.2 mm Min" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Vietnam, Thailand, India, Pakistan" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25kg or 50kg PP bags" },
+          { "item": "Loadability", "value": "Approx. 26-27 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "sunflower-oil": {
+    "image": "IMG video/Images/proizvodi/sunflower-oil-detail.webp",
+    "name": "Crude Sunflower Oil",
+    "shortDescription": "Unrefined crude sunflower oil for further processing into edible oil and other industrial applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Crude, Unrefined" },
+          { "item": "Free Fatty Acids (FFA)", "value": "3.0% Max" },
+          { "item": "Moisture & Impurities", "value": "0.3% Max" },
+          { "item": "Iodine Value", "value": "119 - 138" },
+          { "item": "Saponification Value", "value": "188 - 194" },
+          { "item": "Unsaponifiable Matter", "value": "1.5% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Argentina, EU (Romania, Bulgaria, Hungary), Turkey" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Flexitanks (in 20' container)" },
+          { "item": "Transport", "value": "Bulk vessel or containers" }
+        ]
+      }
+    ]
+  },
+  "palm-oil": {
+    "image": "IMG video/Images/proizvodi/palm-oil-detail.webp",
+    "name": "RBD Palm Olein (CP8)",
+    "shortDescription": "Refined, Bleached, and Deodorized (RBD) Palm Olein, cold-pressed (CP8), widely used as cooking oil.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Free Fatty Acids (FFA)", "value": "0.1% Max" },
+          { "item": "Moisture & Impurities", "value": "0.1% Max" },
+          { "item": "Iodine Value (Wijs)", "value": "57.0 Min" },
+          { "item": "Cloud Point", "value": "8.0°C Max (CP8)" },
+          { "item": "Color (5.25\" Lovibond)", "value": "3.0 Red Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Malaysia, Indonesia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Jerry Cans (18-25L), Steel Drums, Flexitanks, Bulk Vessel" }
+        ]
+      }
+    ]
+  },
+  "olive-oil": {
+    "image": "IMG video/Images/proizvodi/olive-oil-detail.webp",
+    "name": "Extra Virgin Olive Oil (EVOO)",
+    "shortDescription": "Premium quality cold-pressed olive oil with excellent flavor and low acidity.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "Extra Virgin (IOC Standard)" },
+          { "item": "Acidity (as Oleic)", "value": "0.8% Max" },
+          { "item": "Peroxide Value", "value": "20 meq O2/kg Max" },
+          { "item": "Organoleptic", "value": "Median of defects = 0, Median of fruitiness > 0" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Spain, Italy, Greece, Turkey, Tunisia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Glass bottles, Tins (3-5L), Drums, IBC Totes" }
+        ]
+      }
+    ]
+  },
+  "coffee-beans": {
+    "image": "IMG video/Images/proizvodi/coffee-detail.webp",
+    "name": "Coffee Beans (Arabica/Robusta)",
+    "shortDescription": "Green coffee beans, graded and sourced for roasting, including high-quality Arabica and robust Robusta.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Type", "value": "Arabica (Washed/Natural), Robusta (Washed/Natural)" },
+          { "item": "Grade (Arabica)", "value": "e.g., Brazil NY 2/3, Colombia Supremo" },
+          { "item": "Grade (Robusta)", "value": "e.g., Vietnam G1" },
+          { "item": "Screen Size", "value": "15-19" },
+          { "item": "Moisture", "value": "12.5% Max" },
+          { "item": "Defects", "value": "Per grading standard (e.g., <8 defects for NY 2)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Arabica Origin", "value": "Brazil, Colombia, Ethiopia" },
+          { "item": "Robusta Origin", "value": "Vietnam, Brazil, Indonesia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "60 kg Jute bags or 69 kg (Colombia)" },
+          { "item": "Loadability", "value": "Approx. 19.2 MT per 20' container" }
+        ]
+      }
+    ]
+  },
+  "sugar": {
+    "image": "IMG video/Images/proizvodi/sugar-detail.webp",
+    "name": "Refined White Sugar ICUMSA 45",
+    "shortDescription": "High-quality refined white sugar suitable for human consumption and various industrial applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "ICUMSA 45 RBU" },
+          { "item": "Polarization", "value": "99.80% Min" },
+          { "item": "Ash Content", "value": "0.04% Max" },
+          { "item": "Moisture", "value": "0.04% Max" },
+          { "item": "Solubility", "value": "100% Dry & Free Flowing" },
+          { "item": "Radiation", "value": "Normal (non-detectable)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Brazil, Thailand, India, Australia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "50 kg PP bags" },
+          { "item": "Container Load", "value": "Approx. 26-27 MT per 20' container" },
+          { "item": "Bulk", "value": "Available in bulk vessels" },
+          { "item": "Min. Order", "value": "12,500 MT (Spot) or 100,000 MT (Contract)" }
+        ]
+      }
+    ]
+  },
+  "cocoa-beans": {
+    "image": "IMG video/Images/proizvodi/cocoa-beans-detail.webp",
+    "name": "Cocoa Beans (Main Crop)",
+    "shortDescription": "Raw, fermented, and dried cocoa beans sourced for chocolate and cocoa product manufacturing.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "Main Crop (Grade I/II)" },
+          { "item": "Bean Count", "value": "95-105 beans / 100g (varies)" },
+          { "item": "Moisture", "value": "7.5% Max" },
+          { "item": "Mouldy", "value": "< 3% (Grade I)" },
+          { "item": "Slaty", "value": "< 3% (Grade I)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Ivory Coast, Ghana, Ecuador, Nigeria, Cameroon" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "60-70 kg Jute bags" },
+          { "item": "Transport", "value": "20' Containers" }
+        ]
+      }
+    ]
+  },
+  "soybean-meal": {
+    "image": "IMG video/Images/proizvodi/soybean-meal-detail.webp",
+    "name": "Soybean Meal (46% Protein)",
+    "shortDescription": "High-protein soybean meal, a primary ingredient in animal feed for poultry, swine, and cattle.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Protein", "value": "46.0% Min (As Fed)" },
+          { "item": "Moisture", "value": "12.0% Max" },
+          { "item": "Fat / Oil", "value": "1.5% - 2.5%" },
+          { "item": "Fiber", "value": "7.0% Max" },
+          { "item": "Ash", "value": "7.0% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Brazil, Argentina" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk vessel or 50kg bags" },
+          { "item": "Transport", "value": "Bulk Carrier (Panamax, Supramax)" }
+        ]
+      }
+    ]
+  },
+  "corn-gluten-feed": {
+    "image": "IMG video/Images/proizvodi/corn-gluten-feed-detail.webp",
+    "name": "Corn Gluten Feed (CGF)",
+    "shortDescription": "A by-product of corn wet-milling, CGF is a valuable, medium-protein feed ingredient for livestock.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Protein", "value": "18% - 22% (Basis)" },
+          { "item": "Moisture", "value": "10% - 12% Max" },
+          { "item": "Fat", "value": "2% - 4%" },
+          { "item": "Fiber", "value": "8% - 10% Max" },
+          { "item": "Format", "value": "Pellets" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, EU, China" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk vessel or 50kg bags" },
+          { "item": "Transport", "value": "Bulk Carrier" }
+        ]
+      }
+    ]
+  }
+}

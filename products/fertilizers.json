@@ -1,0 +1,227 @@
+{
+  "urea": {
+    "image": "IMG video/Images/proizvodi/fertilizer-urea-detail.webp",
+    "name": "Urea 46% N (Granular)",
+    "shortDescription": "High-quality granular urea with 46% nitrogen content, the most common nitrogen fertilizer.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Nitrogen (N)", "value": "46.0% Min" },
+          { "item": "Biuret", "value": "1.0% Max" },
+          { "item": "Moisture", "value": "0.5% Max" },
+          { "item": "Format", "value": "Granular (2-4mm)" },
+          { "item": "Alt. Format", "value": "Prilled (1-2mm)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Middle East (Oman, Saudi Arabia, Qatar, UAE), North Africa (Algeria, Egypt), China" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "50 kg bags or 1 MT Jumbo bags" },
+          { "item": "Transport", "value": "Bulk vessel or 20' Containers (Approx. 25-27 MT)" }
+        ]
+      }
+    ]
+  },
+  "ammonium-sulfate": {
+    "image": "IMG video/Images/proizvodi/fertilizer-as-detail.webp",
+    "name": "Ammonium Sulfate (AS)",
+    "shortDescription": "A sulfur-rich fertilizer, providing 21% nitrogen and 24% sulfur, ideal for alkaline soils.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Nitrogen (N)", "value": "21.0% Min" },
+          { "item": "Sulfur (S)", "value": "24.0% Min" },
+          { "item": "Moisture", "value": "0.3% Max" },
+          { "item": "Format", "value": "Crystalline (Caprolactam Grade) or Granular" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "China, South Korea, EU (Belgium, Germany)" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "50 kg bags or 1 MT Jumbo bags" },
+          { "item": "Transport", "value": "Bulk vessel or 20' Containers" }
+        ]
+      }
+    ]
+  },
+  "dap": {
+    "image": "IMG video/Images/proizvodi/fertilizer-dap-detail.webp",
+    "name": "DAP (18-46-0)",
+    "shortDescription": "Diammonium Phosphate, the world's most widely used phosphorus fertilizer, with high nutrient content.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Formula", "value": "18-46-0" },
+          { "item": "Total Nitrogen (N)", "value": "18.0% Min" },
+          { "item": "Total Phosphate (P2O5)", "value": "46.0% Min" },
+          { "item": "Moisture", "value": "1.5% Max" },
+          { "item": "Format", "value": "Granular" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "China, USA, Saudi Arabia, Morocco" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "50 kg bags or 1 MT Jumbo bags" },
+          { "item": "Transport", "value": "Bulk vessel or 20' Containers" }
+        ]
+      }
+    ]
+  },
+  "map": {
+    "image": "IMG video/Images/proizvodi/fertilizer-map-detail.webp",
+    "name": "MAP (11-52-0)",
+    "shortDescription": "Monoammonium Phosphate, a high-phosphorus fertilizer used in early plant growth stages.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Formula", "value": "11-52-0" },
+          { "item": "Total Nitrogen (N)", "value": "11.0% Min" },
+          { "item": "Total Phosphate (P2O5)", "value": "52.0% Min" },
+          { "item": "Moisture", "value": "1.0% Max" },
+          { "item": "Format", "value": "Granular" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "USA, Morocco, Saudi Arabia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "50 kg bags or 1 MT Jumbo bags" },
+          { "item": "Transport", "value": "Bulk vessel or 20' Containers" }
+        ]
+      }
+    ]
+  },
+  "mop": {
+    "image": "IMG video/Images/proizvodi/fertilizer-mop-detail.webp",
+    "name": "MOP (Muriate of Potash)",
+    "shortDescription": "Muriate of Potash (Potassium Chloride), the most common potassium source, providing 60% K2O.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Potassium Oxide (K2O)", "value": "60.0% Min" },
+          { "item": "Moisture", "value": "0.5% Max" },
+          { "item": "Format", "value": "Granular (Pink/White) or Standard (Red)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Canada, Jordan, Germany, Israel" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "50 kg bags or 1 MT Jumbo bags" },
+          { "item": "Transport", "value": "Bulk vessel or 20' Containers" }
+        ]
+      }
+    ]
+  },
+  "sop": {
+    "image": "IMG video/Images/proizvodi/fertilizer-sop-detail.webp",
+    "name": "SOP (Sulphate of Potash)",
+    "shortDescription": "Sulphate of Potash, a premium low-chloride potassium fertilizer ideal for sensitive crops like fruits and tobacco.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Potassium Oxide (K2O)", "value": "50.0% Min" },
+          { "item": "Sulfur (S)", "value": "17.0% Min" },
+          { "item": "Chloride (Cl)", "value": "1.0% Max (Premium Grade)" },
+          { "item": "Format", "value": "Granular or Powder (Soluble)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Germany (K+S), Chile, China, USA" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "25 kg or 50 kg bags" },
+          { "item": "Transport", "value": "20' Containers" }
+        ]
+      }
+    ]
+  },
+  "npk": {
+    "image": "IMG video/Images/proizvodi/fertilizer-npk-detail.webp",
+    "name": "NPK Complex Fertilizers",
+    "shortDescription": "Compound NPK fertilizers providing balanced nutrition in a single granule, tailored to specific crop requirements.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Common Grades", "value": "15-15-15, 12-12-17+2MgO, 20-10-10" },
+          { "item": "Nutrients", "value": "Total N, P2O5, and K2O content guaranteed" },
+          { "item": "Format", "value": "Granular" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "EU (Yara, Borealis), Turkey, Morocco, Saudi Arabia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "50 kg bags or 1 MT Jumbo bags" },
+          { "item": "Transport", "value": "Bulk vessel or 20' Containers" }
+        ]
+      }
+    ]
+  }
+}

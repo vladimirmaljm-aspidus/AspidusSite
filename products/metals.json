@@ -1,0 +1,419 @@
+{
+  "copper": {
+    "image": "IMG video/Images/proizvodi/copper-detail.webp",
+    "name": "Copper Cathodes (Grade A)",
+    "shortDescription": "High-purity (99.99%) electrolytic copper cathodes (LME Grade A) for electrical, electronic, and industrial applications.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "LME Grade A" },
+          { "item": "Purity (Cu)", "value": "99.99% Min" },
+          { "item": "Standard", "value": "BS EN 1978:1998" },
+          { "item": "Format", "value": "Cathodes" },
+          { "item": "Dimensions", "value": "Approx. 1m x 1m x 20mm" },
+          { "item": "Weight per Cathode", "value": "Approx. 80 - 120 kg" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Chile, Peru, DRC, Zambia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundled Cathodes (approx. 2.5 MT per bundle)" },
+          { "item": "Transport", "value": "20' or 40' Containers" }
+        ]
+      }
+    ]
+  },
+  "aluminium": {
+    "image": "IMG video/Images/proizvodi/aluminium-detail.webp",
+    "name": "Aluminium Ingots (P1020)",
+    "shortDescription": "Primary aluminium ingots (P1020) for extrusion, rolling, and casting industries.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "P1020 (LME P1020A)" },
+          { "item": "Purity (Al)", "value": "99.70% Min" },
+          { "item": "Impurities (Fe)", "value": "0.20% Max" },
+          { "item": "Impurities (Si)", "value": "0.10% Max" },
+          { "item": "Format", "value": "Standard Ingots (Sows), T-Bars, Billets" },
+          { "item": "Weight per Ingot", "value": "Approx. 20 - 25 kg" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Middle East (UAE, Bahrain), Canada, India, Australia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundled ingots on pallets" },
+          { "item": "Transport", "value": "20' or 40' Containers" }
+        ]
+      }
+    ]
+  },
+  "zinc": {
+    "image": "IMG video/Images/proizvodi/zinc-detail.webp",
+    "name": "Zinc Ingots (SHG)",
+    "shortDescription": "Special High Grade (SHG) zinc ingots (99.995% purity) used primarily for galvanizing steel.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "SHG (Special High Grade)" },
+          { "item": "Standard", "value": "LME Approved (e.g., ASTM B6)" },
+          { "item": "Purity (Zn)", "value": "99.995% Min" },
+          { "item": "Format", "value": "Ingots / Jumbos" },
+          { "item": "Weight per Ingot", "value": "Approx. 25 kg" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "China, Peru, Australia, Canada, USA" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundled on pallets (approx. 1-2 MT per bundle)" },
+          { "item": "Transport", "value": "20' Containers" }
+        ]
+      }
+    ]
+  },
+  "lead": {
+    "image": "IMG video/Images/proizvodi/lead-detail.webp",
+    "name": "Lead Ingots (99.97%)",
+    "shortDescription": "High-purity lead ingots (99.97% to 99.99%) primarily used for batteries and radiation shielding.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "LME Standard" },
+          { "item": "Purity (Pb)", "value": "99.97% Min (Standard)" },
+          { "item": "Alternative Purity", "value": "99.99% (available)" },
+          { "item": "Format", "value": "Ingots" },
+          { "item": "Weight per Ingot", "value": "Approx. 25 kg" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "China, Australia, USA, Mexico" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundled on pallets (approx. 1-2 MT per bundle)" },
+          { "item": "Transport", "value": "20' Containers" }
+        ]
+      }
+    ]
+  },
+  "gold": {
+    "image": "IMG video/Images/proizvodi/gold-detail.webp",
+    "name": "Gold Bullion (999.9)",
+    "shortDescription": "Investment-grade gold bullion (bars and ingots) sourced from LBMA-certified refineries.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Product", "value": "Gold Bullion (Bars)" },
+          { "item": "Purity", "value": "99.99% (24 Karat)" },
+          { "item": "Format", "value": "1 kg, 12.5 kg (400 oz) bars" },
+          { "item": "Alternative Format", "value": "Doré Bars (70-90% purity, from mine sites)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Refinery Hubs", "value": "Switzerland, UAE (Dubai), UK, USA, Singapore" },
+          { "item": "Mining Origin", "value": "Global (Africa, Americas, Australia)" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "table",
+        "content": [
+          { "item": "Certification", "value": "LBMA Good Delivery" },
+          { "item": "Assay", "value": "Official Assay Certificate provided" },
+          { "item": "Compliance", "value": "Full KYC/AML, Proof of Funds required" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Logistics", "value": "Secure, insured transport (Brinks, G4S, Loomis)" },
+          { "item": "Delivery", "value": "FOB, CIF, or Secure Vault Transfer" }
+        ]
+      }
+    ]
+  },
+  "silver": {
+    "image": "IMG video/Images/proizvodi/silver-detail.webp",
+    "name": "Silver Bullion (999.0)",
+    "shortDescription": "Investment-grade silver bars (99.9% purity) from LBMA-approved refineries.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Purity", "value": "99.9% Min" },
+          { "item": "Format", "value": "1000 oz bars (Good Delivery), 1 kg bars" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Mexico, Peru, China, Poland" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "table",
+        "content": [
+          { "item": "Certification", "value": "LBMA Good Delivery" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Logistics", "value": "Secure, insured transport" },
+          { "item": "Packaging", "value": "Packed securely in vault boxes on pallets" }
+        ]
+      }
+    ]
+  },
+  "platinum": {
+    "image": "IMG video/Images/proizvodi/platinum-detail.webp",
+    "name": "Platinum (Pt)",
+    "shortDescription": "Industrial and investment-grade platinum (99.95% purity) for automotive (catalysts) and jewelry industries.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Purity", "value": "99.95% Min" },
+          { "item": "Format", "value": "Bars, Ingots (1-5 kg), Sponge (Powder)" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "South Africa, Zimbabwe, Canada, USA" }
+        ]
+      },
+      {
+        "titleKey": "certificates",
+        "type": "table",
+        "content": [
+          { "item": "Certification", "value": "LPPM Good Delivery" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Logistics", "value": "Secure, insured transport" }
+        ]
+      }
+    ]
+  },
+  "steel": {
+    "image": "IMG video/Images/proizvodi/steel-detail.webp",
+    "name": "Steel Products (HRC, CRC, Rebar)",
+    "shortDescription": "Trading in various flat and long steel products including Hot-Rolled Coil (HRC), Cold-Rolled Coil (CRC), and Rebar.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Products", "value": "HRC (Hot-Rolled Coil), CRC (Cold-Rolled Coil), Rebar (Deformed Bars), Billets" },
+          { "item": "Standards (Rebar)", "value": "ASTM A615 (Gr 40/60), BS 4449" },
+          { "item": "Standards (HRC/CRC)", "value": "JIS G3101, ASTM A36, EN 10025" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Turkey, India, South Korea, Vietnam, Brazil, EU" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging (Coil)", "value": "Standard mill export packing" },
+          { "item": "Packaging (Rebar)", "value": "Bundles (approx. 2-5 MT)" },
+          { "item": "Transport", "value": "Bulk vessel or container" }
+        ]
+      }
+    ]
+  },
+  "iron-ore": {
+    "image": "IMG video/Images/proizvodi/iron-ore-detail.webp",
+    "name": "Iron Ore Fines (62% Fe)",
+    "shortDescription": "Standard specification iron ore fines (62% Fe content), a key raw material for steel production.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Standard", "value": "Iron Ore Fines 62% Fe (Platts/TSI)" },
+          { "item": "Fe Content", "value": "62.0% (Basis)" },
+          { "item": "Silica (SiO2)", "value": "3.0% - 5.0%" },
+          { "item": "Alumina (Al2O3)", "value": "1.5% - 3.0%" },
+          { "item": "Phosphorus (P)", "value": "0.05% - 0.10%" },
+          { "item": "Sulfur (S)", "value": "< 0.05%" },
+          { "item": "Moisture (H2O)", "value": "8.0% - 10.0% Max" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Australia (Pilbara), Brazil" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Transport", "value": "Bulk Carrier Vessel (Capesize, Panamax)" },
+          { "item": "Terms", "value": "FOB, CFR" }
+        ]
+      }
+    ]
+  },
+  "nickel": {
+    "image": "IMG video/Images/proizvodi/nickel-detail.webp",
+    "name": "Nickel (LME Grade)",
+    "shortDescription": "High-purity primary nickel conforming to LME standards, essential for stainless steel and battery production.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "Grade", "value": "LME Approved Brand" },
+          { "item": "Purity (Ni)", "value": "99.80% Min" },
+          { "item": "Standard", "value": "ASTM B39-79" },
+          { "item": "Shape", "value": "Full Plate Cathodes, Cut Cathodes, Pellets, Briquettes" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Canada, Australia, Indonesia, New Caledonia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bundled cathodes or steel drums (for pellets/briquettes)" },
+          { "item": "Lot Size", "value": "LME Standard (6 Tonnes)" },
+          { "item": "Transport", "value": "20' Containers" }
+        ]
+      }
+    ]
+  },
+  "copper-concentrate": {
+    "image": "IMG video/Images/proizvodi/copper-concentrate-detail.webp",
+    "name": "Copper Concentrate",
+    "shortDescription": "Partially processed copper ore with elevated copper content, serving as feedstock for smelting and refining industries.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "HS Code", "value": "260300" },
+          { "item": "Copper (Cu) Content", "value": "20% - 40% (Basis)" },
+          { "item": "Moisture", "value": "8% - 12% Max" },
+          { "item": "Payable Metals", "value": "Gold (Au), Silver (Ag)" },
+          { "item": "Penalty Elements", "value": "Arsenic (As), Lead (Pb), Cadmium (Cd), Mercury (Hg)" },
+          { "item": "Terms", "value": "Treatment Charges (TC) / Refining Charges (RC) apply" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Chile, Peru, DRC, Zambia, Mongolia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk bags (WIB - Wet-in-Bulk) approx. 1-2 MT" },
+          { "item": "Transport", "value": "Bulk vessel or container (with safety liners)" }
+        ]
+      }
+    ]
+  },
+  "zinc-concentrate": {
+    "image": "IMG video/Images/proizvodi/zinc-concentrate-detail.webp",
+    "name": "Zinc Concentrate",
+    "shortDescription": "A raw material for producing refined zinc, also containing traces of valuable by-products like lead and silver.",
+    "tabs": [
+      {
+        "titleKey": "specification",
+        "type": "table",
+        "content": [
+          { "item": "HS Code", "value": "260800" },
+          { "item": "Zinc (Zn) Content", "value": "45% - 60% (Basis)" },
+          { "item": "Lead (Pb)", "value": "Varies (often 1-5%)" },
+          { "item": "Payable Metals", "value": "Silver (Ag)" },
+          { "item": "Moisture", "value": "Typically < 10%" },
+          { "item": "Terms", "value": "Treatment Charges (TC) apply" }
+        ]
+      },
+      {
+        "titleKey": "origin",
+        "type": "table",
+        "content": [
+          { "item": "Major Producers", "value": "Peru, Australia, USA, Bolivia" }
+        ]
+      },
+      {
+        "titleKey": "packaging_logistics",
+        "type": "table",
+        "content": [
+          { "item": "Packaging", "value": "Bulk bags (WIB) approx. 1-2 MT" },
+          { "item": "Transport", "value": "Bulk vessel or container" }
+        ]
+      }
+    ]
+  }
+}
