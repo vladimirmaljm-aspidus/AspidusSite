@@ -7,6 +7,17 @@ import { useI18n } from "./i18n";
 import { easeOutExpo } from "./motion-helpers";
 import { PulseDot, AnimatedDivider } from "./animated-icons";
 
+/**
+ * Multi-scene hero video sequence.
+ * Scene 1: cargo ship at sea (10s)
+ * Scene 2: oil refinery at twilight (5s)
+ * Cycles with smooth crossfade transitions. Total loop ~30s with Ken Burns.
+ */
+const SCENES = [
+  { src: "/aspidus/hero-video-10s.mp4", duration: 10000, zoom: [1, 1.1] },
+  { src: "/aspidus/hero-video-refinery.mp4", duration: 5000, zoom: [1.1, 1] },
+];
+
 export default function Hero() {
   const { t } = useI18n();
   const ref = React.useRef<HTMLElement>(null);
@@ -15,44 +26,58 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "28%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
+  const [sceneIdx, setSceneIdx] = React.useState(0);
+
+  React.useEffect(() => {
+    const scene = SCENES[sceneIdx];
+    const id = setTimeout(() => {
+      setSceneIdx((i) => (i + 1) % SCENES.length);
+    }, scene.duration);
+    return () => clearTimeout(id);
+  }, [sceneIdx]);
+
   const scrollTo = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <section ref={ref} id="home" className="relative min-h-[94svh] flex items-end overflow-hidden pt-24">
-      {/* Parallax background — looping video with slow zoom for cinematic feel */}
+      {/* Parallax background — multi-scene video with crossfade */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 overflow-hidden">
-        {/* Ken Burns zoom on the video container — makes the loop feel longer + cinematic */}
-        <motion.div
-          className="absolute inset-0"
-          animate={{ scale: [1, 1.1, 1.05, 1] }}
-          transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/aspidus/hero-premium.png"
-            className="w-full h-full object-cover"
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={sceneIdx}
+            className="absolute inset-0"
+            initial={{ opacity: 0, scale: SCENES[sceneIdx].zoom[0] }}
+            animate={{ opacity: 1, scale: SCENES[sceneIdx].zoom[1] }}
+            exit={{ opacity: 0 }}
+            transition={{
+              opacity: { duration: 1.5, ease: "easeInOut" },
+              scale: { duration: SCENES[sceneIdx].duration / 1000, ease: "linear" },
+            }}
           >
-            <source src="/aspidus/hero-video-10s.mp4" type="video/mp4" />
-          </video>
-        </motion.div>
-        {/* Subtle horizontal drift overlay for parallax depth */}
+            <video
+              autoPlay
+              muted
+              playsInline
+              poster="/aspidus/hero-premium.png"
+              className="w-full h-full object-cover"
+            >
+              <source src={SCENES[sceneIdx].src} type="video/mp4" />
+            </video>
+          </motion.div>
+        </AnimatePresence>
+        {/* Subtle warm drift overlay for depth */}
         <motion.div
-          className="absolute inset-0 opacity-50"
+          className="absolute inset-0 opacity-50 pointer-events-none"
           animate={{ x: ["0%", "-2%", "0%"] }}
           transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
-          style={{
-            background: "radial-gradient(ellipse at 70% 50%, rgba(196,163,104,0.15), transparent 60%)",
-          }}
+          style={{ background: "radial-gradient(ellipse at 70% 50%, rgba(196,163,104,0.15), transparent 60%)" }}
         />
         {/* LIGHT overlay — keeps video visible but text readable, NOT dark */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(245,242,234,0.92) 0%, rgba(245,242,234,0.75) 45%, rgba(245,242,234,0.25) 100%)" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(245,242,234,0.95) 0%, rgba(245,242,234,0.1) 40%, rgba(245,242,234,0.35) 100%)" }} />
       </motion.div>
 
-      {/* Soft floating orbs (subtle, blend with image) */}
+      {/* Soft floating orbs */}
       <motion.div
         className="absolute top-[15%] right-[10%] w-80 h-80 rounded-full opacity-40 blur-3xl pointer-events-none"
         animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
@@ -81,23 +106,12 @@ export default function Hero() {
 
             <h1 className="h-display">
               <span className="block overflow-hidden">
-                <motion.span
-                  className="block"
-                  initial={{ y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 1, ease: easeOutExpo, delay: 0.35 }}
-                >
+                <motion.span className="block" initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, ease: easeOutExpo, delay: 0.35 }}>
                   {t("hero.title1")}
                 </motion.span>
               </span>
               <span className="block overflow-hidden">
-                <motion.span
-                  className="block italic"
-                  style={{ color: "var(--brass-deep)" }}
-                  initial={{ y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 1, ease: easeOutExpo, delay: 0.5 }}
-                >
+                <motion.span className="block italic" style={{ color: "var(--brass-deep)" }} initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, ease: easeOutExpo, delay: 0.5 }}>
                   {t("hero.title2")}
                 </motion.span>
               </span>
@@ -133,7 +147,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Floating data panel — editorial, no card box */}
+          {/* Floating data panel */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
