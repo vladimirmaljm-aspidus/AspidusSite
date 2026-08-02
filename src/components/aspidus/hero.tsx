@@ -20,19 +20,26 @@ export default function Hero() {
 
   return (
     <section ref={ref} id="home" className="relative min-h-[94svh] flex items-end overflow-hidden pt-24">
-      {/* Parallax background — video with image fallback */}
-      <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/aspidus/hero-premium.png"
-          className="w-full h-full object-cover"
+      {/* Parallax background — looping video with slow zoom for cinematic feel */}
+      <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 overflow-hidden">
+        {/* Ken Burns zoom on the video container */}
+        <motion.div
+          className="absolute inset-0"
+          animate={{ scale: [1, 1.08, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         >
-          <source src="/aspidus/hero-video.mp4" type="video/mp4" />
-        </video>
-        {/* LIGHT overlay — keeps video/image visible but text readable, NOT dark */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/aspidus/hero-premium.png"
+            className="w-full h-full object-cover"
+          >
+            <source src="/aspidus/hero-video.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
+        {/* LIGHT overlay — keeps video visible but text readable, NOT dark */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(245,242,234,0.92) 0%, rgba(245,242,234,0.75) 45%, rgba(245,242,234,0.25) 100%)" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(245,242,234,0.95) 0%, rgba(245,242,234,0.1) 40%, rgba(245,242,234,0.35) 100%)" }} />
       </motion.div>

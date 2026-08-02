@@ -45,14 +45,14 @@ export default function About() {
           {/* Image with parallax + floating stat */}
           <Reveal className="lg:col-span-5">
             <div ref={ref} className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-lg mesh-warm">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-lg">
                 <motion.img
-                  src="/aspidus/griffon-premium.png"
+                  src="/aspidus/griffon-office.png"
                   alt="Aspidus — The Griffon"
                   style={{ y: imgY, scale: 1.08 }}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(245,242,234,0.3)] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(245,242,234,0.2)] via-transparent to-transparent" />
               </div>
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
