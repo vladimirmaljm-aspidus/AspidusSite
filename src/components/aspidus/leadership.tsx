@@ -2,24 +2,23 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { Linkedin, ArrowUpRight } from "lucide-react";
 import { useI18n } from "./i18n";
-import { Reveal, staggerContainer, staggerItem } from "./motion-helpers";
+import { Reveal } from "./motion-helpers";
 import { AnimatedDivider } from "./animated-icons";
 
 type Exec = {
   name: string;
   role: string;
-  initials: string;
   location: string;
   focus: string;
 };
 
 const EXECUTIVES: Exec[] = [
-  { name: "Executive Office", role: "Founder & CEO", initials: "EO", location: "Dubai, UAE", focus: "Strategy · Group Direction" },
-  { name: "Head of Trading", role: "Chief Trading Officer", initials: "HT", location: "Dubai, UAE", focus: "Energy · Metals · Pricing" },
-  { name: "Head of Origination", role: "Origination & Supply", initials: "HO", location: "Cape Town, ZA", focus: "Africa · Agriculture · Minerals" },
-  { name: "Head of Risk & Compliance", role: "Chief Risk Officer", initials: "RC", location: "Istanbul, TR", focus: "KYC/AML · Sanctions · Legal" },
+  { name: "Executive Office", role: "Founder & Chief Executive", location: "Dubai, UAE", focus: "Group strategy · Direction" },
+  { name: "Head of Trading", role: "Chief Trading Officer", location: "Dubai, UAE", focus: "Energy · Metals · Pricing" },
+  { name: "Head of Origination", role: "Origination & Supply", location: "Cape Town, ZA", focus: "Africa · Agriculture · Minerals" },
+  { name: "Head of Risk & Compliance", role: "Chief Risk Officer", location: "Istanbul, TR", focus: "KYC / AML · Sanctions · Legal" },
 ];
 
 export default function Leadership() {
@@ -27,7 +26,8 @@ export default function Leadership() {
   return (
     <section id="leadership" className="relative py-16 sm:py-24 bg-[var(--parchment-warm)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid lg:grid-cols-12 gap-6 mb-10">
+        {/* Header */}
+        <div className="grid lg:grid-cols-12 gap-6 mb-12">
           <div className="lg:col-span-4">
             <Reveal>
               <div className="eyebrow mb-3">{t("leadership.eyebrow")}</div>
@@ -47,37 +47,55 @@ export default function Leadership() {
           </div>
         </div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
-        >
-          {EXECUTIVES.map((exec) => (
+        {/* Editorial list — table-like, NO portrait placeholders */}
+        <div className="border-t border-[var(--rule-strong)]">
+          {EXECUTIVES.map((exec, i) => (
             <motion.div
               key={exec.name}
-              variants={staggerItem}
-              className="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 overflow-hidden border border-[var(--rule)] p-5"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
+              className="group grid grid-cols-12 gap-4 items-center py-6 border-b border-[var(--rule)] hover:bg-white/50 transition-colors duration-300 -mx-2 px-2 rounded-lg"
             >
-              <div className="relative aspect-square mb-4 rounded-xl overflow-hidden mesh-warm flex items-center justify-center">
-                <span className="font-serif text-5xl" style={{ color: "var(--brass)" }}>{exec.initials}</span>
-                <div className="absolute top-2 right-2 w-7 h-7 rounded-lg bg-white/80 backdrop-blur border border-[var(--rule)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Linkedin className="h-3.5 w-3.5" style={{ color: "var(--brass)" }} />
-                </div>
+              {/* Index */}
+              <div className="col-span-2 sm:col-span-1">
+                <span className="font-serif italic text-xl" style={{ color: "var(--brass)" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
-              <h3 className="font-serif text-base text-[var(--ink)] leading-tight">{exec.name}</h3>
-              <div className="mono-label mt-1 text-[0.6rem]" style={{ color: "var(--brass)" }}>{exec.role}</div>
-              <hr className="rule mt-3 mb-2" />
-              <div className="text-xs text-[var(--muted-foreground)]">{exec.location}</div>
-              <div className="mono-label mt-1.5 opacity-60 text-[0.55rem]">{exec.focus}</div>
+              {/* Name + role */}
+              <div className="col-span-10 sm:col-span-5">
+                <h3 className="font-serif text-lg sm:text-xl text-[var(--ink)] leading-tight">{exec.name}</h3>
+                <div className="mono-label mt-1 text-[0.6rem]" style={{ color: "var(--brass)" }}>{exec.role}</div>
+              </div>
+              {/* Location */}
+              <div className="col-span-6 sm:col-span-3">
+                <div className="text-sm text-[var(--ink)]">{exec.location}</div>
+                <div className="mono-label mt-0.5 text-[0.55rem] opacity-60">Office</div>
+              </div>
+              {/* Focus */}
+              <div className="col-span-5 sm:col-span-2">
+                <div className="text-xs text-[var(--muted-foreground)] leading-relaxed">{exec.focus}</div>
+              </div>
+              {/* LinkedIn */}
+              <div className="col-span-1 flex justify-end">
+                <a
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className="w-8 h-8 rounded-lg border border-[var(--rule)] flex items-center justify-center text-[var(--muted-foreground)] hover:text-[var(--brass)] hover:border-[var(--brass)] opacity-0 group-hover:opacity-100 transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         <Reveal delay={0.15}>
-          <p className="mt-4 text-[0.7rem] text-[var(--muted-foreground)] italic">
-            Executive profiles are summarised. Full biographies available to verified counterparties on request.
+          <p className="mt-6 text-[0.7rem] text-[var(--muted-foreground)] italic">
+            Executive profiles are summarised. Full biographies and disclosures are available to verified counterparties on request.
           </p>
         </Reveal>
       </div>

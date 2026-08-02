@@ -1,57 +1,85 @@
 "use client";
 
 import React from "react";
-import { useI18n } from "./i18n";
-import { Reveal, staggerContainer, staggerItem } from "./motion-helpers";
 import { motion } from "framer-motion";
-import { AnimatedShield, AnimatedGlobe, AnimatedTrend } from "./animated-icons";
+import { ArrowRight } from "lucide-react";
+import { useI18n } from "./i18n";
+import { RLink } from "./router";
+import { Reveal } from "./motion-helpers";
+import { AnimatedDivider } from "./animated-icons";
 
-const cards = [
-  { Icon: AnimatedShield, titleKey: "why.c1.t", descKey: "why.c1.d" },
-  { Icon: AnimatedGlobe, titleKey: "why.c2.t", descKey: "why.c2.d" },
-  { Icon: AnimatedTrend, titleKey: "why.c3.t", descKey: "why.c3.d" },
+const PRINCIPLES = [
+  { titleKey: "why.c1.t", descKey: "why.c1.d", tag: "Expertise" },
+  { titleKey: "why.c2.t", descKey: "why.c2.d", tag: "Network" },
+  { titleKey: "why.c3.t", descKey: "why.c3.d", tag: "Advantage" },
 ];
 
 export default function WhyPartner() {
   const { t } = useI18n();
   return (
-    <section className="relative py-16 sm:py-24 mesh-soft">
+    <section className="relative py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid lg:grid-cols-12 gap-6 mb-10">
-          <div className="lg:col-span-4">
-            <div className="eyebrow mb-3">{t("approach.eyebrow")}</div>
-            <h2 className="h-section">
+        {/* Header — large editorial statement */}
+        <div className="max-w-4xl mb-14">
+          <Reveal>
+            <div className="eyebrow mb-4">{t("approach.eyebrow")}</div>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="h-display">
               {t("approach.title")}{" "}
               <span className="italic" style={{ color: "var(--brass-deep)" }}>{t("approach.titleAccent")}</span>
             </h2>
-          </div>
-          <div className="lg:col-span-8" />
+          </Reveal>
+          <Reveal delay={0.1}><AnimatedDivider className="mt-5" /></Reveal>
         </div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid md:grid-cols-3 gap-5"
-        >
-          {cards.map((c, i) => (
+        {/* Principles — large editorial rows, NOT cards */}
+        <div className="space-y-0">
+          {PRINCIPLES.map((p, i) => (
             <motion.div
-              key={c.titleKey}
-              variants={staggerItem}
-              className="group relative bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-[var(--rule)]"
+              key={p.titleKey}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.12 }}
+              className="group grid grid-cols-12 gap-4 sm:gap-8 items-start py-10 border-b border-[var(--rule)] last:border-b-0"
             >
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110" style={{ background: "rgba(154,123,63,0.08)", color: "var(--brass)" }}>
-                  <c.Icon size={32} delay={i * 0.1} />
-                </div>
-                <span className="mono-label opacity-40 text-[0.6rem]">{String(i + 1).padStart(2, "0")}</span>
+              {/* Large numeral */}
+              <div className="col-span-2 sm:col-span-2">
+                <span
+                  className="font-serif text-5xl sm:text-7xl leading-none transition-colors duration-500 group-hover:italic"
+                  style={{ color: "var(--brass)" }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
-              <h3 className="h-card mb-3 text-lg">{t(c.titleKey)}</h3>
-              <p className="body-sm text-[0.85rem]">{t(c.descKey)}</p>
+              {/* Tag + title */}
+              <div className="col-span-10 sm:col-span-5">
+                <div className="mono-label mb-2" style={{ color: "var(--brass)" }}>{p.tag}</div>
+                <h3 className="font-serif text-2xl sm:text-3xl text-[var(--ink)] leading-tight">
+                  {t(p.titleKey)}
+                </h3>
+              </div>
+              {/* Description */}
+              <div className="col-span-12 sm:col-span-5">
+                <p className="body-sm text-[0.95rem] leading-relaxed">{t(p.descKey)}</p>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
+        {/* CTA */}
+        <Reveal delay={0.2}>
+          <div className="mt-12 flex flex-wrap items-center justify-between gap-4">
+            <p className="font-serif text-lg text-[var(--ink-soft)] italic max-w-md">
+              Three disciplines. One standard. Built on seventeen years of global trade.
+            </p>
+            <RLink to="/contact" className="btn-brass group">
+              {t("locations.partnership")}
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </RLink>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

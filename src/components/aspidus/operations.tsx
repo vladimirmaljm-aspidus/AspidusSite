@@ -6,29 +6,27 @@ import { ArrowRight } from "lucide-react";
 import { useI18n } from "./i18n";
 import { offices } from "./data";
 import { RLink } from "./router";
-import { Reveal, staggerContainer, staggerItem } from "./motion-helpers";
-import { AnimatedDivider } from "./animated-icons";
+import { Reveal } from "./motion-helpers";
+import { AnimatedDivider, PulseDot } from "./animated-icons";
 
-function project(lat: number, lng: number) {
-  const x = ((lng + 180) / 360) * 100;
-  const y = ((90 - lat) / 180) * 100;
-  return { x, y };
-}
-
-const HUBS = [
-  { id: "dubai", lat: 25.2, lng: 55.27, label: "Dubai", sub: "HQ · DMCC" },
-  { id: "capetown", lat: -33.92, lng: 18.42, label: "Cape Town", sub: "Pty Ltd" },
-  { id: "istanbul", lat: 41.01, lng: 28.97, label: "Istanbul", sub: "Türkiye" },
+// Trade flow labels between offices (commodities that move on each route)
+const FLOWS: { from: string; to: string; label: string }[] = [
+  { from: "dubai", to: "istanbul", label: "Metals · Construction" },
+  { from: "dubai", to: "capetown", label: "Energy · Sugar" },
+  { from: "istanbul", to: "capetown", label: "Textiles · Minerals" },
 ];
-
-const ROUTES: [number, number][] = [[0, 1], [0, 2], [1, 2]];
 
 export default function Operations() {
   const { t } = useI18n();
+  const dubai = offices.find((o) => o.id === "dubai")!;
+  const capetown = offices.find((o) => o.id === "capetown")!;
+  const istanbul = offices.find((o) => o.id === "istanbul")!;
+
   return (
-    <section id="operations" className="relative py-16 sm:py-24 bg-[var(--parchment-warm)]">
+    <section id="operations" className="relative py-16 sm:py-24 mesh-soft overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
           <div>
             <div className="eyebrow mb-3">{t("operations.eyebrow")}</div>
             <h2 className="h-section max-w-xl">
@@ -40,111 +38,175 @@ export default function Operations() {
           <p className="body-sm max-w-sm">{t("operations.desc")}</p>
         </div>
 
+        {/* Network diagram — 3 office nodes + animated trade routes */}
         <Reveal delay={0.05}>
-          <div className="relative bg-white rounded-2xl shadow-sm border border-[var(--rule)] aspect-[2.6/1] overflow-hidden">
-            <WorldMap />
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              {ROUTES.map(([a, b], i) => {
-                const p1 = project(HUBS[a].lat, HUBS[a].lng);
-                const p2 = project(HUBS[b].lat, HUBS[b].lng);
-                const mx = (p1.x + p2.x) / 2;
-                const my = (p1.y + p2.y) / 2 - 6;
-                return (
-                  <motion.path
-                    key={i}
-                    d={`M ${p1.x} ${p1.y} Q ${mx} ${my} ${p2.x} ${p2.y}`}
-                    fill="none"
-                    stroke="var(--brass)"
-                    strokeWidth="0.18"
-                    strokeDasharray="0.5 0.5"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 0.6 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.4, delay: 0.3 + i * 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  />
-                );
-              })}
+          <div className="relative bg-white rounded-3xl shadow-sm border border-[var(--rule)] p-6 sm:p-10 lg:p-14 overflow-hidden">
+            {/* Subtle mesh inside */}
+            <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
+              background: "radial-gradient(at 50% 30%, rgba(154,123,63,0.06), transparent 60%), radial-gradient(at 20% 80%, rgba(45,74,62,0.04), transparent 60%)"
+            }} />
+
+            {/* SVG routes layer — positioned absolutely over the nodes */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              viewBox="0 0 1000 500"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <linearGradient id="route-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="var(--brass)" stopOpacity="0.5" />
+                  <stop offset="50%" stopColor="var(--brass)" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="var(--brass)" stopOpacity="0.5" />
+                </linearGradient>
+              </defs>
+
+              {/* Dubai (top-center ~50%,15%) <-> Istanbul (left ~18%,45%) */}
+              <motion.path
+                d="M 500 75 Q 320 180 180 225"
+                fill="none"
+                stroke="url(#route-grad)"
+                strokeWidth="1.5"
+                strokeDasharray="6 6"
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              />
+              {/* Dubai <-> Cape Town (bottom-right ~82%,75%) */}
+              <motion.path
+                d="M 500 75 Q 680 280 820 375"
+                fill="none"
+                stroke="url(#route-grad)"
+                strokeWidth="1.5"
+                strokeDasharray="6 6"
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              />
+              {/* Istanbul <-> Cape Town */}
+              <motion.path
+                d="M 180 225 Q 500 420 820 375"
+                fill="none"
+                stroke="url(#route-grad)"
+                strokeWidth="1.5"
+                strokeDasharray="6 6"
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              />
+
+              {/* Animated traveling pulses on each route */}
+              <motion.circle r="4" fill="var(--brass)" initial={{ offsetDistance: "0%" }} animate={{ offsetDistance: "100%" }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} style={{ offsetPath: "path('M 500 75 Q 320 180 180 225')" }} />
+              <motion.circle r="4" fill="var(--brass)" initial={{ offsetDistance: "0%" }} animate={{ offsetDistance: "100%" }} transition={{ duration: 5, repeat: Infinity, ease: "linear", delay: 1 }} style={{ offsetPath: "path('M 500 75 Q 680 280 820 375')" }} />
+              <motion.circle r="4" fill="var(--forest)" initial={{ offsetDistance: "0%" }} animate={{ offsetDistance: "100%" }} transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 2 }} style={{ offsetPath: "path('M 180 225 Q 500 420 820 375')" }} />
             </svg>
 
-            {HUBS.map((hub, i) => {
-              const p = project(hub.lat, hub.lng);
-              return (
-                <motion.div
-                  key={hub.id}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute -translate-x-1/2 -translate-y-1/2 group"
-                  style={{ left: `${p.x}%`, top: `${p.y}%` }}
-                >
-                  <span className="absolute inset-0 -m-2 rounded-full border border-[var(--brass)] animate-ping opacity-40" />
-                  <span className="relative block w-2.5 h-2.5 rounded-full bg-[var(--brass)] ring-4 ring-white shadow-md" />
-                  <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 whitespace-nowrap text-center pointer-events-none">
-                    <div className="text-xs font-bold text-[var(--ink)]">{hub.label}</div>
-                    <div className="text-[0.55rem] text-[var(--muted-foreground)] tracking-wider uppercase">{hub.sub}</div>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {/* Nodes — positioned with percentages to match SVG coords */}
+            <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-4 min-h-[420px] items-center">
+              {/* Istanbul — left column */}
+              <OfficeNode office={istanbul} position="left" flowLabels={["Metals · Construction"]} delay={0.5} />
 
-            <div className="absolute top-3 left-3 mono-label opacity-50 text-[0.6rem]">EQUIRECTANGULAR · INDICATIVE</div>
-            <div className="absolute bottom-3 right-3 mono-label opacity-50 text-[0.6rem]">{t("operations.routes")}: 3 · {t("operations.hubs")}: 3</div>
+              {/* Dubai (HQ) — center, featured */}
+              <OfficeNode office={dubai} position="center" featured flowLabels={["Energy · Sugar", "Metals · Construction"]} delay={0.3} />
+
+              {/* Cape Town — right column */}
+              <OfficeNode office={capetown} position="right" flowLabels={["Textiles · Minerals"]} delay={0.7} />
+            </div>
+
+            {/* Flow labels along routes (visible on lg+) */}
+            <div className="hidden lg:block relative mt-4">
+              <div className="flex justify-center gap-8 text-center">
+                {FLOWS.map((f, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1 + i * 0.15 }}
+                    className="flex items-center gap-2"
+                  >
+                    <span className="mono-label text-[0.55rem]">{f.from}</span>
+                    <span className="h-px w-6 bg-[var(--brass)] opacity-40" />
+                    <span className="mono-label text-[0.6rem]" style={{ color: "var(--brass)" }}>{f.label}</span>
+                    <span className="h-px w-6 bg-[var(--brass)] opacity-40" />
+                    <span className="mono-label text-[0.55rem]">{f.to}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </Reveal>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          className="mt-4 grid sm:grid-cols-3 gap-3"
-        >
-          {offices.map((office) => (
-            <motion.div
-              key={office.id}
-              variants={staggerItem}
-              className="group bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-4 flex items-center justify-between gap-3 border border-[var(--rule)]"
-            >
-              <div className="flex-1 min-w-0">
-                <div className="mono-label text-[0.6rem]">{office.flag}</div>
-                <h3 className="font-serif text-base text-[var(--ink)] mt-0.5">{office.city}</h3>
-                <div className="text-[0.7rem] text-[var(--muted-foreground)] mt-1 line-clamp-1">{office.specialties}</div>
-              </div>
-              <RLink to={`/office/${office.id}`} className="btn-ghost-sm">
-                <ArrowRight className="h-3 w-3" />
-              </RLink>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
 }
 
-function WorldMap() {
+function OfficeNode({
+  office,
+  position,
+  featured = false,
+  flowLabels,
+  delay,
+}: {
+  office: typeof offices[number];
+  position: "left" | "center" | "right";
+  featured?: boolean;
+  flowLabels: string[];
+  delay: number;
+}) {
   return (
-    <div className="absolute inset-0 opacity-30">
-      <svg className="w-full h-full" viewBox="0 0 100 50" preserveAspectRatio="none">
-        <defs>
-          <pattern id="dotgrid-light" width="1.2" height="1.2" patternUnits="userSpaceOnUse">
-            <circle cx="0.6" cy="0.6" r="0.2" fill="var(--ink)" opacity="0.4" />
-          </pattern>
-          <mask id="continents-light">
-            <rect width="100" height="50" fill="black" />
-            <ellipse cx="50" cy="18" rx="8" ry="6" fill="white" />
-            <ellipse cx="51" cy="32" rx="9" ry="11" fill="white" />
-            <ellipse cx="68" cy="18" rx="16" ry="9" fill="white" />
-            <ellipse cx="58" cy="24" rx="6" ry="5" fill="white" />
-            <ellipse cx="22" cy="17" rx="12" ry="8" fill="white" />
-            <ellipse cx="30" cy="35" rx="6" ry="9" fill="white" />
-            <ellipse cx="82" cy="36" rx="7" ry="5" fill="white" />
-          </mask>
-        </defs>
-        <rect width="100" height="50" fill="url(#dotgrid-light)" mask="url(#continents-light)" />
-        <line x1="0" y1="25" x2="100" y2="25" stroke="var(--brass)" strokeWidth="0.05" opacity="0.4" />
-        <line x1="50" y1="0" x2="50" y2="50" stroke="var(--brass)" strokeWidth="0.05" opacity="0.3" />
-      </svg>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative ${featured ? "lg:scale-110" : ""}`}
+    >
+      {/* Pulse ring for HQ */}
+      {featured && (
+        <span className="absolute -top-2 left-1/2 -translate-x-1/2 z-10">
+          <PulseDot size={8} color="var(--brass)" />
+        </span>
+      )}
+
+      <div className={`text-center ${featured ? "lg:py-4" : ""}`}>
+        {/* Flag + badge */}
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <span className="px-2.5 py-1 rounded-full bg-white border border-[var(--rule-strong)] text-[0.6rem] font-bold tracking-widest" style={{ color: "var(--brass-deep)" }}>
+            {office.flag}
+          </span>
+          {featured && (
+            <span className="pill-forest text-[0.55rem]" style={{ padding: "0.2rem 0.5rem" }}>HQ</span>
+          )}
+        </div>
+
+        {/* City name */}
+        <h3 className={`font-serif text-[var(--ink)] mb-1 ${featured ? "text-2xl sm:text-3xl" : "text-xl"}`}>
+          {office.city}
+        </h3>
+        <div className="mono-label text-[0.6rem] mb-3" style={{ color: "var(--brass)" }}>{office.legalName}</div>
+
+        {/* Specialties */}
+        <p className="text-xs text-[var(--muted-foreground)] leading-relaxed max-w-[200px] mx-auto mb-4">
+          {office.specialties}
+        </p>
+
+        {/* Timezone */}
+        <div className="inline-flex items-center gap-1.5 text-[0.65rem] text-[var(--muted-foreground)]">
+          <span className="w-1 h-1 rounded-full bg-[var(--brass)]" />
+          {office.hoursTz}
+        </div>
+
+        {/* Link */}
+        <div className="mt-4">
+          <RLink to={`/office/${office.id}`} className="btn-ghost-sm">
+            Learn more
+            <ArrowRight className="h-3 w-3" />
+          </RLink>
+        </div>
+      </div>
+    </motion.div>
   );
 }

@@ -73,62 +73,47 @@ export default function Ticker() {
     };
   }, []);
 
-  if (loading) {
-    return (
-      <div className="ticker-wrap">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-center py-3">
-          <span className="mono-label" style={{ color: "rgba(245,242,234,0.6)" }}>Loading live market data…</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (!data || data.status !== "ok" || data.prices.length === 0) {
-    return (
-      <div className="ticker-wrap">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between py-3">
-          <span className="mono-label" style={{ color: "var(--brass-soft)" }}>{t("ticker.label")}</span>
-          <span className="mono-label" style={{ color: "rgba(245,242,234,0.5)" }}>Live feed temporarily unavailable</span>
-        </div>
-      </div>
-    );
-  }
-
-  const prices = data.prices;
-  const items = [...prices, ...prices];
-
   return (
-    <div className="ticker-wrap">
+    <div className="bg-[var(--parchment-warm)] border-y border-[var(--rule)] overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex items-center gap-4 py-2">
-          <div className="flex-shrink-0 flex items-center gap-2">
-            <PulseDot size={6} color="#6dbd8e" />
-            <span className="mono-label" style={{ color: "var(--brass-soft)" }}>{t("ticker.label")}</span>
+        <div className="flex items-center gap-4 py-2.5">
+          <div className="flex-shrink-0 flex items-center gap-2 pr-3 border-r border-[var(--rule-strong)]">
+            <PulseDot size={6} color="#9a7b3f" />
+            <span className="mono-label" style={{ color: "var(--brass)" }}>{t("ticker.label")}</span>
           </div>
           <div className="flex-1 overflow-hidden">
-            <div className="ticker-track">
-              {items.map((p, i) => {
-                const up = (p.change ?? 0) >= 0;
-                return (
-                  <span key={i} className="ticker-item">
-                    <span className="sym">{p.symbol}</span>
-                    <span className="val">{fmtPrice(p.price)}</span>
-                    <span style={{ color: "rgba(245,242,234,0.5)", fontSize: "0.7rem" }}>{p.currency}</span>
-                    <span className={up ? "chg-up" : "chg-dn"}>
-                      {up ? "▲" : "▼"} {p.changePct !== null ? `${Math.abs(p.changePct)}%` : "—"}
+            {loading ? (
+              <span className="mono-label opacity-50">Loading live market data…</span>
+            ) : (!data || data.status !== "ok" || data.prices.length === 0) ? (
+              <span className="mono-label opacity-50">Live feed temporarily unavailable</span>
+            ) : (
+              <div className="ticker-track">
+                {[...data.prices, ...data.prices].map((p, i) => {
+                  const up = (p.change ?? 0) >= 0;
+                  return (
+                    <span key={i} className="inline-flex items-baseline gap-1.5 text-sm whitespace-nowrap">
+                      <span className="font-semibold text-[var(--ink)] tracking-wide">{p.symbol}</span>
+                      <span className="font-variant-numeric tabular-nums text-[var(--ink)]">{fmtPrice(p.price)}</span>
+                      <span className="text-[0.7rem] text-[var(--muted-foreground)]">{p.currency}</span>
+                      <span className={up ? "text-[#3d8b5f]" : "text-[#b04838]"} style={{ fontSize: "0.72rem" }}>
+                        {up ? "▲" : "▼"} {p.changePct !== null ? `${Math.abs(p.changePct)}%` : "—"}
+                      </span>
+                      <span className="text-[var(--rule-strong)] mx-1">·</span>
                     </span>
-                  </span>
-                );
-              })}
+                  );
+                })}
+              </div>
+            )}
+          </div>
+          {data && data.status === "ok" && (
+            <div className="flex-shrink-0 hidden sm:flex items-center gap-2 pl-3 border-l border-[var(--rule-strong)]">
+              <span className="mono-label opacity-50">Updated</span>
+              <span className="mono-label text-[var(--ink)]">{timeAgo(data.fetchedAt)}</span>
             </div>
-          </div>
-          <div className="flex-shrink-0 hidden sm:flex items-center gap-2 pl-3" style={{ borderLeft: "1px solid rgba(245,242,234,0.12)" }}>
-            <span className="mono-label" style={{ color: "rgba(245,242,234,0.5)" }}>Updated</span>
-            <span className="mono-label" style={{ color: "var(--parchment)" }}>{timeAgo(data.fetchedAt)}</span>
-          </div>
+          )}
         </div>
-        <div className="pb-1.5" style={{ color: "rgba(245,242,234,0.4)", fontSize: "0.65rem" }}>
-          {data.source}. Indicative reference values for information only — not a solicitation or offer.
+        <div className="pb-1.5 text-[0.65rem] text-[var(--muted-foreground)] opacity-70">
+          {data ? data.source : "Yahoo Finance (delayed up to 15 min)"}. Indicative reference values for information only — not a solicitation or offer.
         </div>
       </div>
     </div>
