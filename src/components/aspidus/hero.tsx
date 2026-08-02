@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowRight, Plus } from "lucide-react";
 import { useI18n } from "./i18n";
 import { easeOutExpo } from "./motion-helpers";
@@ -12,7 +12,6 @@ export default function Hero() {
   const ref = React.useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "28%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
@@ -22,11 +21,11 @@ export default function Hero() {
     <section ref={ref} id="home" className="relative min-h-[94svh] flex items-end overflow-hidden pt-24">
       {/* Parallax background — looping video with slow zoom for cinematic feel */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 overflow-hidden">
-        {/* Ken Burns zoom on the video container */}
+        {/* Ken Burns zoom on the video container — makes the loop feel longer + cinematic */}
         <motion.div
           className="absolute inset-0"
-          animate={{ scale: [1, 1.08, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ scale: [1, 1.1, 1.05, 1] }}
+          transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
         >
           <video
             autoPlay
@@ -39,6 +38,15 @@ export default function Hero() {
             <source src="/aspidus/hero-video.mp4" type="video/mp4" />
           </video>
         </motion.div>
+        {/* Subtle horizontal drift overlay for parallax depth */}
+        <motion.div
+          className="absolute inset-0 opacity-50"
+          animate={{ x: ["0%", "-2%", "0%"] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+          style={{
+            background: "radial-gradient(ellipse at 70% 50%, rgba(196,163,104,0.15), transparent 60%)",
+          }}
+        />
         {/* LIGHT overlay — keeps video visible but text readable, NOT dark */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(245,242,234,0.92) 0%, rgba(245,242,234,0.75) 45%, rgba(245,242,234,0.25) 100%)" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(245,242,234,0.95) 0%, rgba(245,242,234,0.1) 40%, rgba(245,242,234,0.35) 100%)" }} />
