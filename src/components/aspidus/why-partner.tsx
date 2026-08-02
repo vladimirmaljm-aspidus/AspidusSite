@@ -16,29 +16,21 @@ export default function WhyPartner() {
   const { t } = useI18n();
 
   return (
-    <section className="relative py-20 sm:py-28 border-t border-[var(--rule)]">
+    <section className="relative py-16 sm:py-24 border-t border-[var(--rule)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Header */}
-        <div className="grid lg:grid-cols-12 gap-8 mb-14">
-          <div className="lg:col-span-3">
-            <Reveal>
-              <div className="eyebrow mb-4">{t("approach.eyebrow")}</div>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <div className="mono-label">06 / Approach</div>
-            </Reveal>
+        {/* Compact header */}
+        <div className="grid lg:grid-cols-12 gap-6 mb-10">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-3">{t("approach.eyebrow")}</div>
+            <h2 className="h-section">
+              {t("approach.title")}{" "}
+              <span className="gold-gradient italic">{t("approach.titleAccent")}</span>
+            </h2>
           </div>
-          <div className="lg:col-span-9">
-            <Reveal delay={0.1}>
-              <h2 className="h-section max-w-3xl">
-                {t("approach.title")}{" "}
-                <span className="gold-gradient italic">{t("approach.titleAccent")}</span>
-              </h2>
-            </Reveal>
-          </div>
+          <div className="lg:col-span-8" />
         </div>
 
-        {/* Cards */}
+        {/* Cards — denser, 3 columns */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -50,16 +42,16 @@ export default function WhyPartner() {
             <motion.div
               key={c.titleKey}
               variants={staggerItem}
-              className="group relative bg-[var(--background)] p-7 sm:p-8 hover:bg-[var(--card)] transition-colors duration-400 overflow-hidden"
+              className="group relative bg-[var(--background)] p-6 hover:bg-[var(--card)] transition-colors duration-300 overflow-hidden"
             >
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-12 h-12 border border-[var(--rule-strong)] flex items-center justify-center text-[var(--brass)] group-hover:bg-[var(--brass)] group-hover:text-[var(--primary-foreground)] group-hover:border-[var(--brass)] transition-all duration-400">
-                  <c.icon className="h-6 w-6" />
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-10 h-10 border border-[var(--rule-strong)] flex items-center justify-center text-[var(--brass)] group-hover:bg-[var(--brass)] group-hover:text-[var(--primary-foreground)] group-hover:border-[var(--brass)] transition-all">
+                  <c.icon className="h-5 w-5" />
                 </div>
-                <span className="mono-label opacity-40">{String(i + 1).padStart(2, "0")}</span>
+                <span className="mono-label opacity-40 text-[0.6rem]">{String(i + 1).padStart(2, "0")}</span>
               </div>
-              <h3 className="h-card mb-3">{t(c.titleKey)}</h3>
-              <p className="body-sm">{t(c.descKey)}</p>
+              <h3 className="h-card mb-2 text-lg">{t(c.titleKey)}</h3>
+              <p className="body-sm text-[0.82rem]">{t(c.descKey)}</p>
             </motion.div>
           ))}
         </motion.div>

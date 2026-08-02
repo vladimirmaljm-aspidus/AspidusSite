@@ -13,7 +13,7 @@ function Counter({ value, prefix = "", suffix = "" }: { value: number; prefix?: 
 
   React.useEffect(() => {
     if (inView) {
-      const controls = animate(count, value, { duration: 2, ease: [0.16, 1, 0.3, 1] });
+      const controls = animate(count, value, { duration: 1.8, ease: [0.16, 1, 0.3, 1] });
       return controls.stop;
     }
   }, [inView, value, count]);
@@ -25,26 +25,25 @@ export default function Stats() {
   const { t } = useI18n();
 
   return (
-    <section className="relative py-16 sm:py-20 bg-[var(--muted)] border-y border-[var(--rule)]">
+    <section className="relative py-12 sm:py-16 bg-[var(--background)] border-y border-[var(--rule)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Compact horizontal strip */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--rule)]">
           {stats.map((s, i) => (
             <motion.div
               key={s.labelKey}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-              className="relative bg-[var(--background)] p-6 sm:p-8 group"
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
+              className="relative bg-[var(--background)] px-5 py-6 group"
             >
-              <div className="flex items-baseline justify-between mb-3">
-                <span className="mono-label opacity-50">{String(i + 1).padStart(2, "0")}</span>
-              </div>
-              <div className="font-serif text-4xl sm:text-5xl gold-gradient leading-none">
+              <span className="mono-label opacity-40 text-[0.6rem]">{String(i + 1).padStart(2, "0")}</span>
+              <div className="font-serif text-3xl sm:text-4xl gold-gradient leading-none mt-2">
                 <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
               </div>
-              <div className="rule-brass mt-4 mb-3 group-hover:w-16 transition-all duration-500" />
-              <p className="mono-label leading-relaxed">{t(s.labelKey)}</p>
+              <div className="rule-brass mt-3 mb-2 group-hover:w-14 transition-all duration-500" />
+              <p className="mono-label leading-relaxed text-[0.65rem]">{t(s.labelKey)}</p>
             </motion.div>
           ))}
         </div>

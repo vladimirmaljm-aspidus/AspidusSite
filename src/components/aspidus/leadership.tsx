@@ -25,31 +25,29 @@ export default function Leadership() {
   const { t } = useI18n();
 
   return (
-    <section id="leadership" className="relative py-20 sm:py-28 border-t border-[var(--rule)]">
+    <section id="leadership" className="relative py-16 sm:py-24 border-t border-[var(--rule)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Header */}
-        <div className="grid lg:grid-cols-12 gap-8 mb-14">
-          <div className="lg:col-span-3">
+        {/* Compact header */}
+        <div className="grid lg:grid-cols-12 gap-6 mb-10">
+          <div className="lg:col-span-4">
             <Reveal>
-              <div className="eyebrow mb-4">{t("leadership.eyebrow")}</div>
+              <div className="eyebrow mb-3">{t("leadership.eyebrow")}</div>
             </Reveal>
             <Reveal delay={0.05}>
-              <div className="mono-label">03 / Leadership</div>
-            </Reveal>
-          </div>
-          <div className="lg:col-span-9">
-            <Reveal delay={0.1}>
-              <h2 className="h-section max-w-3xl">
-                {t("leadership.title")} <span className="gold-gradient italic">{t("leadership.titleAccent")}</span>
+              <h2 className="h-section">
+                {t("leadership.title")}{" "}
+                <span className="gold-gradient italic">{t("leadership.titleAccent")}</span>
               </h2>
             </Reveal>
-            <Reveal delay={0.18}>
-              <p className="lead mt-5 max-w-2xl">{t("leadership.desc")}</p>
+          </div>
+          <div className="lg:col-span-8">
+            <Reveal delay={0.1}>
+              <p className="lead max-w-xl">{t("leadership.desc")}</p>
             </Reveal>
           </div>
         </div>
 
-        {/* Exec grid */}
+        {/* Exec grid — compact horizontal cards */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -61,32 +59,31 @@ export default function Leadership() {
             <motion.div
               key={exec.name}
               variants={staggerItem}
-              className="group bg-[var(--background)] p-6 hover:bg-[var(--card)] transition-colors duration-400"
+              className="group bg-[var(--background)] hover:bg-[var(--card)] transition-colors duration-300 p-5"
             >
-              {/* Portrait placeholder */}
-              <div className="relative aspect-square mb-5 bg-[var(--muted)] border border-[var(--rule)] overflow-hidden">
+              {/* Compact portrait */}
+              <div className="relative aspect-[4/5] mb-4 bg-[var(--muted)] border border-[var(--rule)] overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-serif text-5xl text-[var(--brass)]/40">{exec.initials}</span>
+                  <span className="font-serif text-4xl text-[var(--brass)]/40">{exec.initials}</span>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--muted)] via-transparent to-transparent" />
-                {/* LinkedIn icon on hover */}
-                <div className="absolute top-3 right-3 w-8 h-8 bg-[var(--background)]/80 backdrop-blur border border-[var(--rule-strong)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Linkedin className="h-4 w-4 text-[var(--brass)]" />
+                <div className="absolute top-2 right-2 w-7 h-7 bg-[var(--background)]/80 backdrop-blur border border-[var(--rule-strong)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Linkedin className="h-3.5 w-3.5 text-[var(--brass)]" />
                 </div>
               </div>
 
-              <h3 className="font-serif text-lg text-[var(--parchment)]">{exec.name}</h3>
-              <div className="mono-label mt-1 text-[var(--brass)]">{exec.role}</div>
-              <hr className="rule mt-4 mb-3" />
-              <div className="body-sm">{exec.location}</div>
-              <div className="mono-label mt-2 opacity-60">{exec.focus}</div>
+              <h3 className="font-serif text-base text-[var(--parchment)] leading-tight">{exec.name}</h3>
+              <div className="mono-label mt-1 text-[var(--brass)] text-[0.6rem]">{exec.role}</div>
+              <hr className="rule mt-3 mb-2" />
+              <div className="text-xs text-[var(--parchment-dim)]">{exec.location}</div>
+              <div className="mono-label mt-1.5 opacity-60 text-[0.55rem]">{exec.focus}</div>
             </motion.div>
           ))}
         </motion.div>
 
-        <Reveal delay={0.2}>
-          <p className="mt-6 text-xs text-[var(--parchment-dim)] italic">
-            Executive profiles are summarised. Full biographies and disclosures available to verified counterparties on request.
+        <Reveal delay={0.15}>
+          <p className="mt-4 text-[0.7rem] text-[var(--parchment-dim)] italic">
+            Executive profiles are summarised. Full biographies available to verified counterparties on request.
           </p>
         </Reveal>
       </div>

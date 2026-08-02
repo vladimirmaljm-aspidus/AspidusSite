@@ -29,7 +29,7 @@ const INSIGHTS: Insight[] = [
     category: "Soft Commodities",
     date: "Nov 2025",
     title: "West African cocoa supply: a structural deficit cycle",
-    excerpt: "Weather-driven yield compression in Côte d'Ivoire and Ghana continues to pressure global cocoa balances. We examine origin differentials and forward curves.",
+    excerpt: "Weather-driven yield compression in Côte d'Ivoire and Ghana continues to pressure global cocoa balances.",
     image: "/aspidus/cacao_coffee.webp",
     readTime: "8 min read",
   },
@@ -37,7 +37,7 @@ const INSIGHTS: Insight[] = [
     category: "Company Update",
     date: "Oct 2025",
     title: "Aspidus expands African origination footprint",
-    excerpt: "Cape Town office strengthens direct producer relationships across the SADC region, with new allocated capacity in sugar, nuts and essential minerals.",
+    excerpt: "Cape Town office strengthens direct producer relationships across the SADC region.",
     image: "/aspidus/agrikultura.webp",
     readTime: "4 min read",
   },
@@ -47,34 +47,24 @@ export default function News() {
   const { t } = useI18n();
 
   return (
-    <section id="news" className="relative py-20 sm:py-28 border-t border-[var(--rule)]">
+    <section id="news" className="relative py-16 sm:py-24 border-t border-[var(--rule)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Header */}
-        <div className="grid lg:grid-cols-12 gap-8 mb-14 items-end">
-          <div className="lg:col-span-7">
-            <Reveal>
-              <div className="eyebrow mb-4">{t("news.eyebrow")}</div>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <div className="mono-label mb-4">05 / Insights</div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="h-section max-w-2xl">
-                {t("news.title")} <span className="gold-gradient italic">{t("news.titleAccent")}</span>
-              </h2>
-            </Reveal>
+        {/* Compact header */}
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+          <div>
+            <div className="eyebrow mb-3">{t("news.eyebrow")}</div>
+            <h2 className="h-section max-w-xl">
+              {t("news.title")}{" "}
+              <span className="gold-gradient italic">{t("news.titleAccent")}</span>
+            </h2>
           </div>
-          <div className="lg:col-span-5 lg:text-right">
-            <Reveal delay={0.15}>
-              <RLink to="/contact" className="btn-outline group">
-                {t("news.all")}
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </RLink>
-            </Reveal>
-          </div>
+          <RLink to="/contact" className="btn-ghost-sm group">
+            {t("news.all")}
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </RLink>
         </div>
 
-        {/* Featured + list layout */}
+        {/* Featured + side list — compact */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -82,31 +72,31 @@ export default function News() {
           viewport={{ once: true, margin: "-60px" }}
           className="grid lg:grid-cols-12 gap-px bg-[var(--rule)] border border-[var(--rule)]"
         >
-          {/* Featured (first) */}
+          {/* Featured */}
           <motion.article variants={staggerItem} className="lg:col-span-7 bg-[var(--background)] group">
             <RLink to="/contact" className="block">
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[16/8] overflow-hidden">
                 <img
                   src={INSIGHTS[0].image}
                   alt={INSIGHTS[0].title}
                   className="w-full h-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-transparent" />
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-3 left-3">
                   <span className="pill">{INSIGHTS[0].category}</span>
                 </div>
               </div>
-              <div className="p-6 sm:p-8">
-                <div className="flex items-center gap-3 mono-label mb-3">
+              <div className="p-5 sm:p-6">
+                <div className="flex items-center gap-3 mono-label mb-2 text-[0.6rem]">
                   <span>{INSIGHTS[0].date}</span>
                   <span className="opacity-40">·</span>
                   <span>{INSIGHTS[0].readTime}</span>
                 </div>
-                <h3 className="h-card text-xl sm:text-2xl mb-3 group-hover:text-[var(--brass)] transition-colors">
+                <h3 className="font-serif text-lg sm:text-xl mb-2 group-hover:text-[var(--brass)] transition-colors leading-snug">
                   {INSIGHTS[0].title}
                 </h3>
-                <p className="body-sm max-w-xl">{INSIGHTS[0].excerpt}</p>
-                <span className="btn-ghost-sm mt-4">
+                <p className="body-sm text-[0.82rem] max-w-xl">{INSIGHTS[0].excerpt}</p>
+                <span className="btn-ghost-sm mt-3 text-[0.7rem]">
                   {t("news.readMore")}
                   <ArrowRight className="h-3 w-3" />
                 </span>
@@ -114,7 +104,7 @@ export default function News() {
             </RLink>
           </motion.article>
 
-          {/* Side list (2 + 3) */}
+          {/* Side list */}
           <div className="lg:col-span-5 flex flex-col">
             {INSIGHTS.slice(1).map((insight) => (
               <motion.article
@@ -122,18 +112,18 @@ export default function News() {
                 variants={staggerItem}
                 className="bg-[var(--background)] group flex-1 border-b border-[var(--rule)] last:border-b-0"
               >
-                <RLink to="/contact" className="block p-6 sm:p-7 hover:bg-[var(--card)] transition-colors">
-                  <div className="flex items-center gap-3 mono-label mb-3">
-                    <span className="pill">{insight.category}</span>
+                <RLink to="/contact" className="block p-5 sm:p-6 hover:bg-[var(--card)] transition-colors">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="pill text-[0.55rem]">{insight.category}</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <h3 className="h-card flex-1 group-hover:text-[var(--brass)] transition-colors leading-snug">
+                  <div className="flex items-start gap-2">
+                    <h3 className="font-serif text-base flex-1 group-hover:text-[var(--brass)] transition-colors leading-snug">
                       {insight.title}
                     </h3>
-                    <ArrowUpRight className="h-4 w-4 text-[var(--parchment-dim)] group-hover:text-[var(--brass)] transition-colors flex-shrink-0 mt-1" />
+                    <ArrowUpRight className="h-3.5 w-3.5 text-[var(--parchment-dim)] group-hover:text-[var(--brass)] transition-colors flex-shrink-0 mt-1" />
                   </div>
-                  <p className="body-sm mt-3 line-clamp-2">{insight.excerpt}</p>
-                  <div className="flex items-center gap-3 mono-label mt-4 opacity-60">
+                  <p className="body-sm text-[0.78rem] mt-2 line-clamp-2">{insight.excerpt}</p>
+                  <div className="flex items-center gap-2 mono-label mt-3 opacity-60 text-[0.55rem]">
                     <span>{insight.date}</span>
                     <span>·</span>
                     <span>{insight.readTime}</span>
