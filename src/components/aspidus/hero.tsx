@@ -20,10 +20,19 @@ export default function Hero() {
 
   return (
     <section ref={ref} id="home" className="relative min-h-[94svh] flex items-end overflow-hidden pt-24">
-      {/* Parallax background image */}
+      {/* Parallax background — video with image fallback */}
       <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0 z-0">
-        <img src="/aspidus/hero-premium.png" alt="" className="w-full h-full object-cover" />
-        {/* LIGHT overlay — keeps image visible but text readable, NOT dark */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/aspidus/hero-premium.png"
+          className="w-full h-full object-cover"
+        >
+          <source src="/aspidus/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* LIGHT overlay — keeps video/image visible but text readable, NOT dark */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(245,242,234,0.92) 0%, rgba(245,242,234,0.75) 45%, rgba(245,242,234,0.25) 100%)" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(245,242,234,0.95) 0%, rgba(245,242,234,0.1) 40%, rgba(245,242,234,0.35) 100%)" }} />
       </motion.div>
