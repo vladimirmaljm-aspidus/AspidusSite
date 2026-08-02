@@ -2,6 +2,7 @@
 
 import { I18nProvider } from "@/components/aspidus/i18n";
 import { RouterProvider, useRouter } from "@/components/aspidus/router";
+import { SmoothScroll } from "@/components/aspidus/smooth-scroll";
 import Preloader from "@/components/aspidus/preloader";
 import SiteHeader from "@/components/aspidus/site-header";
 import SiteFooter from "@/components/aspidus/site-footer";
@@ -38,12 +39,12 @@ function NotFound() {
   return (
     <div className="pt-40 pb-32 page-enter">
       <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
-        <div className="font-serif text-[8rem] sm:text-[12rem] gold-gradient leading-none">404</div>
-        <h1 className="font-serif text-3xl text-[var(--parchment)] mt-4 mb-4">Page not found</h1>
-        <p className="text-[var(--parchment-dim)] mb-8">
+        <div className="font-serif text-[8rem] sm:text-[12rem] leading-none italic" style={{ color: "var(--brass)" }}>404</div>
+        <h1 className="font-serif text-3xl text-[var(--ink)] mt-4 mb-4">Page not found</h1>
+        <p className="text-[var(--muted-foreground)] mb-8">
           The page you are looking for does not exist or has been moved.
         </p>
-        <RLink to="/" className="btn-primary">Back to Home</RLink>
+        <RLink to="/" className="btn-brass">Back to Home</RLink>
       </div>
     </div>
   );
@@ -53,14 +54,16 @@ export default function Home() {
   return (
     <I18nProvider>
       <RouterProvider>
-        <Preloader />
-        <div className="relative min-h-screen flex flex-col bg-[#060d18]">
-          <SiteHeader />
-          <main className="flex-1">
-            <CurrentPage />
-          </main>
-          <SiteFooter />
-        </div>
+        <SmoothScroll>
+          <Preloader />
+          <div className="relative min-h-screen flex flex-col bg-[var(--parchment)]">
+            <SiteHeader />
+            <main className="flex-1">
+              <CurrentPage />
+            </main>
+            <SiteFooter />
+          </div>
+        </SmoothScroll>
       </RouterProvider>
     </I18nProvider>
   );

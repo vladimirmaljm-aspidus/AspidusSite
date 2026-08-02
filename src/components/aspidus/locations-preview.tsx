@@ -6,7 +6,7 @@ import { ArrowRight, MapPin, Clock } from "lucide-react";
 import { useI18n } from "./i18n";
 import { offices } from "./data";
 import { RLink } from "./router";
-import { Reveal, staggerContainer, staggerItem } from "./motion-helpers";
+import { Reveal } from "./motion-helpers";
 import { AnimatedDivider } from "./animated-icons";
 
 export default function LocationsPreview() {
@@ -14,8 +14,8 @@ export default function LocationsPreview() {
 
   return (
     <section id="locations" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
             <div className="eyebrow mb-3">{t("locations.tag")}</div>
             <h2 className="h-section max-w-xl">
@@ -29,54 +29,66 @@ export default function LocationsPreview() {
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </RLink>
         </div>
+      </div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid md:grid-cols-3 gap-5"
-        >
-          {offices.map((office) => (
-            <motion.article
+      {/* Full-bleed alternating split-screen editorial — no cards */}
+      <div className="space-y-2">
+        {offices.map((office, i) => {
+          const reversed = i % 2 === 1;
+          return (
+            <motion.div
               key={office.id}
-              variants={staggerItem}
-              className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden border border-[var(--rule)] flex flex-col"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="grid lg:grid-cols-2 gap-0 group"
             >
-              <RLink to={`/office/${office.id}`} className="flex flex-col flex-1">
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <img
-                    src={office.image}
-                    alt={office.city}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(26,29,36,0.3)] via-transparent to-transparent" />
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur text-[0.6rem] font-bold tracking-widest" style={{ color: "var(--brass-deep)" }}>
-                    {office.flag}
-                  </div>
-                </div>
-
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="mono-label mb-1" style={{ color: "var(--brass)" }}>{office.legalName}</div>
-                  <h3 className="font-serif text-xl text-[var(--ink)] mb-2">{office.city}</h3>
-                  <p className="body-sm line-clamp-2 mb-4">{t(office.descKey)}</p>
-
-                  <div className="mt-auto pt-3 border-t border-[var(--rule)] space-y-1.5 text-xs text-[var(--muted-foreground)]">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="h-3 w-3 mt-0.5 flex-shrink-0" style={{ color: "var(--brass)" }} />
-                      <span className="leading-relaxed line-clamp-2">{office.address}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-3 w-3 flex-shrink-0" style={{ color: "var(--brass)" }} />
-                      <span>{office.hoursTz}</span>
-                    </div>
-                  </div>
+              {/* Image side — full-bleed, no rounded card */}
+              <RLink to={`/office/${office.id}`} className={`relative aspect-[16/10] lg:aspect-auto overflow-hidden lg:h-[460px] block ${reversed ? "lg:order-2" : ""}`}>
+                <img
+                  src={office.image}
+                  alt={office.city}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(26,29,36,0.35)] via-transparent to-transparent" />
+                {/* Floating flag badge */}
+                <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur text-[0.6rem] font-bold tracking-widest" style={{ color: "var(--brass-deep)" }}>
+                  {office.flag} · {office.legalName.split(" ").slice(-1)[0]}
                 </div>
               </RLink>
-            </motion.article>
-          ))}
-        </motion.div>
+
+              {/* Text side — editorial, no card */}
+              <div className={`flex flex-col justify-center p-8 sm:p-12 lg:p-16 ${reversed ? "lg:order-1" : ""}`} style={{ background: i === 1 ? "var(--parchment-warm)" : "transparent" }}>
+                <span className="font-serif italic text-5xl mb-4" style={{ color: "var(--brass)" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-serif text-3xl sm:text-4xl text-[var(--ink)] leading-tight mb-3">{office.city}</h3>
+                <div className="mono-label mb-4" style={{ color: "var(--brass)" }}>{office.legalName}</div>
+                <p className="body-sm max-w-md mb-6">{t(office.descKey)}</p>
+
+                <div className="space-y-3 text-sm text-[var(--ink-soft)]">
+                  <div className="flex items-start gap-2.5">
+                    <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: "var(--brass)" }} />
+                    <span className="leading-relaxed">{office.address}</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Clock className="h-4 w-4 flex-shrink-0" style={{ color: "var(--brass)" }} />
+                    <span>{office.hours} · {office.hoursTz}</span>
+                  </div>
+                </div>
+
+                <div className="mt-7">
+                  <RLink to={`/office/${office.id}`} className="btn-outline group">
+                    {t("locations.learnMore")}
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </RLink>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
