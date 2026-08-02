@@ -228,6 +228,80 @@ const en: Dict = {
   "reporting.successTitle": "Report Submitted",
   "reporting.successDesc": "Your report has been securely transmitted to the Aspidus Compliance Team. Thank you for helping us maintain our integrity.",
   "reporting.back": "Return to Main Site",
+
+  // Ticker
+  "ticker.label": "Market Snapshot — Indicative",
+  "ticker.disclaimer": "Indicative reference values. Not a solicitation or offer.",
+
+  // Operations / Network
+  "operations.eyebrow": "Global Network",
+  "operations.title": "Operating across",
+  "operations.titleAccent": "three continents",
+  "operations.desc": "Strategically positioned offices in Dubai, Cape Town and Istanbul connect producers and end-users across energy, metals, agriculture and soft commodities.",
+  "operations.routes": "Active trade routes",
+  "operations.hubs": "Regional hubs",
+
+  // Leadership
+  "leadership.eyebrow": "Leadership",
+  "leadership.title": "The people behind",
+  "leadership.titleAccent": "the name",
+  "leadership.desc": "A multi-disciplinary executive team with decades of combined experience across trading, risk, compliance and operations.",
+
+  // ESG
+  "esg.eyebrow": "Responsibility",
+  "esg.title": "Operating with",
+  "esg.titleAccent": "integrity",
+  "esg.desc": "Responsible sourcing, transparent counterparties and robust compliance are non-negotiable foundations of how we do business.",
+  "esg.p1.t": "Responsible Sourcing",
+  "esg.p1.d": "We trace origin, verify counterparty legitimacy and require internationally recognised certifications before any cargo moves.",
+  "esg.p2.t": "Compliance & KYC",
+  "esg.p2.d": "Full KYC/AML on every counterparty, sanctions screening, and a confidential integrity reporting channel for staff and partners.",
+  "esg.p3.t": "Environmental Stewardship",
+  "esg.p3.d": "Prioritising lower-carbon logistics routes, supporting certified sustainable supply chains and reducing operational footprint.",
+  "esg.stats.certified": "Certified counterparty rate",
+  "esg.stats.audit": "Annual compliance audits",
+  "esg.stats.routes": "Verified trade routes",
+
+  // News & Insights
+  "news.eyebrow": "Insights",
+  "news.title": "Market commentary &",
+  "news.titleAccent": "company updates",
+  "news.readMore": "Read more",
+  "news.all": "All updates",
+
+  // Approach (replaces "Why Partner" heading copy stays)
+  "approach.eyebrow": "Our Approach",
+  "approach.title": "Disciplined,",
+  "approach.titleAccent": "principled trading",
+
+  // Form: conditional sections
+  "form.business.eyebrow": "Company Details",
+  "form.business.companyName": "Company Name *",
+  "form.business.position": "Your Position",
+  "form.business.regNo": "Company Reg. No / Tax ID *",
+  "form.business.website": "Company Website",
+  "form.business.hqAddress": "Headquarters Address *",
+  "form.vetting.eyebrow": "Supplier Qualification",
+  "form.vetting.role": "I am a... *",
+  "form.vetting.rolePlaceholder": "Select Your Role",
+  "form.vetting.roleManufacturer": "Direct Manufacturer / Producer",
+  "form.vetting.roleDistributor": "Authorized Distributor",
+  "form.vetting.roleTrader": "Trading Company",
+  "form.vetting.certsLabel": "Select certifications:",
+  "form.vetting.otherCerts": "Other Certificates",
+  "form.vetting.sourceProof": "Describe Source / Allocation Proof *",
+  "form.vetting.resellerWarn": "* We do not work with long reseller chains.",
+  "form.trade.eyebrow": "Trade Specifications",
+  "form.trade.commodity": "Commodity Name",
+  "form.trade.origin": "Origin (Country)",
+  "form.trade.quantity": "Quantity (MT)",
+  "form.trade.incoterms": "Incoterms",
+  "form.trade.targetPrice": "Target Price ($/MT)",
+  "form.verify.eyebrow": "Verification & Declaration",
+  "form.verify.linkedin": "LinkedIn Profile URL",
+  "form.verify.declarationTitle": "MANDATORY LEGAL DECLARATION",
+  "form.verify.declarationBody": "I certify that I am an authorized representative of the entity named above. All data is verifiable and accurate.",
+  "form.emailCorporateWarn": "Please use a corporate email address.",
 };
 
 const tr: Dict = {

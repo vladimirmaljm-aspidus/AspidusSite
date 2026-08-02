@@ -16,27 +16,26 @@ export default function WhyPartner() {
   const { t } = useI18n();
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#0a1626] overflow-hidden">
-      {/* decorative diagonal line */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/2 h-full border-r border-[var(--primary)]" />
-      </div>
-
+    <section className="relative py-20 sm:py-28 border-t border-[var(--rule)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* Header */}
-        <div className="max-w-2xl">
-          <Reveal>
-            <div className="section-tag mb-5">{t("why.tag")}</div>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white leading-tight tracking-tight">
-              {t("why.title")}{" "}
-              <span className="gold-gradient italic">{t("why.titleAccent")}</span>?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <div className="mt-5 h-px w-16 bg-[var(--primary)]" />
-          </Reveal>
+        <div className="grid lg:grid-cols-12 gap-8 mb-14">
+          <div className="lg:col-span-3">
+            <Reveal>
+              <div className="eyebrow mb-4">{t("approach.eyebrow")}</div>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <div className="mono-label">06 / Approach</div>
+            </Reveal>
+          </div>
+          <div className="lg:col-span-9">
+            <Reveal delay={0.1}>
+              <h2 className="h-section max-w-3xl">
+                {t("approach.title")}{" "}
+                <span className="gold-gradient italic">{t("approach.titleAccent")}</span>
+              </h2>
+            </Reveal>
+          </div>
         </div>
 
         {/* Cards */}
@@ -45,31 +44,22 @@ export default function WhyPartner() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="mt-14 grid md:grid-cols-3 gap-5 sm:gap-6"
+          className="grid md:grid-cols-3 gap-px bg-[var(--rule)] border border-[var(--rule)]"
         >
           {cards.map((c, i) => (
             <motion.div
               key={c.titleKey}
               variants={staggerItem}
-              className="group relative p-7 sm:p-8 rounded-sm border border-[rgba(201,169,97,0.14)] bg-gradient-to-br from-[#0d1929] to-[#0a1626] hover:border-[var(--primary)]/45 transition-all duration-500 overflow-hidden"
+              className="group relative bg-[var(--background)] p-7 sm:p-8 hover:bg-[var(--card)] transition-colors duration-400 overflow-hidden"
             >
-              {/* hover glow */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-[var(--primary)]/0 group-hover:bg-[var(--primary)]/8 blur-2xl transition-all duration-700" />
-
-              {/* number */}
-              <span className="absolute top-6 right-6 font-serif text-2xl text-[var(--primary)]/25 group-hover:text-[var(--primary)]/50 transition-colors duration-500">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-
-              <div className="relative">
-                <div className="w-14 h-14 rounded-sm border border-[rgba(201,169,97,0.3)] bg-[rgba(201,169,97,0.05)] flex items-center justify-center text-[var(--primary)] transition-all duration-500 group-hover:bg-[var(--primary)] group-hover:text-[#0a1420] group-hover:scale-105">
-                  <c.icon className="h-7 w-7" />
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-12 h-12 border border-[var(--rule-strong)] flex items-center justify-center text-[var(--brass)] group-hover:bg-[var(--brass)] group-hover:text-[var(--primary-foreground)] group-hover:border-[var(--brass)] transition-all duration-400">
+                  <c.icon className="h-6 w-6" />
                 </div>
-
-                <h3 className="mt-6 font-serif text-2xl text-white">{t(c.titleKey)}</h3>
-                <div className="mt-3 h-px w-10 bg-[var(--primary)]/40 group-hover:w-16 transition-all duration-500" />
-                <p className="mt-4 text-sm text-slate-400 leading-relaxed">{t(c.descKey)}</p>
+                <span className="mono-label opacity-40">{String(i + 1).padStart(2, "0")}</span>
               </div>
+              <h3 className="h-card mb-3">{t(c.titleKey)}</h3>
+              <p className="body-sm">{t(c.descKey)}</p>
             </motion.div>
           ))}
         </motion.div>

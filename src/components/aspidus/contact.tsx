@@ -4,31 +4,39 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
-  MapPin,
-  Clock,
   Mail,
   Lock,
   CheckCircle2,
   AlertCircle,
   Send,
+  ShieldCheck,
 } from "lucide-react";
 import { useI18n } from "./i18n";
 import { offices, CONTACT_EMAIL, CLIENT_PORTAL_URL } from "./data";
-import { Reveal, staggerContainer, staggerItem, easeOutExpo } from "./motion-helpers";
+import { Reveal, staggerContainer, staggerItem } from "./motion-helpers";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/meozwped";
+
+type InquiryType = "buying" | "selling" | "partnership" | "career_other" | "";
 
 export default function Contact() {
   const { t } = useI18n();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [inquiryType, setInquiryType] = useState<InquiryType>("");
+  const [supplierType, setSupplierType] = useState<string>("");
   const [emailError, setEmailError] = useState(false);
+
+  // Conditional section visibility logic (matches original site)
+  const showBusiness = inquiryType === "buying" || inquiryType === "selling";
+  const showVetting = inquiryType === "selling";
+  const showTrade = inquiryType === "buying" || inquiryType === "selling";
+  const showVerification = inquiryType === "buying" || inquiryType === "selling";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
     const form = e.currentTarget;
     const formData = new FormData(form);
-
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
@@ -38,6 +46,8 @@ export default function Contact() {
       if (res.ok) {
         setStatus("success");
         form.reset();
+        setInquiryType("");
+        setSupplierType("");
       } else {
         setStatus("error");
       }
@@ -52,154 +62,92 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-[var(--primary)]/4 blur-[140px] pointer-events-none" />
-
+    <section id="contact" className="relative py-20 sm:py-28 border-t border-[var(--rule)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* Header */}
-        <div className="max-w-2xl">
-          <Reveal>
-            <div className="section-tag mb-5">{t("contact.tag")}</div>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white leading-tight tracking-tight">
-              {t("contact.title")}{" "}
-              <span className="gold-gradient italic">{t("contact.titleAccent")}</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <div className="mt-5 h-px w-16 bg-[var(--primary)]" />
-          </Reveal>
-          <Reveal delay={0.22}>
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed">
-              {t("contact.desc")}
-            </p>
-          </Reveal>
+        <div className="grid lg:grid-cols-12 gap-8 mb-14">
+          <div className="lg:col-span-3">
+            <Reveal>
+              <div className="eyebrow mb-4">{t("contact.tag")}</div>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <div className="mono-label">09 / Contact</div>
+            </Reveal>
+          </div>
+          <div className="lg:col-span-9">
+            <Reveal delay={0.1}>
+              <h1 className="h-display max-w-3xl">
+                {t("contact.title")} <span className="gold-gradient italic">{t("contact.titleAccent")}</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.18}>
+              <p className="lead mt-5 max-w-2xl">{t("contact.desc")}</p>
+            </Reveal>
+          </div>
         </div>
 
-        {/* Office cards */}
-        <div className="mt-14">
-          <Reveal>
-            <h3 className="text-xs tracking-[0.25em] uppercase text-[var(--primary)] font-semibold mb-5">
-              {t("contact.offices")}
-            </h3>
-          </Reveal>
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-60px" }}
-            className="grid md:grid-cols-3 gap-4 sm:gap-5"
-          >
-            {offices.map((office) => (
-              <motion.div
-                key={office.id}
-                variants={staggerItem}
-                className="group p-5 rounded-sm border border-[rgba(201,169,97,0.14)] bg-[#0d1929] hover:border-[var(--primary)]/40 transition-colors duration-500"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="font-serif text-xl text-white">{office.city}</div>
-                  <span className="text-[0.6rem] font-bold tracking-widest text-[var(--primary)] px-2 py-0.5 border border-[rgba(201,169,97,0.3)] rounded-sm">
-                    {office.flag}
-                  </span>
-                </div>
-                <div className="text-[0.7rem] text-[var(--primary)] font-semibold tracking-wide mb-3">
-                  {office.legalName}
-                </div>
-                <div className="space-y-2 text-xs text-slate-400">
-                  <div className="flex items-start gap-2">
-                    <MapPin className="h-3.5 w-3.5 text-[var(--primary)] mt-0.5 flex-shrink-0" />
-                    <span className="leading-relaxed">{office.address}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-3.5 w-3.5 text-[var(--primary)] flex-shrink-0" />
-                    <span>
-                      {office.hours} ({office.hoursTz})
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Form + side info */}
-        <div className="mt-12 grid lg:grid-cols-5 gap-6 lg:gap-8">
+        {/* Two-column: form + sidebar */}
+        <div className="grid lg:grid-cols-12 gap-8">
           {/* Form */}
-          <Reveal className="lg:col-span-3">
-            <div className="p-6 sm:p-8 lg:p-10 rounded-sm border border-[rgba(201,169,97,0.16)] bg-gradient-to-br from-[#0d1929] to-[#0a1626]">
-              <div className="mb-6">
-                <div className="section-tag mb-3">{t("contact.sendTag")}</div>
-                <h3 className="font-serif text-2xl sm:text-3xl text-white">
-                  {t("contact.sendTitle")}{" "}
-                  <span className="gold-gradient italic">{t("contact.sendTitleAccent")}</span>
-                </h3>
-                <p className="mt-2 text-sm text-slate-400">{t("contact.sendDesc")}</p>
-              </div>
-
+          <Reveal className="lg:col-span-8">
+            <div className="bg-[var(--card)] border border-[var(--rule)] p-6 sm:p-8">
               <AnimatePresence mode="wait">
                 {status === "success" ? (
                   <motion.div
                     key="success"
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12"
+                    className="text-center py-16"
                   >
-                    <CheckCircle2 className="h-14 w-14 text-emerald-400 mx-auto mb-4" />
-                    <h4 className="font-serif text-2xl text-white mb-2">
-                      {t("contact.successTitle")}
-                    </h4>
-                    <p className="text-slate-400">{t("contact.successDesc")}</p>
+                    <CheckCircle2 className="h-12 w-12 text-[#4a9d75] mx-auto mb-4" />
+                    <h3 className="h-card text-xl mb-2">{t("contact.successTitle")}</h3>
+                    <p className="body-sm">{t("contact.successDesc")}</p>
                   </motion.div>
                 ) : status === "error" ? (
                   <motion.div
                     key="error"
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12"
+                    className="text-center py-16"
                   >
-                    <AlertCircle className="h-14 w-14 text-red-400 mx-auto mb-4" />
-                    <h4 className="font-serif text-2xl text-white mb-2">
-                      {t("contact.errorTitle")}
-                    </h4>
-                    <p className="text-slate-400">{t("contact.errorDesc")}</p>
-                    <button
-                      onClick={() => setStatus("idle")}
-                      className="mt-6 btn-ghost"
-                    >
-                      Try again
-                    </button>
+                    <AlertCircle className="h-12 w-12 text-[#b04838] mx-auto mb-4" />
+                    <h3 className="h-card text-xl mb-2">{t("contact.errorTitle")}</h3>
+                    <p className="body-sm mb-6">{t("contact.errorDesc")}</p>
+                    <button onClick={() => setStatus("idle")} className="btn-outline">Try again</button>
                   </motion.div>
                 ) : (
                   <motion.form
                     key="form"
                     onSubmit={handleSubmit}
                     initial={{ opacity: 1 }}
-                    className="space-y-5"
+                    className="space-y-6"
                   >
                     {/* Inquiry type */}
-                    <Field label={t("contact.inquiryType")}>
+                    <div>
+                      <label className="form-label">{t("contact.inquiryType")}</label>
                       <select
                         name="inquiry_type"
                         required
                         defaultValue=""
                         className="form-input"
+                        onChange={(e) => setInquiryType(e.target.value as InquiryType)}
                       >
-                        <option value="" disabled>
-                          {t("contact.inquiryPlaceholder")}
-                        </option>
+                        <option value="" disabled>{t("contact.inquiryPlaceholder")}</option>
                         <option value="buying">{t("contact.buying")}</option>
                         <option value="selling">{t("contact.selling")}</option>
                         <option value="partnership">{t("contact.partnership")}</option>
                         <option value="career_other">{t("contact.career")}</option>
                       </select>
-                    </Field>
+                    </div>
 
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <Field label={t("contact.name")}>
+                    {/* Name + Email */}
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="form-label">{t("contact.name")}</label>
                         <input name="name" type="text" required className="form-input" />
-                      </Field>
-                      <Field label={t("contact.email")}>
+                      </div>
+                      <div>
+                        <label className="form-label">{t("contact.email")}</label>
                         <input
                           name="email"
                           type="email"
@@ -208,44 +156,231 @@ export default function Contact() {
                           className="form-input"
                         />
                         {emailError && (
-                          <p className="mt-1.5 text-xs text-red-400">{t("contact.emailError")}</p>
+                          <p className="mt-1.5 text-xs text-[#b04838]">{t("form.emailCorporateWarn")}</p>
                         )}
-                      </Field>
+                      </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <Field label={t("contact.company")}>
-                        <input name="company_name" type="text" className="form-input" />
-                      </Field>
-                      <Field label={t("contact.office")}>
-                        <select name="contact_office" required defaultValue="" className="form-input">
-                          <option value="" disabled>
-                            {t("contact.officePlaceholder")}
+                    {/* CONDITIONAL: Business Details (buying/selling) */}
+                    <AnimatePresence>
+                      {showBusiness && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pt-6 border-t border-[var(--rule)]">
+                            <div className="form-section-title mb-4">{t("form.business.eyebrow")}</div>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                              <div>
+                                <label className="form-label">{t("form.business.companyName")}</label>
+                                <input name="company_name" type="text" className="form-input" />
+                              </div>
+                              <div>
+                                <label className="form-label">{t("form.business.position")}</label>
+                                <input name="position" type="text" className="form-input" />
+                              </div>
+                            </div>
+                            <div className="grid sm:grid-cols-2 gap-4 mt-4">
+                              <div>
+                                <label className="form-label">{t("form.business.regNo")}</label>
+                                <input name="company_reg_number" type="text" className="form-input" />
+                              </div>
+                              <div>
+                                <label className="form-label">{t("form.business.website")}</label>
+                                <input name="website" type="url" className="form-input" />
+                              </div>
+                            </div>
+                            <div className="mt-4">
+                              <label className="form-label">{t("form.business.hqAddress")}</label>
+                              <input name="company_address" type="text" className="form-input" />
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* CONDITIONAL: Supplier Vetting (selling only) */}
+                    <AnimatePresence>
+                      {showVetting && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pt-6 border-t border-[var(--rule)]">
+                            <div className="form-section-title mb-4">{t("form.vetting.eyebrow")}</div>
+                            <div>
+                              <label className="form-label">{t("form.vetting.role")}</label>
+                              <select
+                                name="supplier_type"
+                                defaultValue=""
+                                className="form-input"
+                                onChange={(e) => setSupplierType(e.target.value)}
+                              >
+                                <option value="" disabled>{t("form.vetting.rolePlaceholder")}</option>
+                                <option value="Manufacturer">{t("form.vetting.roleManufacturer")}</option>
+                                <option value="Authorized_Distributor">{t("form.vetting.roleDistributor")}</option>
+                                <option value="Trader">{t("form.vetting.roleTrader")}</option>
+                              </select>
+                            </div>
+
+                            {/* Manufacturer → certifications */}
+                            <AnimatePresence>
+                              {supplierType === "Manufacturer" && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: "auto" }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  className="overflow-hidden mt-4"
+                                >
+                                  <p className="body-sm mb-2">{t("form.vetting.certsLabel")}</p>
+                                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                    {["ISO", "HACCP", "Halal", "GMP"].map((cert) => (
+                                      <label key={cert} className="flex items-center gap-2 p-2.5 border border-[var(--rule)] hover:border-[var(--brass)]/40 cursor-pointer transition-colors">
+                                        <input type="checkbox" name="certs[]" value={cert} className="accent-[var(--brass)] w-3.5 h-3.5" />
+                                        <span className="text-xs text-[var(--parchment)]">{cert === "Halal" ? "Halal/Kosher" : cert}</span>
+                                      </label>
+                                    ))}
+                                  </div>
+                                  <div className="mt-3">
+                                    <label className="form-label">{t("form.vetting.otherCerts")}</label>
+                                    <input name="other_certs" type="text" className="form-input" />
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+
+                            {/* Trader → source proof */}
+                            <AnimatePresence>
+                              {supplierType === "Trader" && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: "auto" }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  className="overflow-hidden mt-4"
+                                >
+                                  <div>
+                                    <label className="form-label">{t("form.vetting.sourceProof")}</label>
+                                    <textarea name="supply_proof" rows={3} className="form-input resize-none" />
+                                  </div>
+                                  <p className="mt-2 text-xs text-[#b04838]">{t("form.vetting.resellerWarn")}</p>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* CONDITIONAL: Trade Specs (buying/selling) */}
+                    <AnimatePresence>
+                      {showTrade && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pt-6 border-t border-[var(--rule)]">
+                            <div className="form-section-title mb-4">{t("form.trade.eyebrow")}</div>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                              <div>
+                                <label className="form-label">{t("form.trade.commodity")}</label>
+                                <input name="commodity_name" type="text" className="form-input" />
+                              </div>
+                              <div>
+                                <label className="form-label">{t("form.trade.origin")}</label>
+                                <input name="origin" type="text" className="form-input" />
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
+                              <div>
+                                <label className="form-label">{t("form.trade.quantity")}</label>
+                                <input name="quantity" type="text" className="form-input" />
+                              </div>
+                              <div>
+                                <label className="form-label">{t("form.trade.incoterms")}</label>
+                                <select name="incoterms" defaultValue="" className="form-input">
+                                  <option value="" disabled>Incoterms</option>
+                                  <option value="CIF">CIF</option>
+                                  <option value="FOB">FOB</option>
+                                  <option value="ExWorks">ExWorks</option>
+                                </select>
+                              </div>
+                              <div className="col-span-2 sm:col-span-1">
+                                <label className="form-label">{t("form.trade.targetPrice")}</label>
+                                <input name="target_price" type="text" className="form-input" />
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* CONDITIONAL: Verification & Declaration (buying/selling) */}
+                    <AnimatePresence>
+                      {showVerification && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pt-6 border-t border-[var(--rule)]">
+                            <div className="form-section-title mb-4">{t("form.verify.eyebrow")}</div>
+                            <div>
+                              <label className="form-label">{t("form.verify.linkedin")}</label>
+                              <input name="linkedin" type="url" className="form-input" />
+                            </div>
+                            <label className="flex items-start gap-3 mt-4 p-4 border border-[var(--rule-strong)] bg-[var(--muted)] cursor-pointer">
+                              <input type="checkbox" name="declaration" value="yes" required className="mt-0.5 w-4 h-4 accent-[var(--brass)] flex-shrink-0" />
+                              <div>
+                                <div className="form-section-title text-[#b04838] mb-1">{t("form.verify.declarationTitle")}</div>
+                                <p className="text-xs text-[var(--parchment-dim)] leading-relaxed">{t("form.verify.declarationBody")}</p>
+                              </div>
+                            </label>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Recipient office */}
+                    <div>
+                      <label className="form-label">{t("contact.office")}</label>
+                      <select name="contact_office" required defaultValue="" className="form-input">
+                        <option value="" disabled>{t("contact.officePlaceholder")}</option>
+                        {offices.map((o) => (
+                          <option key={o.id} value={`${o.city} (${o.flag})`}>
+                            {o.city} ({o.flag})
                           </option>
-                          {offices.map((o) => (
-                            <option key={o.id} value={`${o.city} (${o.flag})`}>
-                              {o.city} ({o.flag})
-                            </option>
-                          ))}
-                        </select>
-                      </Field>
+                        ))}
+                      </select>
                     </div>
 
-                    <Field label={t("contact.message")}>
+                    {/* Message */}
+                    <div>
+                      <label className="form-label">{t("contact.message")}</label>
                       <textarea name="message" rows={4} required className="form-input resize-none" />
-                    </Field>
+                    </div>
 
                     <button
                       type="submit"
                       disabled={status === "sending" || emailError}
-                      className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed group"
+                      className="btn-brass w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed group"
                     >
                       {status === "sending" ? (
                         t("contact.sending")
                       ) : (
                         <>
                           {t("contact.send")}
-                          <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                         </>
                       )}
                     </button>
@@ -255,98 +390,75 @@ export default function Contact() {
             </div>
           </Reveal>
 
-          {/* Side info */}
-          <div className="lg:col-span-2 space-y-4">
-            <Reveal delay={0.1}>
-              <a
+          {/* Sidebar: direct contact + portal + offices */}
+          <div className="lg:col-span-4 space-y-4">
+            <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }}>
+              <motion.a
+                variants={staggerItem}
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="group block p-6 rounded-sm border border-[rgba(201,169,97,0.14)] bg-[#0d1929] hover:border-[var(--primary)]/40 transition-colors duration-500"
+                className="group block bg-[var(--card)] border border-[var(--rule)] hover:border-[var(--brass)]/40 transition-colors duration-400 p-5"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-sm border border-[rgba(201,169,97,0.3)] bg-[rgba(201,169,97,0.05)] flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-[#0a1420] transition-all duration-400">
-                    <Mail className="h-5 w-5" />
+                  <div className="w-10 h-10 border border-[var(--rule-strong)] flex items-center justify-center text-[var(--brass)] group-hover:bg-[var(--brass)] group-hover:text-[var(--primary-foreground)] transition-all">
+                    <Mail className="h-4 w-4" />
                   </div>
-                  <div>
-                    <div className="text-xs tracking-[0.18em] uppercase text-[var(--primary)] font-semibold">
-                      {t("contact.directTitle")}
-                    </div>
-                    <p className="mt-1 text-sm text-slate-400">{t("contact.directDesc")}</p>
-                    <p className="mt-2 text-white font-medium break-all">{CONTACT_EMAIL}</p>
+                  <div className="flex-1 min-w-0">
+                    <div className="mono-label text-[var(--brass)] mb-1">{t("contact.directTitle")}</div>
+                    <p className="body-sm mb-2">{t("contact.directDesc")}</p>
+                    <p className="text-sm text-[var(--parchment)] break-all">{CONTACT_EMAIL}</p>
                   </div>
                 </div>
-              </a>
-            </Reveal>
+              </motion.a>
 
-            <Reveal delay={0.18}>
-              <a
+              <motion.a
+                variants={staggerItem}
                 href={CLIENT_PORTAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block p-6 rounded-sm border border-[rgba(201,169,97,0.14)] bg-[#0d1929] hover:border-[var(--primary)]/40 transition-colors duration-500"
+                className="group block bg-[var(--card)] border border-[var(--rule)] hover:border-[var(--brass)]/40 transition-colors duration-400 p-5 mt-4"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-sm border border-[rgba(201,169,97,0.3)] bg-[rgba(201,169,97,0.05)] flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-[#0a1420] transition-all duration-400">
-                    <Lock className="h-5 w-5" />
+                  <div className="w-10 h-10 border border-[var(--rule-strong)] flex items-center justify-center text-[var(--brass)] group-hover:bg-[var(--brass)] group-hover:text-[var(--primary-foreground)] transition-all">
+                    <Lock className="h-4 w-4" />
                   </div>
-                  <div>
-                    <div className="text-xs tracking-[0.18em] uppercase text-[var(--primary)] font-semibold">
-                      {t("contact.portalTitle")}
-                    </div>
-                    <p className="mt-1 text-sm text-slate-400">{t("contact.portalDesc")}</p>
-                    <span className="mt-2 inline-flex items-center gap-1.5 text-sm text-white font-medium">
-                      {t("nav.portal")}
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                    </span>
+                  <div className="flex-1">
+                    <div className="mono-label text-[var(--brass)] mb-1">{t("contact.portalTitle")}</div>
+                    <p className="body-sm">{t("contact.portalDesc")}</p>
                   </div>
                 </div>
-              </a>
+              </motion.a>
+            </motion.div>
+
+            {/* Offices quick list */}
+            <Reveal delay={0.1}>
+              <div className="bg-[var(--card)] border border-[var(--rule)] p-5">
+                <div className="mono-label text-[var(--brass)] mb-4">{t("contact.offices")}</div>
+                <div className="space-y-3">
+                  {offices.map((o) => (
+                    <div key={o.id} className="flex items-center justify-between text-sm border-b border-[var(--rule)] last:border-b-0 pb-3 last:pb-0">
+                      <div>
+                        <div className="text-[var(--parchment)]">{o.city}</div>
+                        <div className="mono-label opacity-60">{o.hoursTz}</div>
+                      </div>
+                      <span className="pill">{o.flag}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </Reveal>
 
-            <Reveal delay={0.26}>
-              <div className="p-6 rounded-sm border border-[rgba(201,169,97,0.14)] bg-gradient-to-br from-[rgba(201,169,97,0.06)] to-transparent">
-                <p className="font-serif text-lg text-white leading-snug">
-                  &ldquo;The name for Integrity. Connecting global commodity markets since 2007.&rdquo;
+            {/* Trust badge */}
+            <Reveal delay={0.15}>
+              <div className="bg-[var(--forest-deep)]/40 border border-[var(--rule-strong)] p-5 flex items-start gap-3">
+                <ShieldCheck className="h-5 w-5 text-[#6ba889] flex-shrink-0 mt-0.5" />
+                <p className="text-xs text-[var(--parchment-dim)] leading-relaxed">
+                  All counterparties undergo KYC/AML verification. Submission of this form constitutes a business inquiry under our compliance framework.
                 </p>
               </div>
             </Reveal>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        :global(.form-input) {
-          width: 100%;
-          padding: 0.75rem 0.9rem;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid rgba(201, 169, 97, 0.18);
-          border-radius: 2px;
-          color: #eef2f7;
-          font-size: 0.9rem;
-          transition: all 0.3s ease;
-        }
-        :global(.form-input:focus) {
-          outline: none;
-          border-color: var(--primary);
-          background: rgba(201, 169, 97, 0.04);
-          box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
-        }
-        :global(.form-input::placeholder) {
-          color: #64748b;
-        }
-        :global(select.form-input option) {
-          background: #0d1929;
-          color: #eef2f7;
-        }
-      `}</style>
     </section>
-  );
-}
-
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="block text-xs font-medium tracking-wide text-slate-400 mb-2">{label}</span>
-      {children}
-    </label>
   );
 }

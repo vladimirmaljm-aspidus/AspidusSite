@@ -45,64 +45,68 @@
 }
 
 /*
-  ASPIDUS — Corporate Design System
-  Deep ink navy + warm brass/champagne gold + deep teal accent + parchment text
+  ASPIDUS — Institutional Corporate Design System
+  Premium ink/charcoal surfaces + muted brass accent + parchment text
+  References: Trafigura / Vitol / Cargill / Glencore editorial restraint
   Forced dark theme (the brand is dark-first)
 */
 :root,
 .dark {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 
-  /* Surfaces — layered navy */
-  --background: #060d18;
-  --foreground: #e8e4d8;
+  /* Surfaces — layered ink/charcoal */
+  --background: #0a0d12;
+  --foreground: #d8d4ca;
 
-  --card: #0b1626;
-  --card-foreground: #e8e4d8;
+  --card: #10141b;
+  --card-foreground: #d8d4ca;
 
-  --popover: #0b1626;
-  --popover-foreground: #e8e4d8;
+  --popover: #10141b;
+  --popover-foreground: #d8d4ca;
 
-  /* Brand: warm brass/champagne gold */
-  --primary: #c9a55c;
-  --primary-foreground: #0a1420;
+  /* Brand: muted brass (less saturated, more institutional) */
+  --primary: #b8975a;
+  --primary-foreground: #0a0d12;
 
-  --secondary: #101d2e;
-  --secondary-foreground: #c4c0b4;
+  --secondary: #161b24;
+  --secondary-foreground: #b8b4aa;
 
-  --muted: #0c1726;
-  --muted-foreground: #7e8898;
+  --muted: #0e1218;
+  --muted-foreground: #6b7280;
 
-  /* Accent: deep teal */
-  --accent: #14463a;
-  --accent-foreground: #d4e6dc;
+  /* Accent: deep forest (ESG / sustainability signal) */
+  --accent: #1a3a2e;
+  --accent-foreground: #c8d8cd;
 
-  --destructive: #c8553d;
-  --border: rgba(201, 165, 92, 0.16);
-  --input: rgba(255, 255, 255, 0.07);
-  --ring: #c9a55c;
+  --destructive: #b04838;
+  --border: rgba(184, 151, 90, 0.14);
+  --input: rgba(255, 255, 255, 0.06);
+  --ring: #b8975a;
 
-  --chart-1: #c9a55c;
-  --chart-2: #4a9d83;
+  --chart-1: #b8975a;
+  --chart-2: #4a8d75;
   --chart-3: #6b8cae;
-  --chart-4: #d98c5f;
-  --chart-5: #9d7ec9;
+  --chart-4: #c97f4f;
+  --chart-5: #8d6ea8;
 
-  --sidebar: #0b1626;
-  --sidebar-foreground: #e8e4d8;
-  --sidebar-primary: #c9a55c;
-  --sidebar-primary-foreground: #0a1420;
-  --sidebar-accent: #101d2e;
-  --sidebar-accent-foreground: #e8e4d8;
-  --sidebar-border: rgba(201, 165, 92, 0.16);
-  --sidebar-ring: #c9a55c;
+  --sidebar: #10141b;
+  --sidebar-foreground: #d8d4ca;
+  --sidebar-primary: #b8975a;
+  --sidebar-primary-foreground: #0a0d12;
+  --sidebar-accent: #161b24;
+  --sidebar-accent-foreground: #d8d4ca;
+  --sidebar-border: rgba(184, 151, 90, 0.14);
+  --sidebar-ring: #b8975a;
 
   /* Editorial extras */
-  --gold-soft: #d9bd7e;
-  --gold-deep: #a8853d;
-  --teal-deep: #0f3528;
-  --parchment: #e8e4d8;
-  --parchment-dim: #a8a496;
+  --brass: #b8975a;
+  --brass-soft: #c9aa6e;
+  --brass-deep: #8a703f;
+  --forest-deep: #0f2a20;
+  --parchment: #d8d4ca;
+  --parchment-dim: #8a8678;
+  --rule: rgba(216, 212, 202, 0.1);
+  --rule-strong: rgba(216, 212, 202, 0.18);
 }
 
 @layer base {
@@ -422,4 +426,384 @@
 }
 .breadcrumb .sep {
   opacity: 0.4;
+}
+
+/* ===================================================================
+   INSTITUTIONAL TYPOGRAPHY (Trafigura/Vitol-level restraint)
+   =================================================================== */
+
+/* Editorial headline scale — smaller, denser */
+.h-display {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--parchment);
+}
+.h-section {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--parchment);
+}
+.h-card {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: var(--parchment);
+}
+
+/* Eyebrow / kicker label */
+.eyebrow {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brass);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--brass);
+  opacity: 0.6;
+}
+
+/* Body lead */
+.lead {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--parchment-dim);
+}
+.body-sm {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--parchment-dim);
+}
+.mono-label {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--parchment-dim);
+}
+
+/* ===================================================================
+   TICKER (live commodity strip)
+   =================================================================== */
+.ticker-wrap {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--muted);
+  overflow: hidden;
+  position: relative;
+}
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.7rem 0;
+  white-space: nowrap;
+  animation: tickerScroll 60s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--parchment-dim);
+}
+.ticker-item .sym {
+  font-weight: 600;
+  color: var(--parchment);
+  letter-spacing: 0.04em;
+}
+.ticker-item .val {
+  font-variant-numeric: tabular-nums;
+  color: var(--parchment);
+}
+.ticker-item .chg-up { color: #4a9d75; }
+.ticker-item .chg-dn { color: #b04838; }
+
+/* ===================================================================
+   RULES & DIVIDERS
+   =================================================================== */
+.rule {
+  height: 1px;
+  background: var(--rule);
+  border: none;
+}
+.rule-strong {
+  height: 1px;
+  background: var(--rule-strong);
+  border: none;
+}
+.rule-brass {
+  height: 1px;
+  width: 48px;
+  background: var(--brass);
+  border: none;
+}
+
+/* ===================================================================
+   DATA TABLE (financial / specs)
+   =================================================================== */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.data-table thead th {
+  text-align: left;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--parchment-dim);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.data-table tbody td {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--parchment);
+  vertical-align: top;
+}
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.data-table .num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* ===================================================================
+   SUB-NAV (sticky in-page section nav, Trafigura-style)
+   =================================================================== */
+.sub-nav {
+  position: sticky;
+  top: 64px;
+  z-index: 30;
+  background: rgba(10, 13, 18, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rule);
+}
+.sub-nav-track {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sub-nav-track::-webkit-scrollbar { display: none; }
+.sub-nav-item {
+  flex-shrink: 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--parchment-dim);
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+}
+.sub-nav-item:hover {
+  color: var(--parchment);
+}
+.sub-nav-item.active {
+  color: var(--brass);
+  border-bottom-color: var(--brass);
+}
+
+/* ===================================================================
+   BADGE / PILL
+   =================================================================== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brass);
+  background: rgba(184, 151, 90, 0.08);
+  border: 1px solid rgba(184, 151, 90, 0.22);
+  border-radius: 2px;
+}
+.pill-forest {
+  color: #6ba889;
+  background: rgba(74, 141, 117, 0.08);
+  border-color: rgba(74, 141, 117, 0.25);
+}
+
+/* ===================================================================
+   FORM (institutional)
+   =================================================================== */
+.form-input {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  color: var(--parchment);
+  font-size: 0.875rem;
+  font-family: var(--font-inter), sans-serif;
+  transition: all 0.25s ease;
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--brass);
+  background: rgba(184, 151, 90, 0.03);
+  box-shadow: 0 0 0 1px rgba(184, 151, 90, 0.2);
+}
+.form-input::placeholder {
+  color: #5a5f6a;
+}
+select.form-input option {
+  background: #10141b;
+  color: var(--parchment);
+}
+.form-label {
+  display: block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--parchment-dim);
+  margin-bottom: 0.5rem;
+}
+.form-section-title {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+/* ===================================================================
+   BUTTONS (refined)
+   =================================================================== */
+.btn-brass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--primary-foreground);
+  background: var(--brass);
+  border: 1px solid var(--brass);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-brass:hover {
+  background: var(--brass-soft);
+  border-color: var(--brass-soft);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--parchment);
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-outline:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+.btn-ghost-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--brass);
+  background: none;
+  border: none;
+  transition: gap 0.3s ease;
+}
+.btn-ghost-sm:hover {
+  gap: 0.65rem;
+}
+
+/* keep old btn classes for back-compat */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--primary-foreground);
+  background: var(--brass);
+  border: 1px solid var(--brass);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover {
+  background: var(--brass-soft);
+  border-color: var(--brass-soft);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--parchment);
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-ghost:hover {
+  border-color: var(--brass);
+  color: var(--brass);
 }
