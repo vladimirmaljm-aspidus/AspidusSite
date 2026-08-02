@@ -62,10 +62,10 @@ export default function Contact() {
             <div className="section-tag mb-5">{t("contact.tag")}</div>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white leading-tight tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white leading-tight tracking-tight">
               {t("contact.title")}{" "}
               <span className="gold-gradient italic">{t("contact.titleAccent")}</span>
-            </h2>
+            </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <div className="mt-5 h-px w-16 bg-[var(--primary)]" />

@@ -46,55 +46,63 @@
 
 /*
   ASPIDUS — Corporate Design System
-  Deep midnight navy + champagne gold + emerald accent
+  Deep ink navy + warm brass/champagne gold + deep teal accent + parchment text
   Forced dark theme (the brand is dark-first)
 */
 :root,
 .dark {
   --radius: 0.75rem;
 
-  /* Surfaces */
-  --background: #08111d;
-  --foreground: #eef2f7;
+  /* Surfaces — layered navy */
+  --background: #060d18;
+  --foreground: #e8e4d8;
 
-  --card: #0d1929;
-  --card-foreground: #eef2f7;
+  --card: #0b1626;
+  --card-foreground: #e8e4d8;
 
-  --popover: #0d1929;
-  --popover-foreground: #eef2f7;
+  --popover: #0b1626;
+  --popover-foreground: #e8e4d8;
 
-  /* Brand: champagne gold */
-  --primary: #c9a961;
+  /* Brand: warm brass/champagne gold */
+  --primary: #c9a55c;
   --primary-foreground: #0a1420;
 
-  --secondary: #122033;
-  --secondary-foreground: #cbd5e1;
+  --secondary: #101d2e;
+  --secondary-foreground: #c4c0b4;
 
-  --muted: #0f1c2e;
-  --muted-foreground: #8a9bb1;
+  --muted: #0c1726;
+  --muted-foreground: #7e8898;
 
-  --accent: #1b3a2e;
-  --accent-foreground: #d9e8df;
+  /* Accent: deep teal */
+  --accent: #14463a;
+  --accent-foreground: #d4e6dc;
 
   --destructive: #c8553d;
-  --border: rgba(201, 169, 97, 0.14);
-  --input: rgba(255, 255, 255, 0.08);
-  --ring: #c9a961;
+  --border: rgba(201, 165, 92, 0.16);
+  --input: rgba(255, 255, 255, 0.07);
+  --ring: #c9a55c;
 
-  --chart-1: #c9a961;
-  --chart-2: #4ea88a;
+  --chart-1: #c9a55c;
+  --chart-2: #4a9d83;
   --chart-3: #6b8cae;
   --chart-4: #d98c5f;
   --chart-5: #9d7ec9;
 
-  --sidebar: #0d1929;
-  --sidebar-foreground: #eef2f7;
-  --sidebar-primary: #c9a961;
+  --sidebar: #0b1626;
+  --sidebar-foreground: #e8e4d8;
+  --sidebar-primary: #c9a55c;
   --sidebar-primary-foreground: #0a1420;
-  --sidebar-accent: #122033;
-  --sidebar-accent-foreground: #eef2f7;
-  --sidebar-border: rgba(201, 169, 97, 0.14);
-  --sidebar-ring: #c9a961;
+  --sidebar-accent: #101d2e;
+  --sidebar-accent-foreground: #e8e4d8;
+  --sidebar-border: rgba(201, 165, 92, 0.16);
+  --sidebar-ring: #c9a55c;
+
+  /* Editorial extras */
+  --gold-soft: #d9bd7e;
+  --gold-deep: #a8853d;
+  --teal-deep: #0f3528;
+  --parchment: #e8e4d8;
+  --parchment-dim: #a8a496;
 }
 
 @layer base {
@@ -283,4 +291,135 @@
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+}
+
+/* ---------- Editorial: numbered marker ---------- */
+.num-marker {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-style: italic;
+  color: var(--gold-deep);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Editorial: section index ---------- */
+.section-index {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--parchment-dim);
+  text-transform: uppercase;
+}
+
+/* ---------- Split text reveal (GSAP) ---------- */
+.split-line {
+  overflow: hidden;
+  display: block;
+}
+
+/* ---------- Magnetic underline ---------- */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- Product spec table ---------- */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.spec-table tr {
+  border-bottom: 1px solid rgba(201, 165, 92, 0.1);
+}
+.spec-table td {
+  padding: 1rem 0;
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+.spec-table td:first-child {
+  width: 38%;
+  color: var(--parchment-dim);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-right: 1.5rem;
+}
+.spec-table td:last-child {
+  color: var(--parchment);
+  font-weight: 400;
+}
+
+/* ---------- Page transition ---------- */
+.page-enter {
+  animation: pageEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Filter chip ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--parchment-dim);
+  border: 1px solid rgba(201, 165, 92, 0.18);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+}
+.chip:hover {
+  color: var(--parchment);
+  border-color: rgba(201, 165, 92, 0.4);
+}
+.chip.active {
+  color: var(--primary-foreground);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--parchment-dim);
+}
+.breadcrumb a {
+  color: var(--parchment-dim);
+  transition: color 0.3s;
+}
+.breadcrumb a:hover {
+  color: var(--primary);
+}
+.breadcrumb .sep {
+  opacity: 0.4;
 }
