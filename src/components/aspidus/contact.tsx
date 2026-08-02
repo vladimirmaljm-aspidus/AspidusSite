@@ -90,7 +90,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Form */}
           <Reveal className="lg:col-span-8">
-            <div className="bg-[var(--card)] border border-[var(--rule)] p-6 sm:p-8">
+            <div className="bg-white border border-[var(--rule)] p-6 sm:p-8">
               <AnimatePresence mode="wait">
                 {status === "success" ? (
                   <motion.div
@@ -241,9 +241,9 @@ export default function Contact() {
                                   <p className="body-sm mb-2">{t("form.vetting.certsLabel")}</p>
                                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                                     {["ISO", "HACCP", "Halal", "GMP"].map((cert) => (
-                                      <label key={cert} className="flex items-center gap-2 p-2.5 border border-[var(--rule)] hover:border-[var(--brass)]/40 cursor-pointer transition-colors">
+                                      <label key={cert} className="flex items-center gap-2 p-2.5 border border-[var(--rule)] hover:border-[var(--brass)] cursor-pointer transition-colors">
                                         <input type="checkbox" name="certs[]" value={cert} className="accent-[var(--brass)] w-3.5 h-3.5" />
-                                        <span className="text-xs text-[var(--parchment)]">{cert === "Halal" ? "Halal/Kosher" : cert}</span>
+                                        <span className="text-xs text-[var(--ink)]">{cert === "Halal" ? "Halal/Kosher" : cert}</span>
                                       </label>
                                     ))}
                                   </div>
@@ -339,11 +339,11 @@ export default function Contact() {
                               <label className="form-label">{t("form.verify.linkedin")}</label>
                               <input name="linkedin" type="url" className="form-input" />
                             </div>
-                            <label className="flex items-start gap-3 mt-4 p-4 border border-[var(--rule-strong)] bg-[var(--muted)] cursor-pointer">
+                            <label className="flex items-start gap-3 mt-4 p-4 border border-[var(--rule-strong)] bg-[var(--parchment-warm)] cursor-pointer">
                               <input type="checkbox" name="declaration" value="yes" required className="mt-0.5 w-4 h-4 accent-[var(--brass)] flex-shrink-0" />
                               <div>
                                 <div className="form-section-title text-[#b04838] mb-1">{t("form.verify.declarationTitle")}</div>
-                                <p className="text-xs text-[var(--parchment-dim)] leading-relaxed">{t("form.verify.declarationBody")}</p>
+                                <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">{t("form.verify.declarationBody")}</p>
                               </div>
                             </label>
                           </div>
@@ -396,7 +396,7 @@ export default function Contact() {
               <motion.a
                 variants={staggerItem}
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="group block bg-[var(--card)] border border-[var(--rule)] hover:border-[var(--brass)]/40 transition-colors duration-400 p-5"
+                className="group block bg-white border border-[var(--rule)] hover:border-[var(--brass)] transition-colors duration-400 p-5"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-[var(--rule-strong)] flex items-center justify-center text-[var(--brass)] group-hover:bg-[var(--brass)] group-hover:text-[var(--primary-foreground)] transition-all">
@@ -405,7 +405,7 @@ export default function Contact() {
                   <div className="flex-1 min-w-0">
                     <div className="mono-label text-[var(--brass)] mb-1">{t("contact.directTitle")}</div>
                     <p className="body-sm mb-2">{t("contact.directDesc")}</p>
-                    <p className="text-sm text-[var(--parchment)] break-all">{CONTACT_EMAIL}</p>
+                    <p className="text-sm text-[var(--ink)] break-all">{CONTACT_EMAIL}</p>
                   </div>
                 </div>
               </motion.a>
@@ -415,7 +415,7 @@ export default function Contact() {
                 href={CLIENT_PORTAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block bg-[var(--card)] border border-[var(--rule)] hover:border-[var(--brass)]/40 transition-colors duration-400 p-5 mt-4"
+                className="group block bg-white border border-[var(--rule)] hover:border-[var(--brass)] transition-colors duration-400 p-5 mt-4"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-[var(--rule-strong)] flex items-center justify-center text-[var(--brass)] group-hover:bg-[var(--brass)] group-hover:text-[var(--primary-foreground)] transition-all">
@@ -431,13 +431,13 @@ export default function Contact() {
 
             {/* Offices quick list */}
             <Reveal delay={0.1}>
-              <div className="bg-[var(--card)] border border-[var(--rule)] p-5">
+              <div className="bg-white border border-[var(--rule)] p-5">
                 <div className="mono-label text-[var(--brass)] mb-4">{t("contact.offices")}</div>
                 <div className="space-y-3">
                   {offices.map((o) => (
                     <div key={o.id} className="flex items-center justify-between text-sm border-b border-[var(--rule)] last:border-b-0 pb-3 last:pb-0">
                       <div>
-                        <div className="text-[var(--parchment)]">{o.city}</div>
+                        <div className="text-[var(--ink)]">{o.city}</div>
                         <div className="mono-label opacity-60">{o.hoursTz}</div>
                       </div>
                       <span className="pill">{o.flag}</span>
@@ -449,9 +449,9 @@ export default function Contact() {
 
             {/* Trust badge */}
             <Reveal delay={0.15}>
-              <div className="bg-[var(--forest-deep)]/40 border border-[var(--rule-strong)] p-5 flex items-start gap-3">
+              <div className="bg-[var(--forest)] border border-[var(--rule-strong)] p-5 flex items-start gap-3">
                 <ShieldCheck className="h-5 w-5 text-[#6ba889] flex-shrink-0 mt-0.5" />
-                <p className="text-xs text-[var(--parchment-dim)] leading-relaxed">
+                <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">
                   All counterparties undergo KYC/AML verification. Submission of this form constitutes a business inquiry under our compliance framework.
                 </p>
               </div>

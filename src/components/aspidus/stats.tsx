@@ -10,25 +10,25 @@ function Counter({ value, prefix = "", suffix = "" }: { value: number; prefix?: 
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const count = useMotionValue(0);
   const rounded = useTransform(count, (v) => `${prefix}${Math.round(v)}${suffix}`);
-
   React.useEffect(() => {
     if (inView) {
       const controls = animate(count, value, { duration: 1.8, ease: [0.16, 1, 0.3, 1] });
       return controls.stop;
     }
   }, [inView, value, count]);
-
   return <motion.span ref={ref}>{rounded}</motion.span>;
 }
 
 export default function Stats() {
   const { t } = useI18n();
-
   return (
-    <section className="relative py-12 sm:py-16 bg-[var(--background)] border-y border-[var(--rule)]">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Compact horizontal strip */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--rule)]">
+    <section className="relative py-14 sm:py-16 bg-[var(--ink)] overflow-hidden">
+      {/* subtle mesh on dark */}
+      <div className="absolute inset-0 opacity-20" style={{
+        background: "radial-gradient(at 20% 50%, rgba(154,123,63,0.4), transparent 50%), radial-gradient(at 80% 50%, rgba(45,74,62,0.3), transparent 50%)"
+      }} />
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 relative">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s, i) => (
             <motion.div
               key={s.labelKey}
@@ -36,14 +36,14 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
-              className="relative bg-[var(--background)] px-5 py-6 group"
+              className="text-center lg:text-left"
             >
-              <span className="mono-label opacity-40 text-[0.6rem]">{String(i + 1).padStart(2, "0")}</span>
-              <div className="font-serif text-3xl sm:text-4xl gold-gradient leading-none mt-2">
+              <span className="mono-label" style={{ color: "rgba(245,242,234,0.4)" }}>{String(i + 1).padStart(2, "0")}</span>
+              <div className="font-serif text-4xl sm:text-5xl leading-none mt-2" style={{ color: "var(--brass-soft)" }}>
                 <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
               </div>
-              <div className="rule-brass mt-3 mb-2 group-hover:w-14 transition-all duration-500" />
-              <p className="mono-label leading-relaxed text-[0.65rem]">{t(s.labelKey)}</p>
+              <div className="mt-3 h-0.5 w-10 rounded-full" style={{ background: "var(--brass)" }} />
+              <p className="mono-label leading-relaxed text-[0.65rem] mt-3" style={{ color: "rgba(245,242,234,0.7)" }}>{t(s.labelKey)}</p>
             </motion.div>
           ))}
         </div>

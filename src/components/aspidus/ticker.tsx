@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useI18n } from "./i18n";
+import { PulseDot } from "./animated-icons";
 
 type Price = {
   symbol: string;
@@ -65,7 +66,6 @@ export default function Ticker() {
       }
     };
     fetchData();
-    // refresh every 90s
     const id = setInterval(fetchData, 90000);
     return () => {
       mounted = false;
@@ -73,39 +73,37 @@ export default function Ticker() {
     };
   }, []);
 
-  // Loading state
   if (loading) {
     return (
       <div className="ticker-wrap">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-center py-3">
-          <span className="mono-label opacity-50">Loading live market data…</span>
+          <span className="mono-label" style={{ color: "rgba(245,242,234,0.6)" }}>Loading live market data…</span>
         </div>
       </div>
     );
   }
 
-  // Unavailable — honest fallback, never fabricate
   if (!data || data.status !== "ok" || data.prices.length === 0) {
     return (
       <div className="ticker-wrap">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between py-3">
-          <span className="mono-label text-[var(--brass)]">{t("ticker.label")}</span>
-          <span className="mono-label opacity-50">Live feed temporarily unavailable</span>
+          <span className="mono-label" style={{ color: "var(--brass-soft)" }}>{t("ticker.label")}</span>
+          <span className="mono-label" style={{ color: "rgba(245,242,234,0.5)" }}>Live feed temporarily unavailable</span>
         </div>
       </div>
     );
   }
 
   const prices = data.prices;
-  const items = [...prices, ...prices]; // duplicate for seamless loop
+  const items = [...prices, ...prices];
 
   return (
     <div className="ticker-wrap">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex items-center gap-4 py-2">
           <div className="flex-shrink-0 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4a9d75] animate-pulse" />
-            <span className="mono-label text-[var(--brass)]">{t("ticker.label")}</span>
+            <PulseDot size={6} color="#6dbd8e" />
+            <span className="mono-label" style={{ color: "var(--brass-soft)" }}>{t("ticker.label")}</span>
           </div>
           <div className="flex-1 overflow-hidden">
             <div className="ticker-track">
@@ -115,7 +113,7 @@ export default function Ticker() {
                   <span key={i} className="ticker-item">
                     <span className="sym">{p.symbol}</span>
                     <span className="val">{fmtPrice(p.price)}</span>
-                    <span className="text-[var(--parchment-dim)] text-[0.7rem]">{p.currency}</span>
+                    <span style={{ color: "rgba(245,242,234,0.5)", fontSize: "0.7rem" }}>{p.currency}</span>
                     <span className={up ? "chg-up" : "chg-dn"}>
                       {up ? "▲" : "▼"} {p.changePct !== null ? `${Math.abs(p.changePct)}%` : "—"}
                     </span>
@@ -124,12 +122,12 @@ export default function Ticker() {
               })}
             </div>
           </div>
-          <div className="flex-shrink-0 hidden sm:flex items-center gap-2 pl-3 border-l border-[var(--rule)]">
-            <span className="mono-label opacity-50">Updated</span>
-            <span className="mono-label text-[var(--parchment)]">{timeAgo(data.fetchedAt)}</span>
+          <div className="flex-shrink-0 hidden sm:flex items-center gap-2 pl-3" style={{ borderLeft: "1px solid rgba(245,242,234,0.12)" }}>
+            <span className="mono-label" style={{ color: "rgba(245,242,234,0.5)" }}>Updated</span>
+            <span className="mono-label" style={{ color: "var(--parchment)" }}>{timeAgo(data.fetchedAt)}</span>
           </div>
         </div>
-        <div className="pb-1.5 text-[0.65rem] text-[var(--parchment-dim)] opacity-60">
+        <div className="pb-1.5" style={{ color: "rgba(245,242,234,0.4)", fontSize: "0.65rem" }}>
           {data.source}. Indicative reference values for information only — not a solicitation or offer.
         </div>
       </div>

@@ -30,8 +30,8 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
     return (
       <div className="pt-32 pb-24 page-enter">
         <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
-          <h1 className="font-serif text-4xl text-[var(--parchment)] mb-4">{t("product.notFound")}</h1>
-          <p className="text-[var(--parchment-dim)] mb-8">{t("product.notFoundDesc")}</p>
+          <h1 className="font-serif text-4xl text-[var(--ink)] mb-4">{t("product.notFound")}</h1>
+          <p className="text-[var(--muted-foreground)] mb-8">{t("product.notFoundDesc")}</p>
           <RLink to="/commodities" className="btn-primary group">
             {t("product.browseCatalog")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -49,7 +49,7 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
   return (
     <div className="pt-28 sm:pt-32 page-enter">
       {/* Breadcrumb */}
-      <section className="border-b border-[rgba(201,165,92,0.12)]">
+      <section className="border-b border-[rgba(26,29,36,0.09)]">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 py-4">
           <div className="breadcrumb">
             <a href="#/" onClick={(e) => { e.preventDefault(); navigate("/"); }}>{t("nav.home")}</a>
@@ -73,15 +73,15 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
             {/* Image */}
             <div className="lg:col-span-6" data-reveal>
-              <div className="relative aspect-[4/5] sm:aspect-[5/5] overflow-hidden rounded-sm border border-[rgba(201,165,92,0.16)]">
+              <div className="relative aspect-[4/5] sm:aspect-[5/5] overflow-hidden rounded-sm border border-[rgba(26,29,36,0.1)]">
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060d18]/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--parchment)]/40 via-transparent to-transparent" />
                 {sector && (
-                  <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-[#060d18]/85 backdrop-blur-sm border border-[rgba(201,165,92,0.3)] text-xs font-semibold tracking-wider uppercase text-[var(--primary)]">
+                  <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-[var(--parchment)]/85 backdrop-blur-sm border border-[rgba(26,29,36,0.2)] text-xs font-semibold tracking-wider uppercase text-[var(--primary)]">
                     <sector.icon className="h-4 w-4" />
                     {sector.name}
                   </div>
@@ -94,27 +94,27 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
               <div className="text-xs tracking-[0.25em] uppercase text-[var(--primary)] font-semibold mb-3">
                 {sector?.name} · {t("product.sector")}
               </div>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[var(--parchment)] leading-[1.05] tracking-tight">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[var(--ink)] leading-[1.05] tracking-tight">
                 {product.name}
               </h1>
               <div className="mt-5 h-px w-16 bg-[var(--primary)]" />
-              <p className="mt-6 text-lg text-[var(--parchment-dim)] leading-relaxed">
+              <p className="mt-6 text-lg text-[var(--muted-foreground)] leading-relaxed">
                 {product.shortDescription}
               </p>
 
               {/* Quick meta */}
               <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-sm border border-[rgba(201,165,92,0.12)] bg-[#0b1626]">
-                  <div className="text-[0.65rem] tracking-[0.2em] uppercase text-[var(--parchment-dim)] mb-1">
+                <div className="p-4 rounded-sm border border-[rgba(26,29,36,0.09)] bg-white">
+                  <div className="text-[0.65rem] tracking-[0.2em] uppercase text-[var(--muted-foreground)] mb-1">
                     {t("product.sector")}
                   </div>
-                  <div className="font-serif text-lg text-[var(--parchment)]">{sector?.name}</div>
+                  <div className="font-serif text-lg text-[var(--ink)]">{sector?.name}</div>
                 </div>
-                <div className="p-4 rounded-sm border border-[rgba(201,165,92,0.12)] bg-[#0b1626]">
-                  <div className="text-[0.65rem] tracking-[0.2em] uppercase text-[var(--parchment-dim)] mb-1">
+                <div className="p-4 rounded-sm border border-[rgba(26,29,36,0.09)] bg-white">
+                  <div className="text-[0.65rem] tracking-[0.2em] uppercase text-[var(--muted-foreground)] mb-1">
                     {t("product.overview")}
                   </div>
-                  <div className="font-serif text-lg text-[var(--parchment)]">{availableTabs.length} sections</div>
+                  <div className="font-serif text-lg text-[var(--ink)]">{availableTabs.length} sections</div>
                 </div>
               </div>
 
@@ -131,14 +131,14 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
       </section>
 
       {/* Spec tabs */}
-      <section className="py-12 sm:py-16 bg-[#0a1626] border-y border-[rgba(201,165,92,0.12)]">
+      <section className="py-12 sm:py-16 bg-[var(--parchment-warm)] border-y border-[rgba(26,29,36,0.09)]">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid lg:grid-cols-12 gap-10">
             {/* Tab nav (sticky sidebar) */}
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-32">
                 <div className="section-tag mb-5">{t("product.overview")}</div>
-                <h2 className="font-serif text-2xl sm:text-3xl text-[var(--parchment)] mb-6">
+                <h2 className="font-serif text-2xl sm:text-3xl text-[var(--ink)] mb-6">
                   {t("product.specification")}
                 </h2>
                 <nav className="flex lg:flex-col gap-2 overflow-x-auto no-scrollbar">
@@ -152,7 +152,7 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
                         className={`flex items-center gap-3 px-4 py-3 rounded-sm border text-left whitespace-nowrap lg:whitespace-normal transition-all duration-300 ${
                           activeTab === i
                             ? "border-[var(--primary)] bg-[rgba(201,165,92,0.08)] text-[var(--primary)]"
-                            : "border-[rgba(201,165,92,0.12)] text-[var(--parchment-dim)] hover:text-[var(--parchment)] hover:border-[rgba(201,165,92,0.3)]"
+                            : "border-[rgba(26,29,36,0.09)] text-[var(--muted-foreground)] hover:text-[var(--ink)] hover:border-[rgba(26,29,36,0.2)]"
                         }`}
                       >
                         <Icon className="h-4 w-4 flex-shrink-0" />
@@ -182,7 +182,7 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
                           const Icon = meta?.icon || FileText;
                           return <Icon className="h-6 w-6 text-[var(--primary)]" />;
                         })()}
-                        <h3 className="font-serif text-2xl text-[var(--parchment)]">
+                        <h3 className="font-serif text-2xl text-[var(--ink)]">
                           {(() => {
                             const meta = TAB_META[availableTabs[activeTab].titleKey];
                             return meta ? t(meta.key) : availableTabs[activeTab].titleKey;
@@ -201,7 +201,7 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
                       </table>
                     </>
                   ) : (
-                    <p className="text-[var(--parchment-dim)]">{t("product.noData")}</p>
+                    <p className="text-[var(--muted-foreground)]">{t("product.noData")}</p>
                   )}
                 </motion.div>
               </AnimatePresence>
@@ -215,7 +215,7 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
         <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="flex items-end justify-between mb-8">
-              <h2 className="font-serif text-2xl sm:text-3xl text-[var(--parchment)]">
+              <h2 className="font-serif text-2xl sm:text-3xl text-[var(--ink)]">
                 {t("product.related")}
               </h2>
               <RLink to={`/commodities/${product.sector}`} className="link-underline text-sm text-[var(--primary)]">
@@ -227,7 +227,7 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
                 <RLink
                   key={p.slug}
                   to={`/product/${p.slug}`}
-                  className="group block overflow-hidden rounded-sm border border-[rgba(201,165,92,0.12)] hover:border-[var(--primary)]/45 bg-[#0b1626] transition-colors duration-500"
+                  className="group block overflow-hidden rounded-sm border border-[rgba(26,29,36,0.09)] hover:border-[var(--primary)]/45 bg-white transition-colors duration-500"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
@@ -236,10 +236,10 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1626] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-serif text-base text-[var(--parchment)] group-hover:text-[var(--primary)] transition-colors leading-snug">
+                    <h3 className="font-serif text-base text-[var(--ink)] group-hover:text-[var(--brass)] transition-colors leading-snug">
                       {p.name}
                     </h3>
                   </div>
@@ -255,7 +255,7 @@ export default function ProductDetailPage({ slug }: { slug: string }) {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <button
             onClick={() => navigate(`/commodities/${product.sector}`)}
-            className="inline-flex items-center gap-2 text-sm text-[var(--parchment-dim)] hover:text-[var(--primary)] transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[var(--muted-foreground)] hover:text-[var(--brass)] transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             {t("common.back")} — {sector?.name}

@@ -65,7 +65,7 @@ export default function SiteHeader() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled || route.name !== "home"
-            ? "bg-[#060d18]/90 backdrop-blur-xl border-b border-[rgba(201,165,92,0.16)] py-3"
+            ? "bg-[rgba(245,242,234,0.92)] backdrop-blur-xl border-b border-[var(--rule)] py-3 shadow-sm"
             : "bg-transparent py-5"
         }`}
       >
@@ -89,7 +89,7 @@ export default function SiteHeader() {
               <button
                 key={link.key}
                 onClick={() => handleNav(link.to)}
-                className="relative px-4 py-2 text-sm font-medium text-[var(--parchment-dim)] hover:text-[var(--parchment)] transition-colors duration-300 group"
+                className="relative px-4 py-2 text-sm font-medium text-[var(--ink-soft)] hover:text-[var(--brass)] transition-colors duration-300 group"
               >
                 {t(link.key)}
                 <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-[var(--primary)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-out" />
@@ -97,7 +97,7 @@ export default function SiteHeader() {
             ))}
             <button
               onClick={() => handleNav("/reporting")}
-              className="relative px-4 py-2 text-sm font-medium text-[var(--parchment-dim)] hover:text-[var(--parchment)] transition-colors duration-300 group"
+              className="relative px-4 py-2 text-sm font-medium text-[var(--ink-soft)] hover:text-[var(--brass)] transition-colors duration-300 group"
             >
               {t("reporting.tag")}
               <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-[var(--primary)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400 ease-out" />
@@ -110,7 +110,7 @@ export default function SiteHeader() {
               <button
                 onClick={() => setLangOpen((v) => !v)}
                 onBlur={() => setTimeout(() => setLangOpen(false), 150)}
-                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-[var(--parchment-dim)] hover:text-[var(--parchment)] border border-transparent hover:border-[rgba(201,165,92,0.3)] rounded-md transition-all duration-300"
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-[var(--ink-soft)] hover:text-[var(--brass)] border border-transparent hover:border-[rgba(201,165,92,0.3)] rounded-md transition-all duration-300"
               >
                 <Globe className="h-4 w-4" />
                 <span>{currentLang?.short}</span>
@@ -123,7 +123,7 @@ export default function SiteHeader() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-40 rounded-md border border-[rgba(201,165,92,0.18)] bg-[#0b1626]/95 backdrop-blur-xl py-1 shadow-2xl"
+                    className="absolute right-0 mt-2 w-40 rounded-md border border-[rgba(201,165,92,0.18)] bg-white/95 backdrop-blur-xl py-1 shadow-2xl"
                   >
                     {LANGUAGES.map((l) => (
                       <button
@@ -135,7 +135,7 @@ export default function SiteHeader() {
                         className={`w-full text-left px-4 py-2 text-sm transition-colors ${
                           lang === l.code
                             ? "text-[var(--primary)] bg-[rgba(201,165,92,0.08)]"
-                            : "text-[var(--parchment-dim)] hover:text-[var(--parchment)] hover:bg-white/5"
+                            : "text-[var(--ink-soft)] hover:text-[var(--brass)] hover:bg-[var(--parchment-warm)]"
                         }`}
                       >
                         {l.label}
@@ -150,7 +150,7 @@ export default function SiteHeader() {
               href={CLIENT_PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#0a1420] bg-gradient-to-r from-[#d9bd7e] to-[#c9a55c] rounded-md hover:shadow-[0_8px_30px_-12px_rgba(201,165,92,0.7)] transition-all duration-400"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#0a1420] bg-gradient-to-r from-[#c4a368] to-[var(--brass)] rounded-md hover:shadow-[0_8px_30px_-12px_rgba(201,165,92,0.7)] transition-all duration-400"
             >
               <Lock className="h-4 w-4" />
               {t("nav.portal")}
@@ -158,7 +158,7 @@ export default function SiteHeader() {
 
             <button
               onClick={() => setMobileOpen(true)}
-              className="lg:hidden p-2 text-[var(--parchment)] hover:text-white"
+              className="lg:hidden p-2 text-[var(--ink)]"
               aria-label={t("nav.menu")}
             >
               <Menu className="h-6 w-6" />
@@ -177,7 +177,7 @@ export default function SiteHeader() {
             className="fixed inset-0 z-[60] lg:hidden"
           >
             <div
-              className="absolute inset-0 bg-[#060d18]/95 backdrop-blur-xl"
+              className="absolute inset-0 bg-[var(--parchment)] backdrop-blur-xl"
               onClick={() => setMobileOpen(false)}
             />
             <motion.div
@@ -185,13 +185,13 @@ export default function SiteHeader() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute right-0 top-0 bottom-0 w-[82%] max-w-sm bg-[#0b1626] border-l border-[rgba(201,165,92,0.18)] flex flex-col"
+              className="absolute right-0 top-0 bottom-0 w-[82%] max-w-sm bg-white border-l border-[rgba(201,165,92,0.18)] flex flex-col"
             >
               <div className="flex items-center justify-between p-5 border-b border-[rgba(201,165,92,0.14)]">
                 <img src="/aspidus/aspidus_logo2.webp" alt="Aspidus" className="h-8" />
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="p-2 text-[var(--parchment-dim)] hover:text-[var(--parchment)]"
+                  className="p-2 text-[var(--ink-soft)] hover:text-[var(--brass)]"
                   aria-label="Close menu"
                 >
                   <X className="h-6 w-6" />
@@ -206,7 +206,7 @@ export default function SiteHeader() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + i * 0.07, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => handleNav(link.to)}
-                    className="text-left py-3.5 px-4 text-lg font-serif text-[var(--parchment)] hover:text-[var(--primary)] hover:bg-white/5 rounded-md transition-colors"
+                    className="text-left py-3.5 px-4 text-lg font-serif text-[var(--ink)] hover:text-[var(--primary)] hover:bg-[var(--parchment-warm)] rounded-md transition-colors"
                   >
                     {t(link.key)}
                   </motion.button>
@@ -222,7 +222,7 @@ export default function SiteHeader() {
                       className={`flex-1 py-2 text-sm rounded border transition-colors ${
                         lang === l.code
                           ? "border-[var(--primary)] text-[var(--primary)] bg-[rgba(201,165,92,0.08)]"
-                          : "border-[rgba(201,165,92,0.2)] text-[var(--parchment-dim)]"
+                          : "border-[rgba(201,165,92,0.2)] text-[var(--ink-soft)]"
                       }`}
                     >
                       {l.short}
@@ -233,7 +233,7 @@ export default function SiteHeader() {
                   href={CLIENT_PORTAL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-[#0a1420] bg-gradient-to-r from-[#d9bd7e] to-[#c9a55c] rounded-md"
+                  className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-[#0a1420] bg-gradient-to-r from-[#c4a368] to-[var(--brass)] rounded-md"
                 >
                   <Lock className="h-4 w-4" />
                   {t("nav.portal")}
@@ -251,7 +251,7 @@ function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#c9a55c] to-[#d9bd7e] z-[70] origin-left"
+      className="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--brass)] to-[#c4a368] z-[70] origin-left"
       style={{ scaleX: scrollYProgress }}
     />
   );

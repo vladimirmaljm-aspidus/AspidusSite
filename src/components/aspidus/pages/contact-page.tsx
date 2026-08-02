@@ -30,7 +30,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <button
             onClick={() => navigate("/")}
-            className="inline-flex items-center gap-2 text-sm text-[var(--parchment-dim)] hover:text-[var(--primary)] transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[var(--muted-foreground)] hover:text-[var(--brass)] transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             {t("common.backToHome")}

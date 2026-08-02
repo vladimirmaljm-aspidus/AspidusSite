@@ -41,7 +41,7 @@ export default function ReportingPage() {
   return (
     <div className="pt-28 sm:pt-32 page-enter">
       {/* Hero */}
-      <section className="relative py-16 sm:py-20 border-b border-[rgba(201,165,92,0.12)] overflow-hidden">
+      <section className="relative py-16 sm:py-20 border-b border-[rgba(26,29,36,0.09)] overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[var(--accent)]/15 blur-[120px] pointer-events-none" />
         <div className="mx-auto max-w-7xl px-5 sm:px-8 relative">
           <div className="breadcrumb mb-6">
@@ -52,19 +52,19 @@ export default function ReportingPage() {
 
           <div className="grid lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-8" data-reveal>
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[rgba(201,165,92,0.3)] bg-[rgba(201,165,92,0.06)] backdrop-blur-sm mb-6">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[rgba(26,29,36,0.2)] bg-[rgba(201,165,92,0.06)] backdrop-blur-sm mb-6">
                 <ShieldCheck className="h-4 w-4 text-[var(--primary)]" />
                 <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[var(--primary)]">
                   {t("reporting.tag")}
                 </span>
               </div>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[var(--parchment)] leading-[1.05] tracking-tight">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[var(--ink)] leading-[1.05] tracking-tight">
                 {t("reporting.title")}{" "}
                 <span className="gold-gradient italic">{t("reporting.titleAccent")}</span>
               </h1>
             </div>
             <div className="lg:col-span-4" data-reveal data-reveal-delay="0.15">
-              <p className="text-[var(--parchment-dim)] leading-relaxed">{t("reporting.desc")}</p>
+              <p className="text-[var(--muted-foreground)] leading-relaxed">{t("reporting.desc")}</p>
             </div>
           </div>
         </div>
@@ -74,14 +74,14 @@ export default function ReportingPage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           {/* Confidentiality banner */}
-          <div className="mb-8 p-5 rounded-sm border border-[rgba(201,165,92,0.2)] bg-[rgba(201,165,92,0.04)] flex items-start gap-3" data-reveal>
+          <div className="mb-8 p-5 rounded-sm border border-[rgba(26,29,36,0.14)] bg-[rgba(201,165,92,0.04)] flex items-start gap-3" data-reveal>
             <Lock className="h-5 w-5 text-[var(--primary)] flex-shrink-0 mt-0.5" />
-            <p className="text-sm text-[var(--parchment-dim)] leading-relaxed">
+            <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
               {t("reporting.confidential")}
             </p>
           </div>
 
-          <div className="p-6 sm:p-8 lg:p-10 rounded-sm border border-[rgba(201,165,92,0.16)] bg-gradient-to-br from-[#0b1626] to-[#0a1626]" data-reveal data-reveal-delay="0.1">
+          <div className="p-6 sm:p-8 lg:p-10 rounded-sm border border-[rgba(26,29,36,0.1)] bg-gradient-to-br from-white to-[#0a1626]" data-reveal data-reveal-delay="0.1">
             <AnimatePresence mode="wait">
               {status === "success" ? (
                 <motion.div
@@ -91,10 +91,10 @@ export default function ReportingPage() {
                   className="text-center py-12"
                 >
                   <CheckCircle2 className="h-14 w-14 text-emerald-400 mx-auto mb-4" />
-                  <h3 className="font-serif text-2xl text-[var(--parchment)] mb-2">
+                  <h3 className="font-serif text-2xl text-[var(--ink)] mb-2">
                     {t("reporting.successTitle")}
                   </h3>
-                  <p className="text-[var(--parchment-dim)]">{t("reporting.successDesc")}</p>
+                  <p className="text-[var(--muted-foreground)]">{t("reporting.successDesc")}</p>
                 </motion.div>
               ) : status === "error" ? (
                 <motion.div
@@ -104,8 +104,8 @@ export default function ReportingPage() {
                   className="text-center py-12"
                 >
                   <AlertCircle className="h-14 w-14 text-red-400 mx-auto mb-4" />
-                  <h3 className="font-serif text-2xl text-[var(--parchment)] mb-2">Submission Failed</h3>
-                  <p className="text-[var(--parchment-dim)] mb-6">Please try again.</p>
+                  <h3 className="font-serif text-2xl text-[var(--ink)] mb-2">Submission Failed</h3>
+                  <p className="text-[var(--muted-foreground)] mb-6">Please try again.</p>
                   <button onClick={() => setStatus("idle")} className="btn-ghost">Try again</button>
                 </motion.div>
               ) : (
@@ -126,14 +126,14 @@ export default function ReportingPage() {
                     </select>
                   </Field>
 
-                  <label className="flex items-start gap-3 p-4 rounded-sm border border-[rgba(201,165,92,0.14)] bg-[#0a1626] cursor-pointer hover:border-[rgba(201,165,92,0.3)] transition-colors">
+                  <label className="flex items-start gap-3 p-4 rounded-sm border border-[rgba(26,29,36,0.1)] bg-[var(--parchment-warm)] cursor-pointer hover:border-[rgba(26,29,36,0.2)] transition-colors">
                     <input
                       type="checkbox"
                       name="anonymous"
                       value="yes"
                       className="mt-0.5 w-4 h-4 accent-[var(--primary)]"
                     />
-                    <span className="text-sm text-[var(--parchment-dim)]">{t("reporting.anon")}</span>
+                    <span className="text-sm text-[var(--muted-foreground)]">{t("reporting.anon")}</span>
                   </label>
 
                   <div className="grid sm:grid-cols-2 gap-5">
@@ -181,7 +181,7 @@ export default function ReportingPage() {
           <div className="mt-8 text-center">
             <button
               onClick={() => navigate("/")}
-              className="inline-flex items-center gap-2 text-sm text-[var(--parchment-dim)] hover:text-[var(--primary)] transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-[var(--muted-foreground)] hover:text-[var(--brass)] transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               {t("reporting.back")}
@@ -211,7 +211,7 @@ export default function ReportingPage() {
           color: #7e8898;
         }
         :global(select.form-input option) {
-          background: #0b1626;
+          background: var(--parchment-warm);
           color: #e8e4d8;
         }
       `}</style>
@@ -222,7 +222,7 @@ export default function ReportingPage() {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="block text-xs font-medium tracking-wide text-[var(--parchment-dim)] mb-2">{label}</span>
+      <span className="block text-xs font-medium tracking-wide text-[var(--muted-foreground)] mb-2">{label}</span>
       {children}
     </label>
   );
