@@ -11,41 +11,31 @@ export default function Hero() {
   const { t } = useI18n();
   const ref = React.useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const orb1Y = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const orb2Y = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "28%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
   const scrollTo = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section ref={ref} id="home" className="relative min-h-[94svh] flex items-center overflow-hidden mesh-warm grain pt-24">
-      {/* Layered organic gradient blobs (no dark photo) */}
-      <motion.div
-        style={{ y: orb1Y }}
-        className="absolute top-[10%] right-[8%] w-[36rem] h-[36rem] rounded-full opacity-50 blur-3xl pointer-events-none"
-      >
-        <div className="w-full h-full rounded-full" style={{ background: "radial-gradient(circle, rgba(196,163,104,0.55), transparent 65%)" }} />
-      </motion.div>
-      <motion.div
-        style={{ y: orb2Y }}
-        className="absolute bottom-[5%] left-[5%] w-[42rem] h-[42rem] rounded-full opacity-40 blur-3xl pointer-events-none"
-      >
-        <div className="w-full h-full rounded-full" style={{ background: "radial-gradient(circle, rgba(45,74,62,0.45), transparent 65%)" }} />
-      </motion.div>
-      <motion.div
-        className="absolute top-[40%] left-[45%] w-[28rem] h-[28rem] rounded-full opacity-30 blur-3xl pointer-events-none"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.4, 0.3] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="w-full h-full rounded-full" style={{ background: "radial-gradient(circle, rgba(154,123,63,0.5), transparent 65%)" }} />
+    <section ref={ref} id="home" className="relative min-h-[94svh] flex items-end overflow-hidden pt-24">
+      {/* Parallax background image */}
+      <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0 z-0">
+        <img src="/aspidus/hero-premium.png" alt="" className="w-full h-full object-cover" />
+        {/* LIGHT overlay — keeps image visible but text readable, NOT dark */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(245,242,234,0.92) 0%, rgba(245,242,234,0.75) 45%, rgba(245,242,234,0.25) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(245,242,234,0.95) 0%, rgba(245,242,234,0.1) 40%, rgba(245,242,234,0.35) 100%)" }} />
       </motion.div>
 
-      {/* Subtle grid texture */}
-      <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{
-        backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
-        backgroundSize: "80px 80px",
-      }} />
+      {/* Soft floating orbs (subtle, blend with image) */}
+      <motion.div
+        className="absolute top-[15%] right-[10%] w-80 h-80 rounded-full opacity-40 blur-3xl pointer-events-none"
+        animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="w-full h-full rounded-full" style={{ background: "radial-gradient(circle, rgba(196,163,104,0.4), transparent 70%)" }} />
+      </motion.div>
 
       {/* Content */}
       <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 w-full pb-16">

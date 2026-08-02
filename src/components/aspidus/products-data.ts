@@ -22,7 +22,7 @@ export const products: Product[] = [
     "name": "Crude Oil (Brent)",
     "shortDescription": "Brent Crude is a leading global price benchmark for Atlantic basin light sweet crude oils.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -89,7 +89,7 @@ export const products: Product[] = [
     "name": "Crude Oil (WTI)",
     "shortDescription": "West Texas Intermediate (WTI) is a high-quality light sweet crude and a primary benchmark for North American oil.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -156,7 +156,7 @@ export const products: Product[] = [
     "name": "Liquefied Natural Gas (LNG)",
     "shortDescription": "Clean, reliable, and efficient energy source, cooled to a liquid state for transport and storage.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -215,7 +215,7 @@ export const products: Product[] = [
     "name": "Liquefied Petroleum Gas (LPG)",
     "shortDescription": "Versatile fuel mixture (Propane/Butane) used for heating, cooking, and automotive fuel.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -274,7 +274,7 @@ export const products: Product[] = [
     "name": "Gasoline (RON 95)",
     "shortDescription": "High-quality unleaded gasoline (petrol) meeting international standards such as RON 95.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -337,7 +337,7 @@ export const products: Product[] = [
     "name": "Diesel (EN590)",
     "shortDescription": "Ultra-low sulfur diesel (ULSD) compliant with EN590 standards (10ppm sulfur) for modern diesel engines.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -404,7 +404,7 @@ export const products: Product[] = [
     "name": "Jet Fuel (A-1)",
     "shortDescription": "High-quality aviation turbine fuel (Jet A-1) meeting stringent international safety and performance standards.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -467,7 +467,7 @@ export const products: Product[] = [
     "name": "Polyethylene (PE)",
     "shortDescription": "Versatile polymer available in various grades (HDPE, LDPE, LLDPE) for packaging, industrial, and consumer applications.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -526,7 +526,7 @@ export const products: Product[] = [
     "name": "Polypropylene (PP)",
     "shortDescription": "Durable and chemical-resistant thermoplastic (Homopolymer, Copolymer) used in automotive, packaging, and textile industries.",
     "sector": "energy",
-    "image": "/aspidus/energy.webp",
+    "image": "/aspidus/energy-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -581,7 +581,7 @@ export const products: Product[] = [
     "name": "Copper Cathodes (Grade A)",
     "shortDescription": "High-purity (99.99%) electrolytic copper cathodes (LME Grade A) for electrical, electronic, and industrial applications.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -644,7 +644,7 @@ export const products: Product[] = [
     "name": "Aluminium Ingots (P1020)",
     "shortDescription": "Primary aluminium ingots (P1020) for extrusion, rolling, and casting industries.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -707,7 +707,7 @@ export const products: Product[] = [
     "name": "Zinc Ingots (SHG)",
     "shortDescription": "Special High Grade (SHG) zinc ingots (99.995% purity) used primarily for galvanizing steel.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -766,7 +766,7 @@ export const products: Product[] = [
     "name": "Lead Ingots (99.97%)",
     "shortDescription": "High-purity lead ingots (99.97% to 99.99%) primarily used for batteries and radiation shielding.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -825,7 +825,7 @@ export const products: Product[] = [
     "name": "Gold Bullion (999.9)",
     "shortDescription": "Investment-grade gold bullion (bars and ingots) sourced from LBMA-certified refineries.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -902,7 +902,7 @@ export const products: Product[] = [
     "name": "Silver Bullion (999.0)",
     "shortDescription": "Investment-grade silver bars (99.9% purity) from LBMA-approved refineries.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -959,7 +959,7 @@ export const products: Product[] = [
     "name": "Platinum (Pt)",
     "shortDescription": "Industrial and investment-grade platinum (99.95% purity) for automotive (catalysts) and jewelry industries.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1012,7 +1012,7 @@ export const products: Product[] = [
     "name": "Steel Products (HRC, CRC, Rebar)",
     "shortDescription": "Trading in various flat and long steel products including Hot-Rolled Coil (HRC), Cold-Rolled Coil (CRC), and Rebar.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1067,7 +1067,7 @@ export const products: Product[] = [
     "name": "Iron Ore Fines (62% Fe)",
     "shortDescription": "Standard specification iron ore fines (62% Fe content), a key raw material for steel production.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1134,7 +1134,7 @@ export const products: Product[] = [
     "name": "Nickel (LME Grade)",
     "shortDescription": "High-purity primary nickel conforming to LME standards, essential for stainless steel and battery production.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1193,7 +1193,7 @@ export const products: Product[] = [
     "name": "Copper Concentrate",
     "shortDescription": "Partially processed copper ore with elevated copper content, serving as feedstock for smelting and refining industries.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1256,7 +1256,7 @@ export const products: Product[] = [
     "name": "Zinc Concentrate",
     "shortDescription": "A raw material for producing refined zinc, also containing traces of valuable by-products like lead and silver.",
     "sector": "metals",
-    "image": "/aspidus/metals.webp",
+    "image": "/aspidus/metals-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1319,7 +1319,7 @@ export const products: Product[] = [
     "name": "Milling Wheat (12.5% Protein)",
     "shortDescription": "High-quality milling wheat suitable for flour production, traded on international standards.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1382,7 +1382,7 @@ export const products: Product[] = [
     "name": "Yellow Corn (Maize) No. 2",
     "shortDescription": "Standard grade Yellow Corn (Maize) used primarily for animal feed and ethanol production.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1445,7 +1445,7 @@ export const products: Product[] = [
     "name": "Soybeans No. 2",
     "shortDescription": "High-quality Yellow Soybeans for crushing (oil and meal production) and human consumption.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1508,7 +1508,7 @@ export const products: Product[] = [
     "name": "White Rice (5% Broken)",
     "shortDescription": "Long grain white rice, graded 5% broken, a globally recognized standard for quality.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1575,7 +1575,7 @@ export const products: Product[] = [
     "name": "Crude Sunflower Oil",
     "shortDescription": "Unrefined crude sunflower oil for further processing into edible oil and other industrial applications.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1638,7 +1638,7 @@ export const products: Product[] = [
     "name": "RBD Palm Olein (CP8)",
     "shortDescription": "Refined, Bleached, and Deodorized (RBD) Palm Olein, cold-pressed (CP8), widely used as cooking oil.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1693,7 +1693,7 @@ export const products: Product[] = [
     "name": "Extra Virgin Olive Oil (EVOO)",
     "shortDescription": "Premium quality cold-pressed olive oil with excellent flavor and low acidity.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1744,7 +1744,7 @@ export const products: Product[] = [
     "name": "Coffee Beans (Arabica/Robusta)",
     "shortDescription": "Green coffee beans, graded and sourced for roasting, including high-quality Arabica and robust Robusta.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1811,7 +1811,7 @@ export const products: Product[] = [
     "name": "Refined White Sugar ICUMSA 45",
     "shortDescription": "High-quality refined white sugar suitable for human consumption and various industrial applications.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1882,7 +1882,7 @@ export const products: Product[] = [
     "name": "Cocoa Beans (Main Crop)",
     "shortDescription": "Raw, fermented, and dried cocoa beans sourced for chocolate and cocoa product manufacturing.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -1941,7 +1941,7 @@ export const products: Product[] = [
     "name": "Soybean Meal (46% Protein)",
     "shortDescription": "High-protein soybean meal, a primary ingredient in animal feed for poultry, swine, and cattle.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2000,7 +2000,7 @@ export const products: Product[] = [
     "name": "Corn Gluten Feed (CGF)",
     "shortDescription": "A by-product of corn wet-milling, CGF is a valuable, medium-protein feed ingredient for livestock.",
     "sector": "agriculture",
-    "image": "/aspidus/agrikultura.webp",
+    "image": "/aspidus/agriculture-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2059,7 +2059,7 @@ export const products: Product[] = [
     "name": "Frozen Chicken (Whole & Cuts)",
     "shortDescription": "High-quality, calibrated frozen chicken products sourced from SIF/BRC/Halal certified facilities, ideal for food service and retail.",
     "sector": "meat",
-    "image": "/aspidus/meat.webp",
+    "image": "/aspidus/meat-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2148,7 +2148,7 @@ export const products: Product[] = [
     "name": "Frozen Boneless Beef",
     "shortDescription": "Premium frozen boneless beef cuts, grass-fed or grain-fed, sourced from leading Halal-certified abattoirs.",
     "sector": "meat",
-    "image": "/aspidus/meat.webp",
+    "image": "/aspidus/meat-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2229,7 +2229,7 @@ export const products: Product[] = [
     "name": "Frozen Lamb Carcass & Cuts",
     "shortDescription": "High-quality frozen lamb, available as 6-way cut carcasses or specific cuts, sourced from Australia and South America.",
     "sector": "meat",
-    "image": "/aspidus/meat.webp",
+    "image": "/aspidus/meat-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2306,7 +2306,7 @@ export const products: Product[] = [
     "name": "Frozen Turkey (Whole & Cuts)",
     "shortDescription": "Premium frozen turkey products, including whole birds for food service and specific cuts for processing.",
     "sector": "meat",
-    "image": "/aspidus/meat.webp",
+    "image": "/aspidus/meat-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2375,7 +2375,7 @@ export const products: Product[] = [
     "name": "Frozen Beef/Chicken Liver",
     "shortDescription": "High-quality frozen beef and chicken livers, processed and packed for human consumption.",
     "sector": "meat",
-    "image": "/aspidus/meat.webp",
+    "image": "/aspidus/meat-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2448,7 +2448,7 @@ export const products: Product[] = [
     "name": "Cotton Yarn (Carded/Combed)",
     "shortDescription": "High-quality ring-spun cotton yarn for knitting and weaving, available in various counts.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2507,7 +2507,7 @@ export const products: Product[] = [
     "name": "Raw Cotton (Ginned)",
     "shortDescription": "Raw ginned cotton bales, graded by staple length, strength, and micronaire for spinning mills.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2566,7 +2566,7 @@ export const products: Product[] = [
     "name": "Polyester Staple Fiber (PSF)",
     "shortDescription": "Virgin-grade Polyester Staple Fiber (PSF) used for spinning, non-woven fabrics, and filling applications.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2621,7 +2621,7 @@ export const products: Product[] = [
     "name": "Caustic Soda Flakes (99%)",
     "shortDescription": "High-purity Caustic Soda (Sodium Hydroxide) flakes, essential for paper, textile, and detergent manufacturing.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2680,7 +2680,7 @@ export const products: Product[] = [
     "name": "Plastic Pellets (PET / HDPE)",
     "shortDescription": "Prime virgin plastic granules (PET & HDPE) for food-grade packaging, bottle, and pipe manufacturing.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2735,7 +2735,7 @@ export const products: Product[] = [
     "name": "Wood Pulp (NBSK)",
     "shortDescription": "Northern Bleached Softwood Kraft (NBSK) pulp, a benchmark commodity for high-quality paper production.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2790,7 +2790,7 @@ export const products: Product[] = [
     "name": "Waste Paper (OCC 11)",
     "shortDescription": "OCC (Old Corrugated Containers) Grade 11, a key raw material for recycling into new containerboard.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2849,7 +2849,7 @@ export const products: Product[] = [
     "name": "Lumber (SPF)",
     "shortDescription": "Construction-grade dimensional lumber, primarily Spruce-Pine-Fir (SPF), for residential and commercial framing.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2908,7 +2908,7 @@ export const products: Product[] = [
     "name": "Steel Rebar (Deformed)",
     "shortDescription": "Hot-rolled deformed steel reinforcement bars used for concrete reinforcement in construction.",
     "sector": "raw_materials",
-    "image": "/aspidus/raw_materials.webp",
+    "image": "/aspidus/raw-materials-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -2963,7 +2963,7 @@ export const products: Product[] = [
     "name": "Cement (OPC 42.5N/R)",
     "shortDescription": "High-performance Ordinary Portland Cement (OPC) compliant with EN 197-1, suitable for all general construction purposes.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3026,7 +3026,7 @@ export const products: Product[] = [
     "name": "Construction Sand (Washed)",
     "shortDescription": "Clean, washed silica sand used for concrete production, mortar, and other general construction applications.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3085,7 +3085,7 @@ export const products: Product[] = [
     "name": "Gravel / Aggregates",
     "shortDescription": "Crushed stone and gravel (coarse aggregates) used as a primary component in concrete and for road base.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3144,7 +3144,7 @@ export const products: Product[] = [
     "name": "Mineral Wool Insulation",
     "shortDescription": "Rock wool (stone wool) insulation boards and batts, providing high-performance thermal, acoustic, and fire insulation.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3203,7 +3203,7 @@ export const products: Product[] = [
     "name": "Structural Steel Beams",
     "shortDescription": "Hot-rolled structural steel sections (beams) used in construction and engineering projects.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3258,7 +3258,7 @@ export const products: Product[] = [
     "name": "Steel Rebars (Construction)",
     "shortDescription": "Hot-rolled deformed steel reinforcement bars used for concrete reinforcement in construction.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3313,7 +3313,7 @@ export const products: Product[] = [
     "name": "Steel Pipes (Welded)",
     "shortDescription": "Carbon steel pipes (ERW/HFW) used for structural applications, fencing, and fluid conveyance.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3368,7 +3368,7 @@ export const products: Product[] = [
     "name": "Porcelain Tiles (60x60)",
     "shortDescription": "High-quality glazed porcelain tiles, durable and suitable for residential and commercial flooring.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3427,7 +3427,7 @@ export const products: Product[] = [
     "name": "Gypsum Board (Drywall)",
     "shortDescription": "Standard gypsum plasterboard for interior walls and ceilings, offering fast and efficient installation.",
     "sector": "construction",
-    "image": "/aspidus/construction.webp",
+    "image": "/aspidus/construction-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3486,7 +3486,7 @@ export const products: Product[] = [
     "name": "Raw Cotton Bales",
     "shortDescription": "High-grade raw ginned cotton bales, graded by staple length, strength (Gpt), and micronaire for spinning mills.",
     "sector": "textiles",
-    "image": "/aspidus/textiles.webp",
+    "image": "/aspidus/textiles-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3553,7 +3553,7 @@ export const products: Product[] = [
     "name": "Scoured Wool (Merino)",
     "shortDescription": "High-quality scoured (cleaned) Merino wool, graded by micron, ready for spinning and textile production.",
     "sector": "textiles",
-    "image": "/aspidus/textiles.webp",
+    "image": "/aspidus/textiles-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3612,7 +3612,7 @@ export const products: Product[] = [
     "name": "Polyester Staple Fiber (PSF)",
     "shortDescription": "Virgin-grade Polyester Staple Fiber (PSF) used for spinning, non-woven fabrics, and filling applications.",
     "sector": "textiles",
-    "image": "/aspidus/textiles.webp",
+    "image": "/aspidus/textiles-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3671,7 +3671,7 @@ export const products: Product[] = [
     "name": "Cotton Yarn (Combed)",
     "shortDescription": "Premium 100% cotton combed ring-spun yarn for high-quality knitting and weaving applications.",
     "sector": "textiles",
-    "image": "/aspidus/textiles.webp",
+    "image": "/aspidus/textiles-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3734,7 +3734,7 @@ export const products: Product[] = [
     "name": "Polyester Yarn (DTY)",
     "shortDescription": "Polyester Drawn Textured Yarn (DTY) used widely in weaving and knitting for apparel and home textiles.",
     "sector": "textiles",
-    "image": "/aspidus/textiles.webp",
+    "image": "/aspidus/textiles-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3793,7 +3793,7 @@ export const products: Product[] = [
     "name": "Denim Fabric",
     "shortDescription": "Durable denim fabric for apparel, available in various weights and compositions (100% Cotton or Stretch).",
     "sector": "textiles",
-    "image": "/aspidus/textiles.webp",
+    "image": "/aspidus/textiles-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3856,7 +3856,7 @@ export const products: Product[] = [
     "name": "Urea 46% N (Granular)",
     "shortDescription": "High-quality granular urea with 46% nitrogen content, the most common nitrogen fertilizer.",
     "sector": "fertilizers",
-    "image": "/aspidus/fertilizers.webp",
+    "image": "/aspidus/fertilizers-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3915,7 +3915,7 @@ export const products: Product[] = [
     "name": "Ammonium Sulfate (AS)",
     "shortDescription": "A sulfur-rich fertilizer, providing 21% nitrogen and 24% sulfur, ideal for alkaline soils.",
     "sector": "fertilizers",
-    "image": "/aspidus/fertilizers.webp",
+    "image": "/aspidus/fertilizers-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -3970,7 +3970,7 @@ export const products: Product[] = [
     "name": "DAP (18-46-0)",
     "shortDescription": "Diammonium Phosphate, the world's most widely used phosphorus fertilizer, with high nutrient content.",
     "sector": "fertilizers",
-    "image": "/aspidus/fertilizers.webp",
+    "image": "/aspidus/fertilizers-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4029,7 +4029,7 @@ export const products: Product[] = [
     "name": "MAP (11-52-0)",
     "shortDescription": "Monoammonium Phosphate, a high-phosphorus fertilizer used in early plant growth stages.",
     "sector": "fertilizers",
-    "image": "/aspidus/fertilizers.webp",
+    "image": "/aspidus/fertilizers-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4088,7 +4088,7 @@ export const products: Product[] = [
     "name": "MOP (Muriate of Potash)",
     "shortDescription": "Muriate of Potash (Potassium Chloride), the most common potassium source, providing 60% K2O.",
     "sector": "fertilizers",
-    "image": "/aspidus/fertilizers.webp",
+    "image": "/aspidus/fertilizers-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4139,7 +4139,7 @@ export const products: Product[] = [
     "name": "SOP (Sulphate of Potash)",
     "shortDescription": "Sulphate of Potash, a premium low-chloride potassium fertilizer ideal for sensitive crops like fruits and tobacco.",
     "sector": "fertilizers",
-    "image": "/aspidus/fertilizers.webp",
+    "image": "/aspidus/fertilizers-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4194,7 +4194,7 @@ export const products: Product[] = [
     "name": "NPK Complex Fertilizers",
     "shortDescription": "Compound NPK fertilizers providing balanced nutrition in a single granule, tailored to specific crop requirements.",
     "sector": "fertilizers",
-    "image": "/aspidus/fertilizers.webp",
+    "image": "/aspidus/fertilizers-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4245,7 +4245,7 @@ export const products: Product[] = [
     "name": "Almonds (Nonpareil)",
     "shortDescription": "Premium California Nonpareil almonds, shelled and graded by count, ideal for snacking and confectionery.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4308,7 +4308,7 @@ export const products: Product[] = [
     "name": "Walnuts (Chandler)",
     "shortDescription": "Chandler variety walnuts, known for their light color and high-quality kernels. Available as halves or in-shell.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4371,7 +4371,7 @@ export const products: Product[] = [
     "name": "Cashew Kernels (WW320)",
     "shortDescription": "White Wholes 320 (WW320) grade cashew kernels, a global standard for size and quality.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4434,7 +4434,7 @@ export const products: Product[] = [
     "name": "Pistachios (In-Shell)",
     "shortDescription": "Roasted and salted in-shell pistachios, graded by size (count per ounce) and split percentage.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4493,7 +4493,7 @@ export const products: Product[] = [
     "name": "Hazelnut Kernels (Turkish)",
     "shortDescription": "Shelled, roasted, or natural hazelnut kernels from the Turkish Black Sea region, sized and graded.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4552,7 +4552,7 @@ export const products: Product[] = [
     "name": "Raisins (Sultana)",
     "shortDescription": "Turkish Sultana raisins, Type 9, a standard for baking and confectionery. Also available as Thompson Seedless (USA).",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4611,7 +4611,7 @@ export const products: Product[] = [
     "name": "Dried Apricots (Turkish)",
     "shortDescription": "Whole dried Turkish apricots from Malatya, graded by size (Jumbo, No. 1, etc.) and treated with SO2 or natural.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4670,7 +4670,7 @@ export const products: Product[] = [
     "name": "Dates (Medjool)",
     "shortDescription": "Premium Medjool dates, known for their large size, soft texture, and rich flavor.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4733,7 +4733,7 @@ export const products: Product[] = [
     "name": "Dried Figs (Turkish Lerida)",
     "shortDescription": "Turkish dried figs (Lerida type), a popular format, graded by size and quality.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4788,7 +4788,7 @@ export const products: Product[] = [
     "name": "Sunflower Seeds (Hulled)",
     "shortDescription": "Hulled sunflower seed kernels (bakery grade), high purity, for baking, confectionery, and oil production.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4847,7 +4847,7 @@ export const products: Product[] = [
     "name": "Sesame Seeds (Natural)",
     "shortDescription": "Natural unhulled sesame seeds, 99.9% purity, widely used for oil extraction (tahini) and baking.",
     "sector": "nuts_dried_fruits",
-    "image": "/aspidus/nuts_dried_fruits.webp",
+    "image": "/aspidus/nuts-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4906,7 +4906,7 @@ export const products: Product[] = [
     "name": "Cocoa Butter (Natural & Deodorized)",
     "shortDescription": "Premium natural or deodorized cocoa butter, ideal for chocolate manufacturing, confectionery, and cosmetic applications.",
     "sector": "cocoa_coffee",
-    "image": "/aspidus/cacao_coffee.webp",
+    "image": "/aspidus/cocoa-coffee-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -4978,7 +4978,7 @@ export const products: Product[] = [
     "name": "Cocoa Mass (Cocoa Liquor)",
     "shortDescription": "Pure, unsweetened 100% cocoa, produced from ground cocoa nibs. The base ingredient for all chocolate.",
     "sector": "cocoa_coffee",
-    "image": "/aspidus/cacao_coffee.webp",
+    "image": "/aspidus/cocoa-coffee-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5045,7 +5045,7 @@ export const products: Product[] = [
     "name": "Cocoa Powder (Alkalized & Natural)",
     "shortDescription": "High-quality cocoa powder, available in various fat contents and pH levels for baking, beverages, and industrial use.",
     "sector": "cocoa_coffee",
-    "image": "/aspidus/cacao_coffee.webp",
+    "image": "/aspidus/cocoa-coffee-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5108,7 +5108,7 @@ export const products: Product[] = [
     "name": "Green Coffee Beans (Arabica/Robusta)",
     "shortDescription": "Green coffee beans, graded and sourced for roasting, including high-quality Arabica and robust Robusta.",
     "sector": "cocoa_coffee",
-    "image": "/aspidus/cacao_coffee.webp",
+    "image": "/aspidus/cocoa-coffee-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5172,7 +5172,7 @@ export const products: Product[] = [
     "name": "Instant Coffee (Spray & Freeze Dried)",
     "shortDescription": "Soluble coffee available as spray-dried agglomerated or premium freeze-dried, made from Arabica or Robusta beans.",
     "sector": "cocoa_coffee",
-    "image": "/aspidus/cacao_coffee.webp",
+    "image": "/aspidus/cocoa-coffee-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5235,7 +5235,7 @@ export const products: Product[] = [
     "name": "Black Pepper (Whole)",
     "shortDescription": "Whole dried black pepper, graded by density (g/l), sourced from primary producers.",
     "sector": "spices",
-    "image": "/aspidus/spices.webp",
+    "image": "/aspidus/spices-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5294,7 +5294,7 @@ export const products: Product[] = [
     "name": "Cinnamon (Cassia & Ceylon)",
     "shortDescription": "Offering both main types of cinnamon: pungent, strong Cassia and sweet, delicate Ceylon ('True Cinnamon').",
     "sector": "spices",
-    "image": "/aspidus/spices.webp",
+    "image": "/aspidus/spices-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5357,7 +5357,7 @@ export const products: Product[] = [
     "name": "Cumin Seeds (99%)",
     "shortDescription": "Whole dried cumin seeds, machine-cleaned to high purity standards for food processing and export.",
     "sector": "spices",
-    "image": "/aspidus/spices.webp",
+    "image": "/aspidus/spices-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5416,7 +5416,7 @@ export const products: Product[] = [
     "name": "Turmeric Fingers (Polished)",
     "shortDescription": "Dried whole turmeric fingers, graded by curcumin content, available in polished or unpolished formats.",
     "sector": "spices",
-    "image": "/aspidus/spices.webp",
+    "image": "/aspidus/spices-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5475,7 +5475,7 @@ export const products: Product[] = [
     "name": "Cloves (Hand Picked)",
     "shortDescription": "High-quality, hand-picked whole dried cloves, valued for their high oil content and strong aroma.",
     "sector": "spices",
-    "image": "/aspidus/spices.webp",
+    "image": "/aspidus/spices-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5534,7 +5534,7 @@ export const products: Product[] = [
     "name": "Dried Oregano (Rubbed)",
     "shortDescription": "Dried, rubbed oregano leaves (Origanum Vulgare), primarily sourced from Turkey, graded by volatile oil content.",
     "sector": "spices",
-    "image": "/aspidus/spices.webp",
+    "image": "/aspidus/spices-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
@@ -5589,7 +5589,7 @@ export const products: Product[] = [
     "name": "Vanilla Extract (Bourbon)",
     "shortDescription": "Premium natural Bourbon vanilla extract (single-fold or multi-fold), sourced from Madagascar vanilla beans.",
     "sector": "spices",
-    "image": "/aspidus/spices.webp",
+    "image": "/aspidus/spices-premium.png",
     "tabs": [
       {
         "titleKey": "specification",
