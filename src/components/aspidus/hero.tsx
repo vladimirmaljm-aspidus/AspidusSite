@@ -35,7 +35,7 @@ export default function Hero() {
             poster="/aspidus/hero-premium.png"
             className="w-full h-full object-cover"
           >
-            <source src="/aspidus/hero-video.mp4" type="video/mp4" />
+            <source src="/aspidus/hero-video-10s.mp4" type="video/mp4" />
           </video>
         </motion.div>
         {/* Subtle horizontal drift overlay for parallax depth */}
